@@ -4,7 +4,7 @@ apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: RoleBinding
 metadata:
   name: grafana
-  namespace: it-grafana
+  namespace: it-monitoring
   labels:
     helm.sh/chart: grafana-5.5.5
     app.kubernetes.io/name: grafana
@@ -18,4 +18,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: grafana
-  namespace: it-grafana
+  namespace: it-monitoring

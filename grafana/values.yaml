@@ -17,14 +17,8 @@ serviceAccount:
   nameTest:
 #  annotations:
 
-replicas: 2
+replicas: 1
 
-podDisruptionBudget:
-  minAvailable: 1
-  maxUnavailable: 1
-
-## See `kubectl explain deployment.spec.strategy` for more
-## ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
 deploymentStrategy:
   type: RollingUpdate
 
@@ -41,23 +35,11 @@ livenessProbe:
   timeoutSeconds: 30
   failureThreshold: 10
 
-## Use an alternate scheduler, e.g. "stork".
-## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
-##
-# schedulerName: "default-scheduler"
-
 image:
   repository: grafana/grafana
   tag: 7.2.0
   sha: ""
   pullPolicy: IfNotPresent
-
-  ## Optionally specify an array of imagePullSecrets.
-  ## Secrets must be manually created in the namespace.
-  ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-  ##
-  # pullSecrets:
-  #   - myRegistrKeySecretName
 
 testFramework:
   enabled: true
@@ -81,21 +63,8 @@ downloadDashboards:
   env: {}
   resources: {}
 
-## Pod Annotations
-# podAnnotations: {}
-
-## Pod Labels
-# podLabels: {}
-
 podPortName: grafana
 
-## Deployment annotations
-# annotations: {}
-
-## Expose the grafana service to be accessed from outside the cluster (LoadBalancer service).
-## or access it from within the cluster (ClusterIP service). Set the service type and the port to serve it.
-## ref: http://kubernetes.io/docs/user-guide/services/
-##
 service:
   type: ClusterIP
   port: 80
@@ -106,12 +75,8 @@ service:
   portName: service
 
 serviceMonitor:
-  ## If true, a ServiceMonitor CRD is created for a prometheus operator
-  ## https://github.com/coreos/prometheus-operator
-  ##
   enabled: false
   path: /metrics
-  #  namespace: monitoring  (defaults to use the namespace this chart is deployed to)
   labels: {}
   interval: 1m
   scrapeTimeout: 30s
@@ -181,6 +146,15 @@ admin:
   userKey: admin-user
   passwordKey: admin-password
 
+envValueFrom:
+  INFLUXDB_USERNAME:
+      secretKeyRef:
+        name: 'influxdb-secret'
+        key: 'influxdb-username'
+  INFLUXDB_PASSWORD:
+      secretKeyRef:
+        name: 'influxdb-secret'
+        key: 'influxdb-password'
 grafana.ini:
   paths:
     data: /var/lib/grafana/data
@@ -251,13 +225,25 @@ ldap:
       # allow Grafana to replicate dashboard structure from filesystem
       foldersFromFilesStructure: false
   datasources:
-    enabled: false
-    # label that the configmaps with datasources are marked with
-    label: grafana_datasource
-    # If specified, the sidecar will search for datasource config-maps inside this namespace.
-    # Otherwise the namespace in which the sidecar is running will be used.
-    # It's also possible to specify ALL to search in all namespaces
-    searchNamespace: null
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+      - name: "IT InfluxDB"
+        type: influxdb
+        url: http://it-influxdb.it-influxdb:8086
+        access: proxy
+        isDefault: true
+        database: "grafana"
+        user: "${INFLUXDB_USERNAME}"
+        password: "${INFLUXDB_PASSWORD}"
+      - name: "IT InfluxDB internal"
+        type: influxdb
+        url: http://it-influxdb.it-influxdb:8086
+        access: proxy
+        isDefault: false
+        database: "_internal"
+        user: "${INFLUXDB_USERNAME}"
+        password: "${INFLUXDB_PASSWORD}" 
   notifiers:
     enabled: false
     # label that the configmaps with notifiers are marked with
@@ -268,7 +254,7 @@ ldap:
     searchNamespace: null
 ## Override the deployment namespace
 ##
-namespaceOverride: "it-grafana"
+namespaceOverride: "it-monitoring"
 ## Number of old ReplicaSets to retain
 ##
 revisionHistoryLimit: 10
