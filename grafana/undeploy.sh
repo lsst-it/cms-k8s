@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 (
   set -e
-  kubectl delete -f ingress.yaml
   kubectl delete -f deployment.yaml
   kubectl delete -f service.yaml
   kubectl delete -f role-binding.yaml

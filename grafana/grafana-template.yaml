@@ -6,7 +6,7 @@ metadata:
   name: grafana
   namespace: it-monitoring
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -53,17 +53,63 @@ spec:
     rule: 'RunAsAny'
   readOnlyRootFilesystem: false
 ---
+# Source: grafana/templates/tests/test-podsecuritypolicy.yaml
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: grafana-test
+  namespace: it-monitoring
+  labels:
+    helm.sh/chart: grafana-5.6.12
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/version: "7.2.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  allowPrivilegeEscalation: true
+  privileged: false
+  hostNetwork: false
+  hostIPC: false
+  hostPID: false
+  fsGroup:
+    rule: RunAsAny
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  volumes:
+  - configMap
+  - downwardAPI
+  - emptyDir
+  - projected
+  - secret
+---
 # Source: grafana/templates/serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
     app.kubernetes.io/managed-by: Helm
   name: grafana
+  namespace: it-monitoring
+---
+# Source: grafana/templates/tests/test-serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    helm.sh/chart: grafana-5.6.12
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/version: "7.2.0"
+    app.kubernetes.io/managed-by: Helm
+  name: grafana-test
   namespace: it-monitoring
 ---
 # Source: grafana/templates/configmap.yaml
@@ -73,7 +119,7 @@ metadata:
   name: grafana
   namespace: it-monitoring
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -95,13 +141,60 @@ data:
     logs = /var/log/grafana
     plugins = /var/lib/grafana/plugins
     provisioning = /etc/grafana/provisioning
+
+  grafana.yaml: |
+    apiVersion: 1
+    datasources:
+    - access: proxy
+      database: grafana
+      isDefault: true
+      name: IT InfluxDB
+      password: ${INFLUXDB_PASSWORD}
+      type: influxdb
+      url: http://influxdb-0.influxdb.it-influxdb.svc.cluster.local:8086
+      user: ${INFLUXDB_USERNAME}
+    - access: proxy
+      database: _internal
+      isDefault: false
+      name: IT InfluxDB internal
+      password: ${INFLUXDB_PASSWORD}
+      type: influxdb
+      url: http://influxdb-0.influxdb.it-influxdb.svc.cluster.local:8086
+      user: ${INFLUXDB_USERNAME}
+  enabled: |
+    false
+  label: |
+    grafana_notifier
+  searchNamespace: |
+    null
+---
+# Source: grafana/templates/tests/test-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-test
+  namespace: it-monitoring
+  labels:
+    helm.sh/chart: grafana-5.6.12
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/version: "7.2.0"
+    app.kubernetes.io/managed-by: Helm
+data:
+  run.sh: |-
+    @test "Test Health" {
+      url="http://grafana/api/health"
+
+      code=$(wget --server-response --spider --timeout 10 --tries 1 ${url} 2>&1 | awk '/^  HTTP/{print $2}')
+      [ "$code" == "200" ]
+    }
 ---
 # Source: grafana/templates/clusterrole.yaml
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -115,7 +208,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: grafana-clusterrolebinding
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -136,7 +229,7 @@ metadata:
   name: grafana
   namespace: it-monitoring
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -147,6 +240,24 @@ rules:
   verbs:          ['use']
   resourceNames:  [grafana]
 ---
+# Source: grafana/templates/tests/test-role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: grafana-test
+  namespace: it-monitoring
+  labels:
+    helm.sh/chart: grafana-5.6.12
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/version: "7.2.0"
+    app.kubernetes.io/managed-by: Helm
+rules:
+- apiGroups:      ['policy']
+  resources:      ['podsecuritypolicies']
+  verbs:          ['use']
+  resourceNames:  [grafana-test]
+---
 # Source: grafana/templates/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: RoleBinding
@@ -154,7 +265,7 @@ metadata:
   name: grafana
   namespace: it-monitoring
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -168,6 +279,27 @@ subjects:
   name: grafana
   namespace: it-monitoring
 ---
+# Source: grafana/templates/tests/test-rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: grafana-test
+  namespace: it-monitoring
+  labels:
+    helm.sh/chart: grafana-5.6.12
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/version: "7.2.0"
+    app.kubernetes.io/managed-by: Helm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: grafana-test
+subjects:
+- kind: ServiceAccount
+  name: grafana-test
+  namespace: it-monitoring
+---
 # Source: grafana/templates/service.yaml
 apiVersion: v1
 kind: Service
@@ -175,7 +307,7 @@ metadata:
   name: grafana
   namespace: it-monitoring
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -199,13 +331,14 @@ metadata:
   name: grafana
   namespace: it-monitoring
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app.kubernetes.io/name: grafana
@@ -218,7 +351,7 @@ spec:
         app.kubernetes.io/name: grafana
         app.kubernetes.io/instance: grafana
       annotations:
-        checksum/config: 8eeb92d1780dae59dd00f7fe197bfc0f627680e7a940a2a7c13b6069c0f6a448
+        checksum/config: 529b93ff1b1fe84f25ebd02b6edaff35b6435f6603bb479ebe0c1eea1f719f5e
         checksum/dashboards-json-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
         checksum/sc-dashboard-provider-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
     spec:
@@ -241,6 +374,12 @@ spec:
               subPath: ldap.toml
             - name: storage
               mountPath: "/var/lib/grafana"
+            - name: config
+              mountPath: "/etc/grafana/provisioning/datasources/datasources.yaml"
+              subPath: datasources.yaml
+            - name: config
+              mountPath: "/etc/grafana/provisioning/notifiers/notifiers.yaml"
+              subPath: notifiers.yaml
           ports:
             - name: service
               containerPort: 80
@@ -262,13 +401,13 @@ spec:
             - name: "INFLUXDB_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  key: influxdb-password
-                  name: influxdb-secret
+                  key: admin-password
+                  name: grafana-credentials
             - name: "INFLUXDB_USERNAME"
               valueFrom:
                 secretKeyRef:
-                  key: influxdb-username
-                  name: influxdb-secret
+                  key: admin-user
+                  name: grafana-credentials
           livenessProbe:
             failureThreshold: 10
             httpGet:
@@ -307,7 +446,7 @@ metadata:
   name: grafana
   namespace: it-monitoring
   labels:
-    helm.sh/chart: grafana-5.5.5
+    helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: grafana
     app.kubernetes.io/version: "7.2.0"
@@ -330,3 +469,34 @@ spec:
             backend:
               serviceName: grafana
               servicePort: 80
+---
+# Source: grafana/templates/tests/test.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: grafana-test
+  labels:
+    helm.sh/chart: grafana-5.6.12
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/version: "7.2.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test-success
+  namespace: it-monitoring
+spec:
+  serviceAccountName: grafana-test
+  containers:
+    - name: grafana-test
+      image: "bats/bats:v1.1.0"
+      imagePullPolicy: "IfNotPresent"
+      command: ["/opt/bats/bin/bats", "-t", "/tests/run.sh"]
+      volumeMounts:
+        - mountPath: /tests
+          name: tests
+          readOnly: true
+  volumes:
+  - name: tests
+    configMap:
+      name: grafana-test
+  restartPolicy: Never

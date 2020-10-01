@@ -41,13 +41,6 @@ image:
   sha: ""
   pullPolicy: IfNotPresent
 
-testFramework:
-  enabled: true
-  image: "bats/bats"
-  tag: "v1.1.0"
-  imagePullPolicy: IfNotPresent
-  securityContext: {}
-
 securityContext:
   runAsUser: 472
   runAsGroup: 472
@@ -136,11 +129,6 @@ initChownData:
     sha: ""
     pullPolicy: IfNotPresent
 
-# Administrator credentials when not using an existing secret (see below)
-adminUser: admin
-# adminPassword: strongpassword
-
-# Use an existing secret for the admin user.
 admin:
   existingSecret: grafana-credentials
   userKey: admin-user
@@ -149,12 +137,13 @@ admin:
 envValueFrom:
   INFLUXDB_USERNAME:
       secretKeyRef:
-        name: 'influxdb-secret'
-        key: 'influxdb-username'
+        name: 'grafana-credentials'
+        key: 'admin-user'
   INFLUXDB_PASSWORD:
       secretKeyRef:
-        name: 'influxdb-secret'
-        key: 'influxdb-password'
+        name: 'grafana-credentials'
+        key: 'admin-password'
+
 grafana.ini:
   paths:
     data: /var/lib/grafana/data
@@ -171,6 +160,7 @@ grafana.ini:
     enabled: true
     allow_sign_up: true
     config_file: /etc/grafana/ldap.toml
+
 ldap:
   enabled: true
   # `existingSecret` is a reference to an existing secret containing the ldap configuration
@@ -179,79 +169,35 @@ ldap:
   # `config` is the content of `ldap.toml` that will be stored in the created secret
   config: ""
 
-  sidecar:
-  image:
-    repository: kiwigrid/k8s-sidecar
-    tag: 0.1.151
-    sha: ""
-  imagePullPolicy: IfNotPresent
-  resources: 
-    limits:
-      cpu: 100m
-      memory: 100Mi
-    requests:
-      cpu: 50m
-      memory: 50Mi
-  # skipTlsVerify Set to true to skip tls verification for kube api calls
-  # skipTlsVerify: true
-  enableUniqueFilenames: false
-  dashboards:
-    enabled: true
-    SCProvider: true
-    # label that the configmaps with dashboards are marked with
-    label: grafana_dashboard
-    # folder in the pod that should hold the collected dashboards (unless `defaultFolderName` is set)
-    folder: /tmp/dashboards
-    # The default folder name, it will create a subfolder under the `folder` and put dashboards in there instead
-    defaultFolderName: null
-    # If specified, the sidecar will search for dashboard config-maps inside this namespace.
-    # Otherwise the namespace in which the sidecar is running will be used.
-    # It's also possible to specify ALL to search in all namespaces
-    searchNamespace: null
-    # provider configuration that lets grafana manage the dashboards
-    provider:
-      # name of the provider, should be unique
-      name: sidecarProvider
-      # orgid as configured in grafana
-      orgid: 1
-      # folder in which the dashboards should be imported in grafana
-      folder: ''
-      # type of the provider
-      type: file
-      # disableDelete to activate a import-only behaviour
-      disableDelete: false
-      # allow updating provisioned dashboards from the UI
-      allowUiUpdates: false
-      # allow Grafana to replicate dashboard structure from filesystem
-      foldersFromFilesStructure: false
-  datasources:
-    datasources.yaml:
-      apiVersion: 1
-      datasources:
-      - name: "IT InfluxDB"
-        type: influxdb
-        url: http://it-influxdb.it-influxdb:8086
-        access: proxy
-        isDefault: true
-        database: "grafana"
-        user: "${INFLUXDB_USERNAME}"
-        password: "${INFLUXDB_PASSWORD}"
-      - name: "IT InfluxDB internal"
-        type: influxdb
-        url: http://it-influxdb.it-influxdb:8086
-        access: proxy
-        isDefault: false
-        database: "_internal"
-        user: "${INFLUXDB_USERNAME}"
-        password: "${INFLUXDB_PASSWORD}" 
-  notifiers:
-    enabled: false
-    # label that the configmaps with notifiers are marked with
-    label: grafana_notifier
-    # If specified, the sidecar will search for notifier config-maps inside this namespace.
-    # Otherwise the namespace in which the sidecar is running will be used.
-    # It's also possible to specify ALL to search in all namespaces
-    searchNamespace: null
+datasources:
+  grafana.yaml:
+    apiVersion: 1
+    datasources:
+    - name: "IT InfluxDB"
+      type: influxdb
+      url: http://influxdb-0.influxdb.it-influxdb.svc.cluster.local:8086
+      access: proxy
+      isDefault: true
+      database: "grafana"
+      user: "${INFLUXDB_USERNAME}"
+      password: "${INFLUXDB_PASSWORD}"
+    - name: "IT InfluxDB internal"
+      type: influxdb
+      url: http://influxdb-0.influxdb.it-influxdb.svc.cluster.local:8086
+      access: proxy
+      isDefault: false
+      database: "_internal"
+      user: "${INFLUXDB_USERNAME}"
+      password: "${INFLUXDB_PASSWORD}"
+
+notifiers:
+  enabled: false
+  # label that the configmaps with notifiers are marked with
+  label: grafana_notifier
+  # If specified, the sidecar will search for notifier config-maps inside this namespace.
+  # Otherwise the namespace in which the sidecar is running will be used.
+  # It's also possible to specify ALL to search in all namespaces
+  searchNamespace: null
 ## Override the deployment namespace
 ##
 namespaceOverride: "it-monitoring"
