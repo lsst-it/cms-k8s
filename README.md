@@ -1,4 +1,4 @@
-Graylog + InfluxDB over Kubernetes
+Grafana + InfluxDB over Kubernetes
 ==================================
 
 This template has already been configured to work with the URL comcam-grafana.ls.lsst.org.
