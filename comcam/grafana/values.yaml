@@ -1,0 +1,206 @@
+rbac:
+  create: true
+  pspEnabled: true
+  pspUseAppArmor: true
+  namespaced: false
+  extraRoleRules: []
+  # - apiGroups: []
+  #   resources: []
+  #   verbs: []
+  extraClusterRoleRules: []
+  # - apiGroups: []
+  #   resources: []
+  #   verbs: []
+serviceAccount:
+  create: true
+  name:
+  nameTest:
+#  annotations:
+
+replicas: 1
+
+deploymentStrategy:
+  type: RollingUpdate
+
+readinessProbe:
+  httpGet:
+    path: /api/health
+    port: 3000
+
+livenessProbe:
+  httpGet:
+    path: /api/health
+    port: 3000
+  initialDelaySeconds: 60
+  timeoutSeconds: 30
+  failureThreshold: 10
+
+image:
+  repository: grafana/grafana
+  tag: 7.2.0
+  sha: ""
+  pullPolicy: IfNotPresent
+
+securityContext:
+  runAsUser: 472
+  runAsGroup: 472
+  fsGroup: 472
+
+downloadDashboardsImage:
+  repository: curlimages/curl
+  tag: 7.70.0
+  sha: ""
+  pullPolicy: IfNotPresent
+
+downloadDashboards:
+  env: {}
+  resources: {}
+
+podPortName: grafana
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+    # targetPort: 4181 To be used with a proxy extraContainer
+  annotations: {}
+  labels: {}
+  portName: service
+
+serviceMonitor:
+  enabled: false
+  path: /metrics
+  labels: {}
+  interval: 1m
+  scrapeTimeout: 30s
+  relabelings: []
+
+# overrides pod.spec.hostAliases in the grafana deployment's pods
+hostAliases: []
+  # - ip: "1.2.3.4"
+  #   hostnames:
+  #     - "my.host.com"
+
+ingress:
+  enabled: true
+  # Values can be templated
+  annotations: 
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+  hosts:
+    - it-grafana.ls.lsst.org
+  tls: 
+    - secretName: grafana-tls
+      hosts:
+        - it-grafana.ls.lsst.org
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+persistence:
+  type: pvc
+  enabled: false
+  # storageClassName: default
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
+  # annotations: {}
+  finalizers:
+    - kubernetes.io/pvc-protection
+  # subPath: ""
+  # existingClaim:
+
+initChownData:
+  ## If false, data ownership will not be reset at startup
+  ## This allows the prometheus-server to be run with an arbitrary user
+  ##
+  enabled: true
+  ## initChownData container image
+  ##
+  image:
+    repository: busybox
+    tag: "1.31.1"
+    sha: ""
+    pullPolicy: IfNotPresent
+
+admin:
+  existingSecret: grafana-credentials
+  userKey: admin-user
+  passwordKey: admin-password
+
+envValueFrom:
+  INFLUXDB_USERNAME:
+      secretKeyRef:
+        name: 'grafana-credentials'
+        key: 'admin-user'
+  INFLUXDB_PASSWORD:
+      secretKeyRef:
+        name: 'grafana-credentials'
+        key: 'admin-password'
+
+grafana.ini:
+  paths:
+    data: /var/lib/grafana/data
+    logs: /var/log/grafana
+    plugins: /var/lib/grafana/plugins
+    provisioning: /etc/grafana/provisioning
+  analytics:
+    check_for_updates: true
+  log:
+    mode: console
+  grafana_net:
+    url: https://grafana.net
+  auth.ldap:
+    enabled: true
+    allow_sign_up: true
+    config_file: /etc/grafana/ldap.toml
+
+ldap:
+  enabled: true
+  # `existingSecret` is a reference to an existing secret containing the ldap configuration
+  # for Grafana in a key `ldap-toml`.
+  existingSecret: ldap-secret
+  # `config` is the content of `ldap.toml` that will be stored in the created secret
+  config: ""
+
+datasources:
+  grafana.yaml:
+    apiVersion: 1
+    datasources:
+    - name: "IT InfluxDB"
+      type: influxdb
+      url: http://influxdb-0.influxdb.it-influxdb.svc.cluster.local:8086
+      access: proxy
+      isDefault: true
+      database: "grafana"
+      user: "${INFLUXDB_USERNAME}"
+      password: "${INFLUXDB_PASSWORD}"
+    - name: "IT InfluxDB internal"
+      type: influxdb
+      url: http://influxdb-0.influxdb.it-influxdb.svc.cluster.local:8086
+      access: proxy
+      isDefault: false
+      database: "_internal"
+      user: "${INFLUXDB_USERNAME}"
+      password: "${INFLUXDB_PASSWORD}"
+
+notifiers:
+  enabled: false
+  # label that the configmaps with notifiers are marked with
+  label: grafana_notifier
+  # If specified, the sidecar will search for notifier config-maps inside this namespace.
+  # Otherwise the namespace in which the sidecar is running will be used.
+  # It's also possible to specify ALL to search in all namespaces
+  searchNamespace: null
+## Override the deployment namespace
+##
+namespaceOverride: "comcam-grafana"
+## Number of old ReplicaSets to retain
+##
+revisionHistoryLimit: 10

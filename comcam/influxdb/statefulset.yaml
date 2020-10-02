@@ -1,0 +1,75 @@
+---
+# Source: influxdb/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: influxdb
+  namespace: comcam-influxdb
+  labels:
+    helm.sh/chart: influxdb-4.8.5
+    app.kubernetes.io/name: influxdb
+    app.kubernetes.io/instance: influxdb
+    app.kubernetes.io/version: "1.8.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: influxdb
+      app.kubernetes.io/instance: influxdb
+  serviceName: "influxdb"
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: influxdb
+        app.kubernetes.io/instance: influxdb
+    spec:
+      serviceAccountName: influxdb
+      containers:
+      - name: influxdb
+        image: "influxdb:1.7.4-alpine"
+        imagePullPolicy: "IfNotPresent"
+        resources:
+          limits:
+            cpu: 2
+            memory: 2Gi
+          requests:
+            cpu: 0.1
+            memory: 256Mi
+        ports:
+        - name: api
+          containerPort: 8086
+        - name: rpc
+          containerPort: 8088
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: api
+            scheme: HTTP
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /ping
+            port: api
+            scheme: HTTP
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+        volumeMounts:
+        - name: influxdb-data
+          mountPath: /var/lib/influxdb
+        - name: config
+          mountPath: /etc/influxdb
+      volumes:
+      - name: config
+        configMap:
+          name: influxdb
+  volumeClaimTemplates:
+    - metadata:
+        name: influxdb-data
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "8Gi"
