@@ -1,0 +1,148 @@
+---
+# Source: influxdb/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: influxdb
+  namespace: it-influxdb
+  labels:
+    helm.sh/chart: influxdb-4.8.5
+    app.kubernetes.io/name: influxdb
+    app.kubernetes.io/instance: influxdb
+    app.kubernetes.io/version: "1.8.0"
+    app.kubernetes.io/managed-by: Helm
+data:
+  influxdb.conf: |+
+    reporting-disabled = false
+    bind-address = ":8088"
+
+    [meta]
+      dir = "/var/lib/influxdb/meta"
+      logging_enabled = true
+      retention_autocreate = true
+
+    [data]
+      dir = "/var/lib/influxdb/data"
+      wal-dir = "/var/lib/influxdb/wal"
+      cache_max_memory_size = 1.073741824e+09
+      cache_snapshot_memory_size = 2.62144e+07
+      cache_snapshot_write_cold_duration = "10m0s"
+      compact_full_write_cold_duration = "4h0m0s"
+      max_series_per_database = 1e+06
+      max_values_per_tag = 100000
+      query_log_enabled = true
+      trace_logging_enabled = false
+
+    [coordinator]
+      log_queries_after = "0s"
+      max_concurrent_queries = 0
+      max_select_buckets = 0
+      max_select_point = 0
+      max_select_series = 0
+      query_timeout = "0s"
+      write_timeout = "10s"
+
+    [retention]
+      check_interval = "30m0s"
+      enabled = true
+
+    [shard-precreation]
+      advance_period = "30m0s"
+      check_interval = "10m0s"
+      enabled = true
+
+    [monitor]
+      store_database = "_internal"
+      store_enabled = true
+      store_interval = "10s"
+
+    [subscriber]
+      ca_certs = ""
+      enabled = true
+      http_timeout = "30s"
+      insecure_skip_verify = false
+      write_buffer_size = 1000
+      write_concurrency = 40
+
+    [http]
+      auth_enabled = false
+      bind_address = 8086
+      bind_socket = "/var/run/influxdb.sock"
+      enabled = true
+      https_certificate = "/etc/ssl/influxdb.pem"
+      https_enabled = false
+      https_private_key = ""
+      log_enabled = true
+      max_connection_limit = 0
+      max_row_limit = 10000
+      nodePort = 30082
+      pprof_enabled = true
+      realm = "InfluxDB"
+      shared_secret = "beetlejuicebeetlejuicebeetlejuice"
+      unix_socket_enabled = false
+      write_tracing = false
+
+    # TODO: allow multiple graphite listeners
+
+    [[graphite]]
+      batch_pending = 10
+      batch_size = 5000
+      batch_timeout = "1s"
+      bind_address = 2003
+      consistency_level = "one"
+      database = "graphite"
+      enabled = false
+      protocol = "tcp"
+      retention_policy = "autogen"
+      separator = "."
+      udp_read_buffer = 0
+
+    # TODO: allow multiple collectd listeners with templates
+
+    [[collectd]]
+      auth_file = "/etc/collectd/auth_file"
+      batch_pending = 10
+      batch_size = 5000
+      batch_timeout = "10s"
+      bind_address = 25826
+      database = "collectd"
+      enabled = false
+      read_buffer = 0
+      retention_policy = "autogen"
+      security_level = "none"
+      typesdb = "/usr/share/collectd/types.db"
+
+    # TODO: allow multiple opentsdb listeners with templates
+
+    [[opentsdb]]
+      batch_pending = 5
+      batch_size = 1000
+      batch_timeout = "1s"
+      bind_address = 4242
+      certificate = "/etc/ssl/influxdb.pem"
+      consistency_level = "one"
+      database = "opentsdb"
+      enabled = false
+      log_point_errors = true
+      retention_policy = "autogen"
+      tls_enabled = false
+
+    # TODO: allow multiple udp listeners with templates
+
+    [[udp]]
+      batch_pending = 10
+      batch_size = 5000
+      batch_timeout = "1s"
+      bind_address = 8089
+      database = "udp"
+      enabled = false
+      precision = "ns"
+      read_buffer = 0
+      retention_policy = "autogen"
+
+    [continuous_queries]
+      enabled = true
+      log_enabled = true
+      run_interval = "1s"
+
+    [logging]

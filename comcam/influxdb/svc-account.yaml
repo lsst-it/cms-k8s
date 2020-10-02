@@ -1,0 +1,13 @@
+---
+# Source: influxdb/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: influxdb
+  namespace: comcam-influxdb
+  labels:
+    helm.sh/chart: influxdb-4.8.5
+    app.kubernetes.io/name: influxdb
+    app.kubernetes.io/instance: influxdb
+    app.kubernetes.io/version: "1.8.0"
+    app.kubernetes.io/managed-by: Helm
