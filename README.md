@@ -42,7 +42,6 @@ provision influxdb with a database and a username, which has been written into i
 ```bash
 cd gi-k8s/comcam/influxdb
 ./deploy.sh
-kubectl wait --for=condition=ready pod -n it-influxdb influxdb-0
 ./init_influxdb.sh
 ```
 
@@ -52,6 +51,7 @@ This installation has already been configured so it connects with influxdb upon 
 ```bash
 cd gi-k8s/comcam/grafana
 ./deploy.sh
+./init_grafana.sh
 ```
 
 Uninstall
