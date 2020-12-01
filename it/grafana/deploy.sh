@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-kubectl create ns it-monitoring
+kubectl create ns it-grafana
 (
   set -e
   kubectl apply -f influxdb-credentials.yaml
