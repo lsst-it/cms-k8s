@@ -33,7 +33,7 @@ data:
     apiVersion: 1
     datasources:
     - access: proxy
-      database: grafana
+      database: telegraf
       isDefault: true
       name: IT InfluxDB
       type: influxdb

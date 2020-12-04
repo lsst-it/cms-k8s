@@ -1,0 +1,20 @@
+---
+# Source: telegraf/templates/rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: it-telegraf
+  namespace: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+subjects:
+  - kind: ServiceAccount
+    name: it-telegraf
+    namespace: it-telegraf
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: it-telegraf

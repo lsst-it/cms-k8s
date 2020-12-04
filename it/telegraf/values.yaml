@@ -17,7 +17,16 @@ args: []
 env:
   - name: HOSTNAME
     value: "telegraf-polling-service"
-
+  - name: USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: 'telegraf-credentials'
+        key: 'username'
+  - name: PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: 'telegraf-credentials'
+        key: 'password'
 # An older "volumeMounts" key was previously added which will likely
 # NOT WORK as you expect. Please use this newer configuration.
 
@@ -113,6 +122,8 @@ config:
         urls:
           - "http://influxdb.it-influxdb:8086"
         database: "grafana"
+        username: "$USERNAME"
+        password: "$PASSWORD"
   inputs:
     - statsd:
         service_address: ":8125"
