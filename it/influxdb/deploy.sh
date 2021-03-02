@@ -9,4 +9,5 @@ kubectl create ns it-influxdb
   kubectl apply -f statefulset.yaml
   kubectl apply -f ingress.yaml
   kubectl apply -f job.yaml
+  kubectl expose service -n it-influxdb influxdb --type=LoadBalancer --name=influx
 )
