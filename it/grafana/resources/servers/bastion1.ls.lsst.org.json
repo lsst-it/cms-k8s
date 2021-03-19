@@ -110,7 +110,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         }
@@ -252,7 +252,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         }
@@ -402,7 +402,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         },
@@ -451,7 +451,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         }
@@ -604,7 +604,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         },
@@ -659,7 +659,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         }
@@ -795,7 +795,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         }
@@ -938,7 +938,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "it-monitoring"
+              "value": "bastion1.ls.lsst.org"
             }
           ]
         }
@@ -998,7 +998,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "it-monitoring Server",
+  "title": "bastion1.ls.lsst.org",
   "uid": "NhhT3rsMz",
   "version": 32
 }
