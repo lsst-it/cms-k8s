@@ -112,7 +112,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           }
@@ -254,7 +254,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           }
@@ -404,7 +404,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           },
@@ -453,7 +453,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           }
@@ -606,7 +606,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           },
@@ -661,7 +661,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           }
@@ -797,7 +797,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           }
@@ -940,7 +940,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring.ls.lsst.org"
               }
             ]
           }
@@ -1000,7 +1000,7 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "SERVER_NAME",
+    "title": "it-monitoring.ls.lsst.org",
     "uid": "NhhT3rsMz",
     "version": 32
   },
