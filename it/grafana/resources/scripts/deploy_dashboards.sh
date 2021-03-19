@@ -9,7 +9,6 @@ POD="$(kubectl get -n ${NAMESPACE} pods -o json | jq -r '.items[].metadata.name'
 
 /usr/bin/kubectl wait --for=condition=ready pod -n ${NAMESPACE} ${POD} > /dev/null 2>&1
 
-for filename in ../servers/*.json; do
-    echo "$filename"
+for filename in *.json; do
     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
