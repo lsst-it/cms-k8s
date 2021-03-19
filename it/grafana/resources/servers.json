@@ -346,11 +346,11 @@
       "seriesOverrides": [
         {
           "alias": "recieved bytes",
-          "color": "#8AB8FF"
+          "color": "rgb(255, 226, 102)"
         },
         {
           "alias": "sent bytes",
-          "color": "#FFB357"
+          "color": "#1c81a4"
         }
       ],
       "spaceLength": 10,
@@ -542,7 +542,7 @@
       "seriesOverrides": [
         {
           "alias": "read IO",
-          "color": "#1F60C4"
+          "color": "#8AB8FF"
         },
         {
           "alias": "write IO",
@@ -998,7 +998,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "it-monitoring.ls.lsst.org",
+  "title": "it-monitoring Server",
   "uid": "NhhT3rsMz",
-  "version": 31
+  "version": 32
 }
