@@ -1,6 +1,6 @@
 {
   "dashboard":
-  {    
+  {
     "annotations": {
       "list": [
         {
@@ -17,7 +17,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": null,
+    "id": 3,
     "links": [],
     "panels": [
       {
@@ -112,7 +112,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           }
@@ -254,7 +254,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           }
@@ -404,7 +404,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           },
@@ -453,7 +453,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           }
@@ -606,7 +606,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           },
@@ -661,7 +661,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           }
@@ -797,7 +797,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           }
@@ -940,7 +940,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "SERVER_NAME"
+                "value": "it-monitoring"
               }
             ]
           }
@@ -1000,10 +1000,10 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "SERVER_NAME",
+    "title": "it-monitoring.ls.lsst.org",
     "uid": "NhhT3rsMz",
     "version": 31
-    },
-  "folderId": 0,
+  },
+  "folderId": 4,
   "overwrite": false
 }
