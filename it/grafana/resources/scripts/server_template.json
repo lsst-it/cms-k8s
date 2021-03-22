@@ -1,6 +1,6 @@
 {
   "dashboard":
-  {
+  {    
     "annotations": {
       "list": [
         {
@@ -348,11 +348,11 @@
         "seriesOverrides": [
           {
             "alias": "recieved bytes",
-            "color": "rgb(255, 226, 102)"
+            "color": "#8AB8FF"
           },
           {
             "alias": "sent bytes",
-            "color": "#1c81a4"
+            "color": "#FFB357"
           }
         ],
         "spaceLength": 10,
@@ -544,7 +544,7 @@
         "seriesOverrides": [
           {
             "alias": "read IO",
-            "color": "#8AB8FF"
+            "color": "#1F60C4"
           },
           {
             "alias": "write IO",
@@ -1002,8 +1002,8 @@
     "timezone": "",
     "title": "SERVER_NAME",
     "uid": "NhhT3rsMz",
-    "version": 32
-  },
-  "folderId": 4,
+    "version": 31
+    },
+  "folderId": 0,
   "overwrite": false
 }
