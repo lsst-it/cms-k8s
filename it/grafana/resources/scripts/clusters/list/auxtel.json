@@ -70,7 +70,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01",
+              "alias": "atsccs1",
               "groupBy": [
                 {
                   "params": [
@@ -108,12 +108,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02",
+              "alias": "atsccs2",
               "groupBy": [
                 {
                   "params": [
@@ -151,12 +151,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03",
+              "alias": "at-keener",
               "groupBy": [
                 {
                   "params": [
@@ -194,12 +194,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04",
+              "alias": "atsdaq1",
               "groupBy": [
                 {
                   "params": [
@@ -237,12 +237,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05",
+              "alias": "atsdaq-mgmt",
               "groupBy": [
                 {
                   "params": [
@@ -280,12 +280,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06",
+              "alias": "atarchiver",
               "groupBy": [
                 {
                   "params": [
@@ -323,12 +323,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07",
+              "alias": "athexapod",
               "groupBy": [
                 {
                   "params": [
@@ -366,12 +366,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08",
+              "alias": "auxtel-control-01",
               "groupBy": [
                 {
                   "params": [
@@ -409,12 +409,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09",
+              "alias": "nfs1",
               "groupBy": [
                 {
                   "params": [
@@ -452,7 +452,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             }
@@ -546,7 +546,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01",
+              "alias": "atsccs1",
               "groupBy": [
                 {
                   "params": [
@@ -590,12 +590,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02",
+              "alias": "atsccs2",
               "groupBy": [
                 {
                   "params": [
@@ -639,12 +639,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03",
+              "alias": "at-keener",
               "groupBy": [
                 {
                   "params": [
@@ -688,12 +688,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04",
+              "alias": "atsdaq1",
               "groupBy": [
                 {
                   "params": [
@@ -737,12 +737,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05",
+              "alias": "atsdaq-mgmt",
               "groupBy": [
                 {
                   "params": [
@@ -786,12 +786,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06",
+              "alias": "atarchiver",
               "groupBy": [
                 {
                   "params": [
@@ -835,12 +835,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07",
+              "alias": "athexapod",
               "groupBy": [
                 {
                   "params": [
@@ -884,12 +884,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08",
+              "alias": "auxtel-control-01",
               "groupBy": [
                 {
                   "params": [
@@ -933,12 +933,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09",
+              "alias": "nfs1",
               "groupBy": [
                 {
                   "params": [
@@ -982,7 +982,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             }
@@ -1079,7 +1079,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01 recieved bytes",
+              "alias": "atsccs1 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1129,12 +1129,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 recieved bytes",
+              "alias": "atsccs2 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1184,12 +1184,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 recieved bytes",
+              "alias": "at-keener recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1239,12 +1239,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 recieved bytes",
+              "alias": "atsdaq1 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1294,12 +1294,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 recieved bytes",
+              "alias": "atsdaq-mgmt recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1349,12 +1349,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 recieved bytes",
+              "alias": "atarchiver recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1404,12 +1404,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu01 sent bytes",
+              "alias": "atsccs1 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1459,12 +1459,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 sent bytes",
+              "alias": "atsccs2 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1514,12 +1514,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 sent bytes",
+              "alias": "at-keener sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1569,12 +1569,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 sent bytes",
+              "alias": "atsdaq1 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1624,12 +1624,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 sent bytes",
+              "alias": "atsdaq-mgmt sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1679,12 +1679,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 sent bytes",
+              "alias": "atarchiver sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1734,12 +1734,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 recieved bytes",
+              "alias": "athexapod recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1789,12 +1789,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 recieved bytes",
+              "alias": "auxtel-control-01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1844,12 +1844,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 recieved bytes",
+              "alias": "nfs1 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1899,12 +1899,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 sent bytes",
+              "alias": "athexapod sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1954,12 +1954,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 sent bytes",
+              "alias": "auxtel-control-01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2009,12 +2009,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 sent bytes",
+              "alias": "nfs1 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2064,7 +2064,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             }
@@ -2167,7 +2167,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01 read IO",
+              "alias": "atsccs1 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2217,12 +2217,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 read IO",
+              "alias": "atsccs2 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2272,12 +2272,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 read IO",
+              "alias": "at-keener read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2327,12 +2327,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 read IO",
+              "alias": "atsdaq1 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2382,12 +2382,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 read IO",
+              "alias": "atsdaq-mgmt read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2437,12 +2437,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 read IO",
+              "alias": "atarchiver read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2492,12 +2492,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu01 write IO",
+              "alias": "atsccs1 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2547,12 +2547,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 write IO",
+              "alias": "atsccs2 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2602,12 +2602,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 write IO",
+              "alias": "at-keener write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2657,12 +2657,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 write IO",
+              "alias": "atsdaq1 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2712,12 +2712,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 write IO",
+              "alias": "atsdaq-mgmt write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2767,12 +2767,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 write IO",
+              "alias": "atarchiver write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2822,12 +2822,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 read IO",
+              "alias": "athexapod read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2877,12 +2877,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 read IO",
+              "alias": "auxtel-control-01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2932,12 +2932,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 read IO",
+              "alias": "nfs1 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2987,12 +2987,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 write IO",
+              "alias": "athexapod write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3042,12 +3042,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 write IO",
+              "alias": "auxtel-control-01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3097,12 +3097,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 write IO",
+              "alias": "nfs1 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3152,7 +3152,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             }
@@ -3251,7 +3251,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01",
+              "alias": "atsccs1",
               "groupBy": [
                 {
                   "params": [
@@ -3289,12 +3289,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02",
+              "alias": "atsccs2",
               "groupBy": [
                 {
                   "params": [
@@ -3332,12 +3332,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03",
+              "alias": "at-keener",
               "groupBy": [
                 {
                   "params": [
@@ -3375,12 +3375,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04",
+              "alias": "atsdaq1",
               "groupBy": [
                 {
                   "params": [
@@ -3418,12 +3418,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05",
+              "alias": "atsdaq-mgmt",
               "groupBy": [
                 {
                   "params": [
@@ -3461,12 +3461,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06",
+              "alias": "atarchiver",
               "groupBy": [
                 {
                   "params": [
@@ -3504,12 +3504,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07",
+              "alias": "athexapod",
               "groupBy": [
                 {
                   "params": [
@@ -3547,12 +3547,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08",
+              "alias": "auxtel-control-01",
               "groupBy": [
                 {
                   "params": [
@@ -3590,12 +3590,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09",
+              "alias": "nfs1",
               "groupBy": [
                 {
                   "params": [
@@ -3633,7 +3633,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             }
@@ -3732,7 +3732,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01 used disk",
+              "alias": "atsccs1 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3776,12 +3776,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "atsccs1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 used disk",
+              "alias": "atsccs2 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3825,12 +3825,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "atsccs2.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 used disk",
+              "alias": "at-keener used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3874,12 +3874,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "at-keener.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 used disk",
+              "alias": "atsdaq1 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3923,12 +3923,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "atsdaq1.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 used disk",
+              "alias": "atsdaq-mgmt used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3972,7 +3972,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "atsdaq-mgmt.cp.lsst.org"
                 }
               ]
             },
@@ -4021,12 +4021,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "atarchiver.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 used disk",
+              "alias": "athexapod used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4070,12 +4070,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "athexapod.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 used disk",
+              "alias": "auxtel-control-01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4119,12 +4119,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "auxtel-control-01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 used disk",
+              "alias": "nfs1 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4168,7 +4168,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "nfs1.cp.lsst.org"
                 }
               ]
             }
@@ -4228,7 +4228,7 @@
       },
       "timepicker": {},
       "timezone": "",
-      "title": "Antu Cluster",
+      "title": "AuxTel Cluster",
       "uid": null
     },
   "folderId": 173,
