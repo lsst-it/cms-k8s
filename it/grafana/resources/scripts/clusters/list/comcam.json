@@ -70,7 +70,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01",
+              "alias": "comcam-arctl01",
               "groupBy": [
                 {
                   "params": [
@@ -108,12 +108,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02",
+              "alias": "comcam-db01",
               "groupBy": [
                 {
                   "params": [
@@ -151,12 +151,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03",
+              "alias": "comcam-dc01",
               "groupBy": [
                 {
                   "params": [
@@ -194,12 +194,55 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04",
+              "alias": "comcam-dc01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "system",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "load15"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-dc01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-dmctl01",
               "groupBy": [
                 {
                   "params": [
@@ -237,12 +280,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05",
+              "alias": "comcam-fp01",
               "groupBy": [
                 {
                   "params": [
@@ -280,12 +323,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06",
+              "alias": "comcam-fwd01",
               "groupBy": [
                 {
                   "params": [
@@ -323,12 +366,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07",
+              "alias": "comcam-fwd02",
               "groupBy": [
                 {
                   "params": [
@@ -366,12 +409,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08",
+              "alias": "comcam-mcm",
               "groupBy": [
                 {
                   "params": [
@@ -409,12 +452,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09",
+              "alias": "comcam-ocsbr01",
               "groupBy": [
                 {
                   "params": [
@@ -452,7 +495,136 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vs01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "system",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "load15"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "system",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "load15"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "system",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "load15"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
                 }
               ]
             }
@@ -546,7 +718,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01",
+              "alias": "comcam-arctl01",
               "groupBy": [
                 {
                   "params": [
@@ -590,12 +762,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02",
+              "alias": "comcam-db01",
               "groupBy": [
                 {
                   "params": [
@@ -639,12 +811,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03",
+              "alias": "comcam-dc01",
               "groupBy": [
                 {
                   "params": [
@@ -688,12 +860,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04",
+              "alias": "comcam-dmctl01",
               "groupBy": [
                 {
                   "params": [
@@ -737,12 +909,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05",
+              "alias": "comcam-fp01",
               "groupBy": [
                 {
                   "params": [
@@ -786,12 +958,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06",
+              "alias": "comcam-fwd01",
               "groupBy": [
                 {
                   "params": [
@@ -835,12 +1007,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07",
+              "alias": "comcam-fwd02",
               "groupBy": [
                 {
                   "params": [
@@ -884,12 +1056,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08",
+              "alias": "comcam-mcm",
               "groupBy": [
                 {
                   "params": [
@@ -933,12 +1105,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09",
+              "alias": "comcam-ocsbr01",
               "groupBy": [
                 {
                   "params": [
@@ -982,7 +1154,154 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vs01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "mem",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "used"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      " / 1000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "mem",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "used"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      " / 1000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "mem",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "used"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      " / 1000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
                 }
               ]
             }
@@ -1079,7 +1398,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01 recieved bytes",
+              "alias": "comcam-arctl01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1129,12 +1448,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 recieved bytes",
+              "alias": "comcam-db01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1184,12 +1503,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 recieved bytes",
+              "alias": "comcam-dc01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1239,12 +1558,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 recieved bytes",
+              "alias": "comcam-dmctl01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1294,12 +1613,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 recieved bytes",
+              "alias": "comcam-fp01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1349,12 +1668,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 recieved bytes",
+              "alias": "comcam-fwd01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1404,12 +1723,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu01 sent bytes",
+              "alias": "comcam-arctl01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1459,12 +1778,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 sent bytes",
+              "alias": "comcam-db01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1514,12 +1833,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 sent bytes",
+              "alias": "comcam-dc01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1569,12 +1888,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 sent bytes",
+              "alias": "comcam-dmctl01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1624,12 +1943,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 sent bytes",
+              "alias": "comcam-fp01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1679,12 +1998,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 sent bytes",
+              "alias": "comcam-fwd01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1734,12 +2053,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 recieved bytes",
+              "alias": "comcam-fwd02 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1789,12 +2108,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 recieved bytes",
+              "alias": "comcam-mcm recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1844,12 +2163,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 recieved bytes",
+              "alias": "comcam-ocsbr01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1899,12 +2218,177 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 sent bytes",
+              "alias": "comcam-vs01 recieved bytes",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "net",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "O",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "bytes_recv"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "10s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " / 100000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01 recieved bytes",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "net",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "O",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "bytes_recv"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "10s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " / 100000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01 recieved bytes",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "net",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "O",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "bytes_recv"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "10s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " / 100000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-fwd02 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1954,12 +2438,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 sent bytes",
+              "alias": "comcam-mcm sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2009,12 +2493,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 sent bytes",
+              "alias": "comcam-ocsbr01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2064,7 +2548,172 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vs01 sent bytes",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "net",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "R",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "bytes_recv"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "10s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " *-1/ 100000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01 sent bytes",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "net",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "R",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "bytes_recv"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "10s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " *-1/ 100000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01 sent bytes",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "net",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "R",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "bytes_recv"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "10s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " *-1/ 100000"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
                 }
               ]
             }
@@ -2167,7 +2816,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01 read IO",
+              "alias": "comcam-arctl01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2217,12 +2866,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 read IO",
+              "alias": "comcam-db01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2272,12 +2921,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 read IO",
+              "alias": "comcam-dc01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2327,12 +2976,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 read IO",
+              "alias": "comcam-dmctl01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2382,12 +3031,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 read IO",
+              "alias": "comcam-fp01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2437,12 +3086,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 read IO",
+              "alias": "comcam-fwd01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2492,12 +3141,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu01 write IO",
+              "alias": "comcam-arctl01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2547,12 +3196,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 write IO",
+              "alias": "comcam-db01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2602,12 +3251,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 write IO",
+              "alias": "comcam-dc01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2657,12 +3306,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 write IO",
+              "alias": "comcam-dmctl01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2712,12 +3361,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 write IO",
+              "alias": "comcam-fp01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2767,12 +3416,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06 write IO",
+              "alias": "comcam-fwd01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2822,12 +3471,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 read IO",
+              "alias": "comcam-fwd02 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2877,12 +3526,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 read IO",
+              "alias": "comcam-mcm read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2932,12 +3581,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 read IO",
+              "alias": "comcam-ocsbr01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2987,12 +3636,177 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 write IO",
+              "alias": "comcam-vs01 read IO",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "diskio",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "O",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "read_bytes"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "1s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " / 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01 read IO",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "diskio",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "O",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "read_bytes"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "1s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " / 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01 read IO",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "diskio",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "O",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "read_bytes"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "1s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      " / 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-fwd02 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3042,12 +3856,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 write IO",
+              "alias": "comcam-mcm write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3097,12 +3911,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 write IO",
+              "alias": "comcam-ocsbr01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3152,7 +3966,172 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vs01 write IO",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "diskio",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "R",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "write_bytes"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "1s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      "*-1 / 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01 write IO",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "diskio",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "R",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "write_bytes"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "1s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      "*-1 / 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01 write IO",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "diskio",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "R",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "write_bytes"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "1s"
+                    ],
+                    "type": "derivative"
+                  },
+                  {
+                    "params": [
+                      "*-1 / 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
                 }
               ]
             }
@@ -3251,7 +4230,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01",
+              "alias": "comcam-arctl01",
               "groupBy": [
                 {
                   "params": [
@@ -3289,12 +4268,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02",
+              "alias": "comcam-db01",
               "groupBy": [
                 {
                   "params": [
@@ -3332,12 +4311,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03",
+              "alias": "comcam-dc01",
               "groupBy": [
                 {
                   "params": [
@@ -3375,12 +4354,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04",
+              "alias": "comcam-dmctl01",
               "groupBy": [
                 {
                   "params": [
@@ -3418,12 +4397,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05",
+              "alias": "comcam-fp01",
               "groupBy": [
                 {
                   "params": [
@@ -3461,12 +4440,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu06",
+              "alias": "comcam-fwd01",
               "groupBy": [
                 {
                   "params": [
@@ -3504,12 +4483,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07",
+              "alias": "comcam-fwd02",
               "groupBy": [
                 {
                   "params": [
@@ -3547,12 +4526,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08",
+              "alias": "comcam-mcm",
               "groupBy": [
                 {
                   "params": [
@@ -3590,12 +4569,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09",
+              "alias": "comcam-ocsbr01",
               "groupBy": [
                 {
                   "params": [
@@ -3633,7 +4612,136 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vs01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "cpu",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "usage_user"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "cpu",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "usage_user"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "cpu",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "usage_user"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
                 }
               ]
             }
@@ -3732,7 +4840,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "antu01 used disk",
+              "alias": "comcam-arctl01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3776,12 +4884,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu01.ls.lsst.org"
+                  "value": "comcam-arctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu02 used disk",
+              "alias": "comcam-db01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3825,12 +4933,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu02.ls.lsst.org"
+                  "value": "comcam-db01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu03 used disk",
+              "alias": "comcam-dc01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3874,12 +4982,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu03.ls.lsst.org"
+                  "value": "comcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu04 used disk",
+              "alias": "comcam-dmctl01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3923,12 +5031,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu04.ls.lsst.org"
+                  "value": "comcam-dmctl01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu05 used disk",
+              "alias": "comcam-fp01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -3972,7 +5080,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu05.ls.lsst.org"
+                  "value": "comcam-fp01.cp.lsst.org"
                 }
               ]
             },
@@ -4021,12 +5129,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu06.ls.lsst.org"
+                  "value": "comcam-fwd01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu07 used disk",
+              "alias": "comcam-fwd02 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4070,12 +5178,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu07.ls.lsst.org"
+                  "value": "comcam-fwd02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu08 used disk",
+              "alias": "comcam-mcm used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4119,12 +5227,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu08.ls.lsst.org"
+                  "value": "comcam-mcm.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "antu09 used disk",
+              "alias": "comcam-ocsbr01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4168,7 +5276,154 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "antu09.ls.lsst.org"
+                  "value": "comcam-ocsbr01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vs01 used disk",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "disk",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "used_percent"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "*2"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vs01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "comcam-vw01 used disk",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "disk",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "used_percent"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "*2"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "comcam-vw01.cp.lsst.org"
+                }
+              ]
+            },
+            {
+              "alias": "pathfinder-lion01 used disk",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "disk",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "used_percent"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  },
+                  {
+                    "params": [
+                      "*2"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "host",
+                  "operator": "=",
+                  "value": "pathfinder-lion01.cp.lsst.org"
                 }
               ]
             }
@@ -4228,7 +5483,7 @@
       },
       "timepicker": {},
       "timezone": "",
-      "title": "Antu Cluster",
+      "title": "ComCam Cluster",
       "uid": null
     },
   "folderId": 173,
