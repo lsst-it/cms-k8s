@@ -56,7 +56,7 @@ for filename in *.json; do
     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
 
-#Services
+#Servers
 cd ../../servers
 
 if [ ! -d "list" ] 
