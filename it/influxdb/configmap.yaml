@@ -29,7 +29,7 @@ data:
       cache_snapshot_write_cold_duration = "10m0s"
       compact_full_write_cold_duration = "4h0m0s"
       max_series_per_database = 1e+06
-      max_values_per_tag = 100000
+      max_values_per_tag = 0
       query_log_enabled = true
       trace_logging_enabled = false
 
