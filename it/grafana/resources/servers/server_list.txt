@@ -19,6 +19,11 @@ dns3.ls.lsst.org
 dtn01.ls.lsst.org         
 ess-test1.ls.lsst.org     
 foreman.ls.lsst.org       
+gaw01.ls.lsst.org         
+gaw02.ls.lsst.org         
+gaw03.ls.lsst.org         
+gaw04.ls.lsst.org         
+gaw05.ls.lsst.org         
 icinga-master.ls.lsst.org 
 ipa1.ls.lsst.org          
 ipa2.ls.lsst.org          
@@ -33,10 +38,13 @@ ls-dtn01.ls.lsst.org
 ls-dtn02.ls.lsst.org      
 ls-efdetl01.ls.lsst.org   
 ls-fwdr02.ls.lsst.org     
-ls-handoff01.ls.lsst.org  
-ls-handoff02.ls.lsst.org  
 ls-oradb01.ls.lsst.org    
 ls-oradb02.ls.lsst.org    
+luan01.ls.lsst.org        
+luan02.ls.lsst.org        
+luan03.ls.lsst.org        
+luan04.ls.lsst.org        
+luan05.ls.lsst.org        
 new-pfsense01.ls.lsst.org 
 new-pfsense02.ls.lsst.org 
 nvr01.ls.lsst.org         

@@ -70,7 +70,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "andes01",
+            "alias": "yagan01",
             "groupBy": [
               {
                 "params": [
@@ -108,12 +108,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02",
+            "alias": "yagan02",
             "groupBy": [
               {
                 "params": [
@@ -156,7 +156,7 @@
             ]
           },
           {
-            "alias": "andes03",
+            "alias": "yagan03",
             "groupBy": [
               {
                 "params": [
@@ -194,12 +194,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04",
+            "alias": "yagan04",
             "groupBy": [
               {
                 "params": [
@@ -237,12 +237,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05",
+            "alias": "yagan05",
             "groupBy": [
               {
                 "params": [
@@ -280,12 +280,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06",
+            "alias": "yagan06",
             "groupBy": [
               {
                 "params": [
@@ -323,7 +323,50 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan07",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "system",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "load15"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
               }
             ]
           }
@@ -422,7 +465,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "andes01",
+            "alias": "yagan01",
             "groupBy": [
               {
                 "params": [
@@ -466,12 +509,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02",
+            "alias": "yagan02",
             "groupBy": [
               {
                 "params": [
@@ -515,12 +558,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes02.cp.lsst.org"
+                "value": "yagan02.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes03",
+            "alias": "yagan03",
             "groupBy": [
               {
                 "params": [
@@ -564,12 +607,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04",
+            "alias": "yagan04",
             "groupBy": [
               {
                 "params": [
@@ -613,12 +656,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05",
+            "alias": "yagan05",
             "groupBy": [
               {
                 "params": [
@@ -662,12 +705,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06",
+            "alias": "yagan06",
             "groupBy": [
               {
                 "params": [
@@ -711,7 +754,56 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan07",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "mem",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    " / 1000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
               }
             ]
           }
@@ -817,7 +909,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "andes01 recieved bytes",
+            "alias": "yagan01 recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -867,12 +959,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02 recieved bytes",
+            "alias": "yagan02 recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -922,12 +1014,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes02.cp.lsst.org"
+                "value": "yagan02.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes03 recieved bytes",
+            "alias": "yagan03 recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -977,12 +1069,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04 recieved bytes",
+            "alias": "yagan04 recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -1032,12 +1124,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05 recieved bytes",
+            "alias": "yagan05 recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -1087,12 +1179,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06 recieved bytes",
+            "alias": "yagan06 recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -1142,12 +1234,67 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes01 sent bytes",
+            "alias": "yagan07 recieved bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_recv"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 100000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan01 sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1197,12 +1344,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02 sent bytes",
+            "alias": "yagan02 sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1252,12 +1399,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes02.cp.lsst.org"
+                "value": "yagan02.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes03 sent bytes",
+            "alias": "yagan03 sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1307,12 +1454,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04 sent bytes",
+            "alias": "yagan04 sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1362,12 +1509,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05 sent bytes",
+            "alias": "yagan05 sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1417,12 +1564,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06 sent bytes",
+            "alias": "yagan06 sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1472,7 +1619,62 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan07 sent bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_sent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " *-1/ 100000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
               }
             ]
           }
@@ -1575,7 +1777,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "andes01 read IO",
+            "alias": "yagan01 read IO",
             "groupBy": [
               {
                 "params": [
@@ -1625,12 +1827,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02 read IO",
+            "alias": "yagan02 read IO",
             "groupBy": [
               {
                 "params": [
@@ -1680,12 +1882,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes02.cp.lsst.org"
+                "value": "yagan02.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes03 read IO",
+            "alias": "yagan03 read IO",
             "groupBy": [
               {
                 "params": [
@@ -1735,12 +1937,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04 read IO",
+            "alias": "yagan04 read IO",
             "groupBy": [
               {
                 "params": [
@@ -1790,12 +1992,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05 read IO",
+            "alias": "yagan05 read IO",
             "groupBy": [
               {
                 "params": [
@@ -1845,12 +2047,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06 read IO",
+            "alias": "yagan06 read IO",
             "groupBy": [
               {
                 "params": [
@@ -1900,12 +2102,67 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes01 write IO",
+            "alias": "yagan07 read IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "read_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 100"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan01 write IO",
             "groupBy": [
               {
                 "params": [
@@ -1955,12 +2212,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02 write IO",
+            "alias": "yagan02 write IO",
             "groupBy": [
               {
                 "params": [
@@ -2010,12 +2267,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes02.cp.lsst.org"
+                "value": "yagan02.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes03 write IO",
+            "alias": "yagan03 write IO",
             "groupBy": [
               {
                 "params": [
@@ -2065,12 +2322,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04 write IO",
+            "alias": "yagan04 write IO",
             "groupBy": [
               {
                 "params": [
@@ -2120,12 +2377,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05 write IO",
+            "alias": "yagan05 write IO",
             "groupBy": [
               {
                 "params": [
@@ -2175,12 +2432,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06 write IO",
+            "alias": "yagan06 write IO",
             "groupBy": [
               {
                 "params": [
@@ -2230,7 +2487,62 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan07 write IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "write_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1 / 100"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
               }
             ]
           }
@@ -2329,7 +2641,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "andes01",
+            "alias": "yagan01",
             "groupBy": [
               {
                 "params": [
@@ -2367,12 +2679,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02",
+            "alias": "yagan02",
             "groupBy": [
               {
                 "params": [
@@ -2410,12 +2722,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes02.cp.lsst.org"
+                "value": "yagan02.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes03",
+            "alias": "yagan03",
             "groupBy": [
               {
                 "params": [
@@ -2453,12 +2765,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04",
+            "alias": "yagan04",
             "groupBy": [
               {
                 "params": [
@@ -2496,12 +2808,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05",
+            "alias": "yagan05",
             "groupBy": [
               {
                 "params": [
@@ -2539,12 +2851,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06",
+            "alias": "yagan06",
             "groupBy": [
               {
                 "params": [
@@ -2582,7 +2894,50 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan07",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "cpu",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "usage_user"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
               }
             ]
           }
@@ -2681,7 +3036,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "andes01 used disk",
+            "alias": "yagan01 used disk",
             "groupBy": [
               {
                 "params": [
@@ -2725,12 +3080,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes01.cp.lsst.org"
+                "value": "yagan01.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes02 used disk",
+            "alias": "yagan02 used disk",
             "groupBy": [
               {
                 "params": [
@@ -2774,12 +3129,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes02.cp.lsst.org"
+                "value": "yagan02.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes03 used disk",
+            "alias": "yagan03 used disk",
             "groupBy": [
               {
                 "params": [
@@ -2823,12 +3178,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes03.cp.lsst.org"
+                "value": "yagan03.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes04 used disk",
+            "alias": "yagan04 used disk",
             "groupBy": [
               {
                 "params": [
@@ -2872,12 +3227,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes04.cp.lsst.org"
+                "value": "yagan04.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes05 used disk",
+            "alias": "yagan05 used disk",
             "groupBy": [
               {
                 "params": [
@@ -2921,12 +3276,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes05.cp.lsst.org"
+                "value": "yagan05.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "andes06 used disk",
+            "alias": "yagan06 used disk",
             "groupBy": [
               {
                 "params": [
@@ -2970,7 +3325,56 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "andes06.cp.lsst.org"
+                "value": "yagan06.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan07 used disk",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "disk",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used_percent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "*2"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan07.cp.lsst.org"
               }
             ]
           }
@@ -3030,9 +3434,9 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "Andes Cluster",
+    "title": "Yagan Cluster",
     "uid": null
   },
-  "folderId": 4,
+  "folderId": 3,
   "overwrite": false
 }
