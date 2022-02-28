@@ -1,38 +1,11 @@
 Grafana + InfluxDB over Kubernetes
 ==================================
 
-This template has already been configured to work with the URL comcam-grafana.ls.lsst.org.
+Depending on the site to be deployed, it will install either it-grafana.ls.lsst.org or it-grafana.cp.lsst.org
 
-Sources
--------
+Grafana+InfluxSB Deployment
+---------------------------
 
-The Grafana and Influxdb charts can be obtained from:
-
-```bash
-helm repo add influxdata https://helm.influxdata.com/
-helm repo add grafana https://grafana.github.io/helm-charts
-```
-
-Clean Install
--------------
-
-If you require a clean install/template, I recommend grab the template from helm:
-
-```bash
-helm template grafana -n comcam-grafana grafana/grafana -f values
-helm template influxdb -n comcam-influxdb influxdata/influxdb -f values
-```
-
-Deployment
-----------
-
-Depending on the site and instance, you must browse into the folder first.
-i.e Comcam Grafana and InfluxDB -> comcam/grafana and comcam/influxdb respectively
-
-Start by cloning the repo into a local folder:
-
-```bash
-git clone https://github.com/lsst-it/gi-k8s.git
 ```
 
 First, install influxdb by using the deploy.sh script inside the site you want to deploy.
@@ -40,18 +13,45 @@ Once is up and running (wait condition of the following command is met), will ne
 provision influxdb with a database and a username, which has been written into init_influxdb.sh
 
 ```bash
-cd gi-k8s/comcam/influxdb
+cd it/ls/influxdb
 ./deploy.sh
 ./init_influxdb.sh
 ```
 
-Once the installation/Initialisation of influx is done, proceed with the deployment of Grafana.
+Once the installation/Initialization of influx is done, proceed with the deployment of Grafana.
 This installation has already been configured so it connects with influxdb upon the first run:
 
 ```bash
-cd gi-k8s/comcam/grafana
+cd it/ls/grafana
 ./deploy.sh
 ./init_grafana.sh
+```
+
+Charts Depoyment
+----------------
+
+In order to deploy the charts, the resources folders must be created:
+
+```bash
+cd it/ls/grafana/resources
+./folders_generator.sh
+```
+
+Now that the folder's ID are stored, the servers, services, and clusters may be deployed:
+
+```bash
+cd it/ls/grafana/resources/clusters
+./cluster.sh
+```
+
+```bash
+cd it/ls/grafana/resources/services
+./cluster.sh
+```
+
+```bash
+cd it/ls/grafana/resources/servers
+./servers.sh
 ```
 
 Uninstall
@@ -60,8 +60,8 @@ Uninstall
 To delete everything, run the undeploy.sh script in both folders, and then delete the namespaces:
 
 ```bash
-gi-k8s/comcam/influxdb/undeploy.sh
-gi-k8s/comcam/grafana/undeploy.sh
-kubectl delete ns comcam-influxdb
-kubectl delete ns comcam-grafana
+it/ls/influxdb/undeploy.sh
+it/ls/grafana/undeploy.sh
+kubectl delete ns it-influxdb
+kubectl delete ns it-grafana
 ```
