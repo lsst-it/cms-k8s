@@ -83,3 +83,9 @@ ssh $SSH_USER@$SERVER "/usr/bin/kubectl wait --for=condition=ready pod -n it-gra
 for filename in list/*.json; do
     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
+
+#Generic
+cd ../../generic
+for filename in *.json; do
+    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+done
