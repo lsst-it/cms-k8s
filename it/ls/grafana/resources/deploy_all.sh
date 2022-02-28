@@ -2,6 +2,7 @@
 set -xuo pipefail
 
 SERVER='luan01.ls.lsst.org'
+ROOT_PATH=$(pwd)
 URL="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafana -ojson | jq -r '.spec.tls[0].hosts[0]'')"
 USER="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"
 PASSWORD="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-password"]' | base64 --decode)"
@@ -22,6 +23,7 @@ for folder in "${Folders[@]}"; do
 done
 
 #Clusters
+CLUSTER_ID=$(cat $ROOT_PATH/ID/clusters)
 cd clusters
 if [ ! -d "list" ] 
 then
@@ -29,7 +31,7 @@ then
 fi
 cd default
 for filename in *.json; do
-    sed "s/\"folderId\": 4/\"folderId\": $ID/g" $filename > ../list/$filename
+    sed "s/\"folderId\": 4/\"folderId\": $CLUSTER_ID/g" $filename > ../list/$filename
 done
 
 ssh $SSH_USER@$SERVER "/usr/bin/kubectl wait --for=condition=ready pod -n it-grafana ${POD} > /dev/null 2>&1"
@@ -40,15 +42,15 @@ for filename in *.json; do
 done
 
 #Services
+SERVICES_ID=$(cat $ROOT_PATH/ID/services)
 cd ../../services
-
 if [ ! -d "list" ] 
 then
     mkdir list
 fi
 cd default
 for filename in *.json; do
-    sed "s/\"folderId\": 5/\"folderId\": $ID/g" $filename > ../list/$filename
+    sed "s/\"folderId\": 5/\"folderId\": $SERVICES_ID/g" $filename > ../list/$filename
 done
 
 ssh $SSH_USER@$SERVER "/usr/bin/kubectl wait --for=condition=ready pod -n it-grafana ${POD} > /dev/null 2>&1"
@@ -59,12 +61,12 @@ for filename in *.json; do
 done
 
 #Servers
+SERVERS_ID=$(cat $ROOT_PATH/ID/servers)
 cd ../../servers
-
 ssh -l $SSH_USER foreman.ls.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' > server_list.txt
 ssh -l $SSH_USER foreman.cp.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
 ssh -l $SSH_USER foreman.dev.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
-ssh -l $SSH_USER foreman.tuc.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
+ssh -l $SSH_USER foreman.tuc.lsst.cloud 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
 
 if [ ! -d "list" ] 
 then
@@ -73,7 +75,7 @@ fi
 while read server;
 do 
   sed "s/SERVER_NAME/$server/g" server_template.json > default/$server.json
-  sed "s/\"folderId\": 3/\"folderId\": $ID/g" default/$server.json > list/$server.json
+  sed "s/\"folderId\": 3/\"folderId\": $SERVERS_ID/g" default/$server.json > list/$server.json
 done < server_list.txt
 
 
