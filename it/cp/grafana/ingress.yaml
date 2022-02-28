@@ -21,10 +21,13 @@ spec:
       - it-grafana.cp.lsst.org
       secretName: grafana-tls
   rules:
-    - host: it-grafana.cp.lsst.org
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: grafana
-              servicePort: 80
+  - host: it-grafana.cp.lsst.org
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: grafana
+              port: 
+                number: 80
