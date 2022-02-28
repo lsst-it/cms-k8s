@@ -1,0 +1,57 @@
+---
+# Source: grafana/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana
+  namespace: it-grafana
+  labels:
+    helm.sh/chart: grafana-5.6.12
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/version: "7.2.0"
+    app.kubernetes.io/managed-by: Helm
+data:
+  grafana.ini: |
+    [analytics]
+    check_for_updates = true
+    [auth.ldap]
+    allow_sign_up = true
+    config_file = /etc/grafana/ldap.toml
+    enabled = true
+    [grafana_net]
+    url = https://grafana.net
+    [log]
+    mode = console
+    [paths]
+    data = /var/lib/grafana/data
+    logs = /var/log/grafana
+    plugins = /var/lib/grafana/plugins
+    provisioning = /etc/grafana/provisioning
+
+  datasources.yaml: |
+    apiVersion: 1
+    datasources:
+    - access: proxy
+      database: telegraf
+      isDefault: true
+      name: IT InfluxDB
+      type: influxdb
+      url: http://influxdb.it-influxdb:8086
+      user: ${INFLUXDB_USERNAME}
+      password: ${INFLUXDB_PASSWORD}
+    - access: proxy
+      database: _internal
+      isDefault: false
+      name: IT InfluxDB internal
+      type: influxdb
+      url: http://influxdb.it-influxdb:8086
+      user: ${INFLUXDB_USERNAME}
+      password: ${INFLUXDB_PASSWORD}
+      
+  enabled: |
+    false
+  label: |
+    grafana_notifier
+  searchNamespace: |
+    null
