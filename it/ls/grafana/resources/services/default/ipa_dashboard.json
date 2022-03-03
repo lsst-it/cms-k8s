@@ -161,7 +161,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP",
+            "alias": "ipa3 LS",
             "groupBy": [
               {
                 "params": [
@@ -176,10 +176,11 @@
                 "type": "fill"
               }
             ],
+            "hide": false,
             "measurement": "system",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "D",
+            "refId": "B",
             "resultFormat": "time_series",
             "select": [
               [
@@ -199,50 +200,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },
@@ -568,7 +526,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP",
+            "alias": "ipa3 LS",
             "groupBy": [
               {
                 "params": [
@@ -586,7 +544,7 @@
             "measurement": "mem",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "D",
+            "refId": "B",
             "resultFormat": "time_series",
             "select": [
               [
@@ -612,56 +570,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },
@@ -1003,7 +912,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP recieved bytes",
+            "alias": "ipa3 LS recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -1021,7 +930,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "D",
+            "refId": "C",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1047,56 +956,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },
@@ -1358,7 +1218,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP sent bytes",
+            "alias": "ipa3 LS sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1376,7 +1236,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "M",
+            "refId": "L",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1408,62 +1268,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "N",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },
@@ -1835,7 +1640,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP read IO",
+            "alias": "ipa3 LS read IO",
             "groupBy": [
               {
                 "params": [
@@ -1853,7 +1658,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "D",
+            "refId": "B",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1885,62 +1690,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },
@@ -2220,7 +1970,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP write IO",
+            "alias": "ipa3 LS write IO",
             "groupBy": [
               {
                 "params": [
@@ -2238,7 +1988,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "M",
+            "refId": "K",
             "resultFormat": "time_series",
             "select": [
               [
@@ -2270,62 +2020,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "N",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },
@@ -2675,7 +2370,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP",
+            "alias": "ipa3 LS",
             "groupBy": [
               {
                 "params": [
@@ -2693,7 +2388,7 @@
             "measurement": "cpu",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "D",
+            "refId": "B",
             "resultFormat": "time_series",
             "select": [
               [
@@ -2713,50 +2408,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },
@@ -3077,7 +2729,7 @@
             ]
           },
           {
-            "alias": "ipa1 CP used disk",
+            "alias": "ipa3 LS used disk",
             "groupBy": [
               {
                 "params": [
@@ -3095,7 +2747,7 @@
             "measurement": "disk",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "D",
+            "refId": "B",
             "resultFormat": "time_series",
             "select": [
               [
@@ -3121,56 +2773,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 CP used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.cp.lsst.org"
+                "value": "ipa3.ls.lsst.org"
               }
             ]
           },

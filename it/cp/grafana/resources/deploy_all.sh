@@ -63,10 +63,7 @@ done
 #Servers
 SERVERS_ID=$(cat $ROOT_PATH/ID/servers)
 cd ../../servers
-ssh -l $SSH_USER foreman.ls.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' > server_list.txt
-ssh -l $SSH_USER foreman.cp.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
-ssh -l $SSH_USER foreman.dev.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
-ssh -l $SSH_USER foreman.tuc.lsst.cloud 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
+ssh -l $SSH_USER foreman.cp.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' > server_list.txt
 
 if [ ! -d "list" ] 
 then
