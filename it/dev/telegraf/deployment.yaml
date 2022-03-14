@@ -1,0 +1,53 @@
+---
+# Source: telegraf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: it-telegraf
+  namespace: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: telegraf
+      app.kubernetes.io/instance: it-telegraf
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: telegraf
+        app.kubernetes.io/instance: it-telegraf
+      annotations:
+        checksum/config: 0b3f8f16de7573159d2997d078b887bff68d6ca1d4ab85884870f13e6aa4b64a
+    spec:
+      serviceAccountName: it-telegraf
+      containers:
+      - name: telegraf
+        image: "telegraf:1.16-alpine"
+        imagePullPolicy: "IfNotPresent"
+        resources:
+          {}
+        env:
+        - name: HOSTNAME
+          value: telegraf-polling-service
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: username
+              name: telegraf-credentials
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: telegraf-credentials
+        volumeMounts:
+        - name: config
+          mountPath: /etc/telegraf
+      volumes:
+      - name: config
+        configMap:
+          name: it-telegraf

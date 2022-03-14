@@ -1,0 +1,185 @@
+---
+# Source: telegraf/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+---
+# Source: telegraf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+data:
+  telegraf.conf: |+
+    
+    [agent]
+      collection_jitter = "0s"
+      debug = false
+      flush_interval = "10s"
+      flush_jitter = "0s"
+      hostname = "$HOSTNAME"
+      interval = "10s"
+      logfile = ""
+      metric_batch_size = 1000
+      metric_buffer_limit = 10000
+      omit_hostname = false
+      precision = ""
+      quiet = false
+      round_interval = true
+    [[processors.enum]]
+      [[processors.enum.mapping]]
+        dest = "status_code"
+        field = "status"
+        [processors.enum.mapping.value_mappings]
+            critical = 3
+            healthy = 1
+            problem = 2
+    
+    
+    [[outputs.influxdb]]
+      database = "grafana"
+      password = "$PASSWORD"
+      urls = [
+        "http://influxdb.it-influxdb:8086"
+      ]
+      username = "$USERNAME"
+    
+    [[outputs.health]]
+      service_address = "http://:8888"
+      [[outputs.health.compares]]
+        field = "buffer_size"
+        lt = 5000.0
+      [[outputs.health.contains]]
+        field = "buffer_size"
+    [[inputs.statsd]]
+      allowed_pending_messages = 10000
+      metric_separator = "_"
+      percentile_limit = 1000
+      percentiles = [
+        50,
+        95,
+        99
+      ]
+      service_address = ":8125"
+    [[inputs.internal]]
+      collect_memstats = false
+---
+# Source: telegraf/templates/role.yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+metadata:
+  name: it-telegraf
+  namespace: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+rules:
+  []
+---
+# Source: telegraf/templates/rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+subjects:
+  - kind: ServiceAccount
+    name: it-telegraf
+    namespace: it-telegraf
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: it-telegraf
+---
+# Source: telegraf/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8888
+    targetPort: 8888
+    name: "health"
+  - port: 8125
+    targetPort: 8125
+    protocol: "UDP"
+    name: "statsd"
+  selector:
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+---
+# Source: telegraf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: it-telegraf
+  labels:
+    helm.sh/chart: telegraf-1.7.32
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: telegraf
+    app.kubernetes.io/instance: it-telegraf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: telegraf
+      app.kubernetes.io/instance: it-telegraf
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: telegraf
+        app.kubernetes.io/instance: it-telegraf
+      annotations:
+        checksum/config: 0b3f8f16de7573159d2997d078b887bff68d6ca1d4ab85884870f13e6aa4b64a
+    spec:
+      serviceAccountName: it-telegraf
+      containers:
+      - name: telegraf
+        image: "telegraf:1.16-alpine"
+        imagePullPolicy: "IfNotPresent"
+        resources:
+          {}
+        env:
+        - name: HOSTNAME
+          value: telegraf-polling-service
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: username
+              name: telegraf-credentials
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: telegraf-credentials
+        volumeMounts:
+        - name: config
+          mountPath: /etc/telegraf
+      volumes:
+      - name: config
+        configMap:
+          name: it-telegraf
