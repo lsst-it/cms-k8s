@@ -51,9 +51,9 @@ data:
     - name: Prometheus
       type: prometheus
       uid: prometheus
-      url: http://bdc-prometheus-kube-promet-prometheus.bdc-prometheus:9090/
+      url: http://prometheus-kube-prometheus-prometheus.prometheus:9090/
       access: proxy
-      isDefault: true
+      isDefault: false
       jsonData:
         timeInterval: 30s
       
