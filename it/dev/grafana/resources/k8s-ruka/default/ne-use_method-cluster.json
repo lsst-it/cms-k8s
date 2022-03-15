@@ -20,7 +20,6 @@
   },
   "editable": false,
   "fiscalYearStartMonth": 0,
-  "folderId": 6,
   "graphTooltip": 1,
   "id": null,
   "iteration": 1647285378715,
@@ -970,6 +969,7 @@
       "30d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "Node Exporter / USE Method / Cluster",
   "uid": "7-j4FjL7z",

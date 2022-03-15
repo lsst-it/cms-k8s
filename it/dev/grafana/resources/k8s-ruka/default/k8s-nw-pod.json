@@ -20,7 +20,6 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "folderId": 6,
   "graphTooltip": 0,
   "id": null,
   "iteration": 1647285372124,
@@ -1095,6 +1094,7 @@
       "30d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "Kubernetes / Networking / Pod",
   "uid": "7a18067ce943a40ae25454675c19ff5c",

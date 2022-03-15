@@ -20,7 +20,6 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "folderId": 6,
   "graphTooltip": 0,
   "id": null,
   "iteration": 1647285247092,
@@ -946,6 +945,7 @@
       "30d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "Kubernetes / Compute Resources / Node (Pods)",
   "uid": "200ac8fdbfbb74b39aff88118e4d1c2c",

@@ -20,7 +20,6 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "folderId": 6,
   "graphTooltip": 0,
   "id": null,
   "iteration": 1647285102866,
@@ -2673,6 +2672,7 @@
       "30d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "Kubernetes / Compute Resources / Cluster",
   "uid": "efa86fd1d0c121a26444b636a3f509a8",

@@ -2,6 +2,7 @@ it/ldap.toml
 comcam/ldap.toml
 it/cp/grafana/resources/ID
 it/ls/grafana/resources/ID
+it/dev/grafana/resources/ID
 it/cp/grafana/resources/clusters/list
 it/ls/grafana/resources/clusters/list
 it/dev/grafana/resources/clusters/list

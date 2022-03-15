@@ -20,7 +20,6 @@
   },
   "editable": false,
   "fiscalYearStartMonth": 0,
-  "folderId": 6,
   "graphTooltip": 0,
   "id": null,
   "iteration": 1647285368365,
@@ -1926,6 +1925,7 @@
       "30d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "Kubernetes / Kubelet",
   "uid": "3138fa155d5915769fbded898ac09fd9",

@@ -20,7 +20,6 @@
   },
   "editable": false,
   "fiscalYearStartMonth": 0,
-  "folderId": 6,
   "graphTooltip": 0,
   "id": null,
   "iteration": 1647285376641,
@@ -801,6 +800,7 @@
       "30d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "Kubernetes / StatefulSets",
   "uid": "a31c1f46e6f727cb37c0d731a7245005",

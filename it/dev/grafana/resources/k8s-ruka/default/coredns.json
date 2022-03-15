@@ -21,7 +21,6 @@
   "description": "A dashboard for the CoreDNS DNS server with updated metrics for version 1.7.0+.  Based on the CoreDNS dashboard by buhay.",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "folderId": 6,
   "gnetId": 12539,
   "graphTooltip": 0,
   "id": null,
@@ -1430,6 +1429,7 @@
       "1d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "CoreDNS",
   "uid": "vkQ0UHxik",

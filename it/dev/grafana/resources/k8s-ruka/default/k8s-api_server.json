@@ -19,7 +19,6 @@
     ]
   },
   "editable": false,
-  "folderId": 6,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
@@ -1550,6 +1549,7 @@
       "30d"
     ]
   },
+  "folderId": 6,
   "timezone": "utc",
   "title": "Kubernetes / API server",
   "uid": "09ec8aa1e996d6ffcd6817bbaff4db1b",
