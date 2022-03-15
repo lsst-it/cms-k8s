@@ -80,6 +80,7 @@ done
 # done
 
 # #Ruka K8s metrics
+K8S_RUKA_ID=$(cat $ROOT_PATH/ID/k8s-ruka)
 cd k8s-ruka
 if [ ! -d "list" ] 
 then
@@ -87,7 +88,7 @@ then
 fi
 cd default
 for filename in *.json; do
-    sed "s/\"folderId\": 6/\"folderId\": $ID/g" $filename > ../list/$filename
+    sed "s/\"folderId\": 6/\"folderId\": $K8S_RUKA_ID/g" $filename > ../list/$filename
 done
 
 cd ../list
