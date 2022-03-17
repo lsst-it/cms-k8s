@@ -8,7 +8,7 @@ nameOverride: ""
 
 ## Override the deployment namespace
 ##
-namespaceOverride: "prometheus"
+namespaceOverride: "ruka-prom"
 
 ## Provide a k8s version to auto dashboard import script example: kubeTargetVersionOverride: 1.16.6
 ##
@@ -1867,7 +1867,7 @@ prometheus:
 
     ## Loadbalancer IP
     ## Only use if service.type is "LoadBalancer"
-    loadBalancerIP: ""
+    loadBalancerIP: "139.229.134.154"
     loadBalancerSourceRanges: []
 
     ## Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
@@ -1876,7 +1876,7 @@ prometheus:
 
     ## Service type
     ##
-    type: ClusterIP
+    type: LoadBalancer
 
     ## Additional port to define in the Service
     additionalPorts: []
