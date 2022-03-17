@@ -30,6 +30,7 @@ declare CLUSTERS_ID="$(cat ID/clusters)"
 declare SERVICES_ID="$(cat ID/services)"
 declare SERVERS_ID="$(cat ID/servers)"
 declare K8S_LUAN_ID="$(cat ID/k8s-luan)"
+declare K8S_RUKA_ID="$(cat ID/k8s-ruka)"
 
 #Clusters
 cd clusters
@@ -84,7 +85,7 @@ for filename in list/*.json; do
 done
 
 #Luan K8s metrics
-cd k8s-luan
+cd ../../k8s-luan
 if [ ! -d "list" ] 
 then
     mkdir list
@@ -100,7 +101,7 @@ for filename in *.json; do
 done
 
 #Luan K8s metrics
-cd k8s-ruka
+cd ../../k8s-ruka
 if [ ! -d "list" ] 
 then
     mkdir list
