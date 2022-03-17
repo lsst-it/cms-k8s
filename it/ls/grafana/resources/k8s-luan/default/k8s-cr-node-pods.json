@@ -866,8 +866,8 @@
         {
           "current": {
             "selected": false,
-            "text": "ruka-prometheus",
-            "value": "ruka-prometheus"
+            "text": "luan-prometheus",
+            "value": "luan-prometheus"
           },
           "hide": 0,
           "includeAll": false,
@@ -877,7 +877,7 @@
           "options": [],
           "query": "prometheus",
           "refresh": 1,
-          "regex": "/^ruka/",
+          "regex": "/^luan/",
           "skipUrlSync": false,
           "type": "datasource"
         },
@@ -885,8 +885,8 @@
           "allValue": null,
           "current": {
             "selected": false,
-            "text": "ruka-prom",
-            "value": "ruka-prom"
+            "text": "luan-prom",
+            "value": "luan-prom"
           },
           "datasource": "$datasource",
           "definition": "label_values(up{job=\"kube-state-metrics\"}, cluster)",
@@ -912,10 +912,10 @@
           "current": {
             "selected": true,
             "text": [
-              "ruka01"
+              "luan01"
             ],
             "value": [
-              "ruka01"
+              "luan01"
             ]
           },
           "datasource": "$datasource",

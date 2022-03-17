@@ -1552,8 +1552,8 @@
         {
           "current": {
             "selected": false,
-            "text": "ruka-prometheus",
-            "value": "ruka-prometheus"
+            "text": "luan-prometheus",
+            "value": "luan-prometheus"
           },
           "hide": 0,
           "includeAll": false,
@@ -1563,7 +1563,7 @@
           "options": [],
           "query": "prometheus",
           "refresh": 1,
-          "regex": "/^ruka/",
+          "regex": "/^luan/",
           "skipUrlSync": false,
           "type": "datasource"
         },
@@ -1571,8 +1571,8 @@
           "allValue": null,
           "current": {
             "selected": false,
-            "text": "ruka-prom-kube-prometheus-alertmanager",
-            "value": "ruka-prom-kube-prometheus-alertmanager"
+            "text": "luan-prom-kube-prometheus-alertmanager",
+            "value": "luan-prom-kube-prometheus-alertmanager"
           },
           "datasource": "$datasource",
           "definition": "label_values(up{job=\"apiserver\"}, cluster)",

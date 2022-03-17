@@ -48,10 +48,10 @@ data:
       url: http://influxdb.it-influxdb:8086
       user: ${INFLUXDB_USERNAME}
       password: ${INFLUXDB_PASSWORD}
-    - name: Prometheus
+    - name: ruka-prometheus
       type: prometheus
-      uid: prometheus
-      url: http://prometheus-kube-prometheus-prometheus.prometheus:9090/
+      uid: ruka-prometheus
+      url: http://ruka-metrics.dev.lsst.org:9090/
       access: proxy
       isDefault: false
       jsonData:
