@@ -84,7 +84,7 @@ for filename in list/*.json; do
 done
 
 #Yepun K8s metrics
-cd k8s-yepun
+cd ../../k8s-yepun
 if [ ! -d "list" ] 
 then
     mkdir list
