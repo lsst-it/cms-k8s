@@ -2,7 +2,7 @@
 set -xuo pipefail
 
 ID=$(cat ../ID/k8s-yagan)
-SERVER='yepun01.dev.lsst.org'
+SERVER='yepun01.cp.lsst.org'
 SSH_USER='hreinking_b'
 URL="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafana -ojson | jq -r '.spec.tls[0].hosts[0]'')"
 USER="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"

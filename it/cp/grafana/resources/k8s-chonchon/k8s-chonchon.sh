@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -xuo pipefail
 
-ID=$(cat ../ID/k8s-yepun)
+ID=$(cat ../ID/k8s-chonchon)
 SERVER='yepun01.cp.lsst.org'
 SSH_USER='hreinking_b'
 URL="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafana -ojson | jq -r '.spec.tls[0].hosts[0]'')"

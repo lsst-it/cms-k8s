@@ -64,6 +64,14 @@ data:
       isDefault: false
       jsonData:
         timeInterval: 30s      
+    - name: chonchon-prometheus
+      type: prometheus
+      uid: chonchon-prometheus
+      url: http://chonchon-metrics.cp.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s    
   enabled: |
     false
   label: |
