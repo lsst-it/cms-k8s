@@ -7,7 +7,7 @@ URL="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafa
 USER="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"
 PASSWORD="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-password"]' | base64 --decode)"
 POD="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl get -n it-grafana pods -o json ' | jq -r '.items[].metadata.name')"
-Folders=(clusters servers services k8s-ruka k8s-luan)
+Folders=(clusters servers services k8s-ruka k8s-luan k8s-antu k8s-kueyen)
 SSH_USER="hreinking_b"
 counter=$RANDOM
 NUMBER='0'
@@ -31,6 +31,8 @@ declare SERVICES_ID="$(cat ID/services)"
 declare SERVERS_ID="$(cat ID/servers)"
 declare K8S_LUAN_ID="$(cat ID/k8s-luan)"
 declare K8S_RUKA_ID="$(cat ID/k8s-ruka)"
+declare K8S_ANTU_ID="$(cat ID/k8s-antu)"
+declare K8S_KUEYEN_ID="$(cat ID/k8s-kueyen)"
 
 #Clusters
 cd clusters
@@ -109,6 +111,38 @@ fi
 cd default
 for filename in *.json; do
     sed "s/\"folderId\": 6/\"folderId\": $K8S_RUKA_ID/g" $filename > ../list/$filename
+done
+
+cd ../list
+for filename in *.json; do
+    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+done
+
+#Antu K8s metrics
+cd ../../k8s-antu
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
+cd default
+for filename in *.json; do
+    sed "s/\"folderId\": 6/\"folderId\": $K8S_ANTU_ID/g" $filename > ../list/$filename
+done
+
+cd ../list
+for filename in *.json; do
+    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+done
+
+#Kueyen K8s metrics
+cd ../../k8s-kueyen
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
+cd default
+for filename in *.json; do
+    sed "s/\"folderId\": 6/\"folderId\": $K8S_KUEYEN_ID/g" $filename > ../list/$filename
 done
 
 cd ../list

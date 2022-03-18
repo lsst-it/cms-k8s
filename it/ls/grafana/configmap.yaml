@@ -64,6 +64,22 @@ data:
       isDefault: false
       jsonData:
         timeInterval: 30s
+    - name: antu-prometheus
+      type: prometheus
+      uid: antu-prometheus
+      url: http://antu-metrics.ls.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s
+    - name: kueyen-prometheus
+      type: prometheus
+      uid: kueyen-prometheus
+      url: http://kueyen-metrics.ls.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s
       
   enabled: |
     false
