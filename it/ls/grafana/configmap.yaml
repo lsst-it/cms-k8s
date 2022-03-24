@@ -48,6 +48,38 @@ data:
       url: http://influxdb.it-influxdb:8086
       user: ${INFLUXDB_USERNAME}
       password: ${INFLUXDB_PASSWORD}
+    - name: ruka-prometheus
+      type: prometheus
+      uid: ruka-prometheus
+      url: http://ruka-metrics.dev.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s
+    - name: luan-prometheus
+      type: prometheus
+      uid: luan-prometheus
+      url: http://luan-metrics.ls.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s
+    - name: antu-prometheus
+      type: prometheus
+      uid: antu-prometheus
+      url: http://antu-metrics.ls.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s
+    - name: kueyen-prometheus
+      type: prometheus
+      uid: kueyen-prometheus
+      url: http://kueyen-metrics.ls.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s
       
   enabled: |
     false

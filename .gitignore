@@ -2,10 +2,17 @@ it/ldap.toml
 comcam/ldap.toml
 it/cp/grafana/resources/ID
 it/ls/grafana/resources/ID
+it/dev/grafana/resources/ID
 it/cp/grafana/resources/clusters/list
 it/ls/grafana/resources/clusters/list
+it/dev/grafana/resources/clusters/list
 it/cp/grafana/resources/services/list
 it/ls/grafana/resources/services/list
+it/dev/grafana/resources/services/list
 it/cp/grafana/resources/servers/list
 it/ls/grafana/resources/servers/list
+it/dev/grafana/resources/servers/list
+it/ls/grafana/resources/k8s-*/list
+it/cp/grafana/resources/k8s-*/list
+it/dev/grafana/resources/k8s-*/list
 .DS_Store
