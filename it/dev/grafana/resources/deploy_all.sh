@@ -31,60 +31,54 @@ declare SERVICES_ID="$(cat ID/services)"
 declare SERVERS_ID="$(cat ID/servers)"
 declare K8S_RUKA_ID="$(cat ID/k8s-ruka)"
 
-# #Clusters
-# cd clusters
-# if [ ! -d "list" ] 
-# then
-#     mkdir list
-# fi
-# cd default
-# for filename in *.json; do
-#     sed "s/\"folderId\": 4/\"folderId\": $CLUSTERS_ID/g" $filename > ../list/$filename
-# done
+#Clusters
+cd clusters
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
+cd default
+for filename in *.json; do
+    sed "s/\"folderId\": 4/\"folderId\": $CLUSTERS_ID/g" $filename > ../list/$filename
+done
 
-# cd ../list
-# for filename in *.json; do
-#     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-# done
+cd ../list
+for filename in *.json; do
+    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+done
 
-# #Services
-# cd ../../services
-# if [ ! -d "list" ] 
-# then
-#     mkdir list
-# fi
-# cd default
-# for filename in *.json; do
-#     sed "s/\"folderId\": 5/\"folderId\": $SERVICES_ID/g" $filename > ../list/$filename
-# done
+#Services
+cd ../../services
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
+cd default
+for filename in *.json; do
+    sed "s/\"folderId\": 5/\"folderId\": $SERVICES_ID/g" $filename > ../list/$filename
+done
 
-# cd ../list
-# for filename in *.json; do
-#     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-# done
+cd ../list
+for filename in *.json; do
+    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+done
 
-# #Servers
-# cd ../../servers
-# ssh -l $SSH_USER foreman.ls.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' > server_list.txt
-# ssh -l $SSH_USER foreman.dev.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
-# ssh -l $SSH_USER foreman.tuc.lsst.cloud 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
+#Servers
+cd ../../servers
 
-# if [ ! -d "list" ] 
-# then
-#     mkdir list
-# fi
-# while read server;
-# do 
-#   sed "s/SERVER_NAME/$server/g" server_template.json > default/$server.json
-#   sed "s/\"folderId\": 3/\"folderId\": $SERVERS_ID/g" default/$server.json > list/$server.json
-# done < server_list.txt
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
 
-# for filename in list/*.json; do
-#     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-# done
+sed "s/\"folderId\": 3/\"folderId\": $ID/g" default/server_template.json > list/server_dashboard.json
+
+ssh $SSH_USER@$SERVER "/usr/bin/kubectl wait --for=condition=ready pod -n it-grafana ${POD} > /dev/null 2>&1"
+/usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
+
 
 #Ruka K8s metrics
-cd k8s-ruka
+cd ../../k8s-ruka
 if [ ! -d "list" ] 
 then
     mkdir list

@@ -68,23 +68,15 @@ done
 
 #Servers
 cd ../../servers
-ssh -l $SSH_USER foreman.ls.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' > server_list.txt
-ssh -l $SSH_USER foreman.dev.lsst.org 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
-ssh -l $SSH_USER foreman.tuc.lsst.cloud 'sudo /usr/bin/hammer host list --fields Name | grep lsst.org' >> server_list.txt
 
 if [ ! -d "list" ] 
 then
     mkdir list
 fi
-while read server;
-do 
-  sed "s/SERVER_NAME/$server/g" server_template.json > default/$server.json
-  sed "s/\"folderId\": 3/\"folderId\": $SERVERS_ID/g" default/$server.json > list/$server.json
-done < server_list.txt
 
-for filename in list/*.json; do
-    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-done
+sed "s/\"folderId\": 3/\"folderId\": $ID/g" default/server_template.json > list/server_dashboard.json
+
+/usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
 
 #Luan K8s metrics
 cd ../../k8s-luan

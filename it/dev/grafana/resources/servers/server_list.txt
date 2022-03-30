@@ -1,9 +1,0 @@
-dns1.dev.lsst.org    
-foreman.dev.lsst.org 
-puppetdb.dev.lsst.org
-ruka01.dev.lsst.org  
-ruka02.dev.lsst.org  
-ruka03.dev.lsst.org  
-ruka04.dev.lsst.org  
-ruka05.dev.lsst.org  
-ruka06.dev.lsst.org  
