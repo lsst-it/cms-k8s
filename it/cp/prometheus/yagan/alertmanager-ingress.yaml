@@ -1,0 +1,28 @@
+---
+# Source: grafana/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: yagan-alertmanager
+  namespace: yagan-prom
+  labels: {}
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+spec:
+  tls:
+    - hosts:
+      - yagan-alertmanager.cp.lsst.org
+      secretName: yagan-alertmanager-tls
+  rules:
+  - host: yagan-alertmanager.cp.lsst.org
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: alertmanager-operated
+              port:
+                number: 9093
