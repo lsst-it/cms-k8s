@@ -80,6 +80,14 @@ data:
       isDefault: false
       jsonData:
         timeInterval: 30s
+    - name: gaw-prometheus
+      type: prometheus
+      uid: gaw-prometheus
+      url: http://kueyen-metrics.ls.lsst.org:9090/
+      access: proxy
+      isDefault: false
+      jsonData:
+        timeInterval: 30s
       
   enabled: |
     false
