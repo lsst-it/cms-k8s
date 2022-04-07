@@ -7,7 +7,7 @@ URL="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafa
 USER="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"
 PASSWORD="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-password"]' | base64 --decode)"
 POD="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl get -n it-grafana pods -o json ' | jq -r '.items[].metadata.name')"
-Folders=(clusters servers services k8s-yepun k8s-yagan k8s-chonchon)
+Folders=(clusters servers services Kubernetes-Monitoring)
 SSH_USER="hreinking_b"
 counter=$RANDOM
 NUMBER='0'
@@ -29,9 +29,7 @@ done
 declare CLUSTERS_ID="$(cat ID/clusters)"
 declare SERVICES_ID="$(cat ID/services)"
 declare SERVERS_ID="$(cat ID/servers)"
-declare K8S_YEPUN_ID="$(cat ID/k8s-yepun)"
-declare K8S_YAGAN_ID="$(cat ID/k8s-yagan)"
-declare K8S_CHONCHON_ID="$(cat ID/k8s-chonchon)"
+declare K8S_MON_ID="$(cat ID/Kubernetes-Monitoring)"
 
 #Clusters
 cd clusters
@@ -78,47 +76,15 @@ sed "s/\"folderId\": 3/\"folderId\": $ID/g" default/server_template.json > list/
 
 /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
 
-#Yepun K8s metrics
-cd ../../k8s-yepun
+#Kubernetes Monitoring
+cd ../../Kubernetes-Monitoring
 if [ ! -d "list" ] 
 then
     mkdir list
 fi
 cd default
 for filename in *.json; do
-    sed "s/\"folderId\": 6/\"folderId\": $K8S_YEPUN_ID/g" $filename > ../list/$filename
-done
-
-cd ../list
-for filename in *.json; do
-    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-done
-
-#Yagan K8s metrics
-cd ../../k8s-yagan
-if [ ! -d "list" ] 
-then
-    mkdir list
-fi
-cd default
-for filename in *.json; do
-    sed "s/\"folderId\": 6/\"folderId\": $K8S_YAGAN_ID/g" $filename > ../list/$filename
-done
-
-cd ../list
-for filename in *.json; do
-    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-done
-
-#Chonchon K8s metrics
-cd ../../k8s-chonchon
-if [ ! -d "list" ] 
-then
-    mkdir list
-fi
-cd default
-for filename in *.json; do
-    sed "s/\"folderId\": 6/\"folderId\": $K8S_CHONCHON_ID/g" $filename > ../list/$filename
+    sed "s/\"folderId\": 6/\"folderId\": $K8S_MON_ID/g" $filename > ../list/$filename
 done
 
 cd ../list
