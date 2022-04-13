@@ -63,18 +63,6 @@ for filename in *.json; do
     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
 
-#Servers
-cd ../../servers
-
-if [ ! -d "list" ] 
-then
-    mkdir list
-fi
-
-sed "s/\"folderId\": 3/\"folderId\": $ID/g" default/server_template.json > list/server_dashboard.json
-
-/usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
-
 #Kubernetes Monitoring
 cd ../../Kubernetes-Monitoring
 if [ ! -d "list" ] 
@@ -90,3 +78,15 @@ cd ../list
 for filename in *.json; do
     /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
+
+#Servers
+cd ../../servers
+
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
+
+sed "s/\"folderId\": 3/\"folderId\": $ID/g" default/server_template.json > list/server_dashboard.json
+
+/usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
