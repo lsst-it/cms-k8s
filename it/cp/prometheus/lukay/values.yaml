@@ -1867,7 +1867,7 @@ prometheus:
 
     ## Loadbalancer IP
     ## Only use if service.type is "LoadBalancer"
-    loadBalancerIP: "139.229.160.202"
+    loadBalancerIP: "139.229.160.212"
     loadBalancerSourceRanges: []
 
     ## Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
