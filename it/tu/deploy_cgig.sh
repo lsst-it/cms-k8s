@@ -2,15 +2,20 @@
 set -ex
 #  Create Namespace
 kubectl create ns it-monitoring
+#  Deploy Cert-Manager Issuer
+kubectl apply -n it-monitoring -f cert-manager/secret.yaml
+kubectl apply -n it-monitoring -f cert-manager/letsencrypt.yaml
+kubectl apply -n it-monitoring -f cert-manager/letsencrypt-staging.yaml
+kubectl wait --for=condition=ready --timeout=180s -n it-monitoring issuer/letsencrypt
+kubectl wait --for=condition=ready --timeout=180s -n it-monitoring issuer/letsencrypt-staging
 #  Deploy InfluxDB
-kubectl apply -n it-monitoring -f influxdb/influxdb-credentials.yaml
 kubectl apply -n it-monitoring -f influxdb/svc-account.yaml
 kubectl apply -n it-monitoring -f influxdb/configmap.yaml
 kubectl apply -n it-monitoring -f influxdb/service.yaml
 kubectl apply -n it-monitoring -f influxdb/statefulset.yaml
 kubectl apply -n it-monitoring -f influxdb/ingress.yaml
 kubectl apply -n it-monitoring -f influxdb/job.yaml
-kubectl expose service -n it-influxdb influxdb --type=LoadBalancer --name=influx
+kubectl expose service -n it-monitoring influxdb --type=LoadBalancer --name=influx
 #  Deploy Grafana
 kubectl apply -n it-monitoring -f grafana/influxdb-credentials.yaml
 kubectl apply -n it-monitoring -f grafana/grafana-credentials.yaml
