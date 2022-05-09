@@ -4,7 +4,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: influxdb-set-auth
-  namespace: it-influxdb
+  namespace: it-monitoring
   labels:
     helm.sh/chart: influxdb-4.8.5
     app.kubernetes.io/name: influxdb

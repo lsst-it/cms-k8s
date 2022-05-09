@@ -1,0 +1,20 @@
+---
+# Source: graylog/templates/rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: graylog
+  namespace: graylog
+  labels:
+    helm.sh/chart: graylog-1.6.6
+    app.kubernetes.io/name: graylog
+    app.kubernetes.io/instance: "graylog"
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/version: "3.1"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: graylog
+subjects:
+- kind: ServiceAccount
+  name: graylog

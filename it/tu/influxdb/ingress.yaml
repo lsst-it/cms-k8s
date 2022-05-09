@@ -4,7 +4,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: influxdb
-  namespace: it-influxdb
+  namespace: it-monitoring
   labels:
     helm.sh/chart: influxdb-4.8.5
     app.kubernetes.io/name: influxdb
@@ -12,7 +12,7 @@ metadata:
     app.kubernetes.io/version: "1.8.0"
     app.kubernetes.io/managed-by: Helm
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-dns"
+    cert-manager.io/issuer: "letsencrypt"
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:

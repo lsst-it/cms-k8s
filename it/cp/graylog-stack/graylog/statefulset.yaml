@@ -1,0 +1,186 @@
+---
+# Source: graylog/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: graylog
+  namespace: graylog
+  labels:
+    helm.sh/chart: graylog-1.6.6
+    app.kubernetes.io/name: graylog
+    app.kubernetes.io/instance: "graylog"
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/version: "3.1"
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: graylog
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: graylog
+  serviceName: graylog
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: graylog
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: graylog
+        app.kubernetes.io/version: "3.1"
+        helm.sh/chart: graylog-1.5.8
+    spec:
+      containers:
+      - command:
+        - /entrypoint.sh
+        env:
+        - name: GRAYLOG_SERVER_JAVA_OPTS
+          value: '-Djava.net.preferIPv4Stack=true -XX:NewRatio=1 -server -XX:+ResizeTLAB
+            -XX:+UseConcMarkSweepGC -XX:+CMSConcurrentMTEnabled -XX:+CMSClassUnloadingEnabled
+            -XX:+UseParNewGC -XX:-OmitStackTraceInFastThrow -XX:+UnlockExperimentalVMOptions
+            -XX:+UseCGroupMemoryLimitForHeap '
+        - name: GRAYLOG_PASSWORD_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: graylog-password-secret
+              name: graylog
+        - name: GRAYLOG_ROOT_PASSWORD_SHA2
+          valueFrom:
+            secretKeyRef:
+              key: graylog-password-sha2
+              name: graylog
+        image: graylog/graylog:3.1
+        imagePullPolicy: IfNotPresent
+        lifecycle:
+          preStop:
+            exec:
+              command:
+              - bash
+              - -ec
+              - |
+                curl  -XPOST -sS \
+                  -u "admin:${GRAYLOG_PASSWORD_SECRET}" \
+                  -H "X-Requested-By: graylog" \
+                  http://localhost:9000/api/system/shutdown/shutdown
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/system/lbstatus
+            port: 9000
+            scheme: HTTP
+          initialDelaySeconds: 120
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 5
+        name: graylog-server
+        ports:
+        - containerPort: 9000
+          name: graylog
+          protocol: TCP
+        - containerPort: 5514
+          name: syslog
+          protocol: UDP
+        - containerPort: 6514
+          name: network
+          protocol: UDP
+        - containerPort: 7514
+          name: pdu
+          protocol: UDP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/system/lbstatus
+            port: 9000
+            scheme: HTTP
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: 500m
+            memory: 1Gi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /usr/share/graylog/data/journal
+          name: journal
+        - mountPath: /usr/share/graylog/config
+          name: config
+        - mountPath: /entrypoint.sh
+          name: entrypoint
+          subPath: entrypoint.sh
+        - mountPath: /k8s
+          name: kubectl
+        - mountPath: /usr/share/GeoIP
+          name: geoipdir
+      dnsPolicy: ClusterFirst
+      initContainers:
+      - command:
+        - /bin/sh
+        - -c
+        - |
+          rm -rf /usr/share/graylog/data/journal/lost+found
+          wget https://storage.googleapis.com/kubernetes-release/release/v1.16.3/bin/linux/amd64/kubectl -O /k8s/kubectl
+          chmod +x /k8s/kubectl
+
+          GRAYLOG_HOME=/usr/share/graylog
+          chown -R 1100:1100 ${GRAYLOG_HOME}/data/
+        image: alpine
+        imagePullPolicy: IfNotPresent
+        name: setup
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /usr/share/graylog/data/journal
+          name: journal
+        - mountPath: /k8s
+          name: kubectl
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: graylog
+      serviceAccountName: graylog
+      terminationGracePeriodSeconds: 120
+      volumes:
+      - configMap:
+          defaultMode: 420
+          items:
+          - key: graylog.conf
+            mode: 292
+            path: graylog.conf
+          - key: log4j2.xml
+            mode: 292
+            path: log4j2.xml
+          name: graylog
+        name: config
+      - configMap:
+          defaultMode: 420
+          items:
+          - key: entrypoint.sh
+            mode: 365
+            path: entrypoint.sh
+          name: graylog
+        name: entrypoint
+      - emptyDir: {}
+        name: kubectl
+      - hostPath:
+          path: /var/tmp/
+          type: Directory
+        name: geoipdir
+  updateStrategy:
+    type: RollingUpdate
+  volumeClaimTemplates:
+  - metadata:
+      creationTimestamp: null
+      name: journal
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: "800Gi"

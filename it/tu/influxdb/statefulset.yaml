@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: influxdb
-  namespace: it-influxdb
+  namespace: it-monitoring
   labels:
     helm.sh/chart: influxdb-4.8.5
     app.kubernetes.io/name: influxdb

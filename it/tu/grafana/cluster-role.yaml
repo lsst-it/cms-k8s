@@ -10,4 +10,5 @@ metadata:
     app.kubernetes.io/version: "7.2.0"
     app.kubernetes.io/managed-by: Helm
   name: grafana-clusterrole
+  namespace: it-monitoring
 rules: []

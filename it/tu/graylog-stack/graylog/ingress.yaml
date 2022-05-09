@@ -1,0 +1,31 @@
+---
+# Source: graylog/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+  labels:
+    helm.sh/chart: graylog-1.6.6
+    app.kubernetes.io/name: graylog
+    app.kubernetes.io/instance: "graylog"
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/version: "3.1"
+    app.kubernetes.io/component: "web"
+  name: graylog-web
+  namespace: graylog
+spec:
+  tls:
+  - hosts:
+    - it-graylog.tu.lsst.org
+    secretName: graylog-tls
+  rules:
+  - host: it-graylog.tu.lsst.org
+    http:
+      paths:
+      - backend:
+          serviceName: graylog-web
+          servicePort: graylog
+  

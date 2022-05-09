@@ -1,0 +1,23 @@
+---
+# Source: graylog/templates/role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: graylog
+  namespace: graylog
+  labels:
+    app.kubernetes.io/name: graylog
+    helm.sh/chart: graylog-1.6.6
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/instance: "graylog"
+    app.kubernetes.io/version: "3.1"
+rules:
+- apiGroups:
+    - ""
+  resources:
+    - pods
+    - secrets
+  verbs:
+    - get
+    - list
+    - patch

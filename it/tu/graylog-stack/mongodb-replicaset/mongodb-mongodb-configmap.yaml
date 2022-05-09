@@ -1,0 +1,15 @@
+---
+# Source: graylog/charts/mongodb-replicaset/templates/mongodb-mongodb-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: mongodb-replicaset
+    chart: mongodb-replicaset-3.11.2
+    heritage: Helm
+    release: graylog
+  name: graylog-mongodb-replicaset-mongodb
+  namespace: it-monitoring
+data:
+  mongod.conf: |
+    {}
