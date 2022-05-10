@@ -64,14 +64,14 @@ data:
   graylog.conf: "node_id_file = /usr/share/graylog/data/journal/node-id\nroot_username
     = admin\nroot_email = \nroot_timezone = UTC\nplugin_dir = /usr/share/graylog/plugin\nhttp_bind_address
     = 0.0.0.0:9000\nhttp_external_uri = https://it-graylog.tu.lsst.org/\nelasticsearch_hosts
-    = http://graylog-elasticsearch-client.graylog.svc.cluster.local:9200\nallow_leading_wildcard_searches
+    = http://graylog-elasticsearch-client.it-monitoring.svc.cluster.local:9200\nallow_leading_wildcard_searches
     = false\nallow_highlighting = false\noutput_batch_size = 500\noutput_flush_interval
     = 1\noutput_fault_count_threshold = 5\noutput_fault_penalty_seconds = 30\nprocessbuffer_processors
     = 5\noutputbuffer_processors = 3\nprocessor_wait_strategy = blocking\nring_size
     = 65536\ninputbuffer_ring_size = 65536\ninputbuffer_processors = 2\ninputbuffer_wait_strategy
     = blocking\nmessage_journal_enabled = true\n# Do not change `message_journal_dir`
     location\nmessage_journal_dir = /usr/share/graylog/data/journal\nlb_recognition_period_seconds
-    = 3\n# Use a replica set instead of a single host\nmongodb_uri = mongodb://graylog-mongodb-replicaset.graylog.svc.cluster.local:27017/graylog?replicaSet=rs0\nmongodb_max_connections
+    = 3\n# Use a replica set instead of a single host\nmongodb_uri = mongodb://graylog-mongodb-replicaset.it-monitoring.svc.cluster.local:27017/graylog?replicaSet=rs0\nmongodb_max_connections
     = 1000\nmongodb_threads_allowed_to_block_multiplier = 5\n# Email transport\ntransport_email_enabled
     = false\ntransport_email_hostname = \ntransport_email_port = 2587\ntransport_email_use_auth
     = true\ntransport_email_use_tls = true\ntransport_email_use_ssl = false\ntransport_email_auth_username
