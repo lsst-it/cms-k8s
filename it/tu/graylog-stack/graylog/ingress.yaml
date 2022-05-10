@@ -15,7 +15,7 @@ metadata:
     app.kubernetes.io/version: "3.1"
     app.kubernetes.io/component: "web"
   name: graylog-web
-  namespace: graylog
+  namespace: it-monitoring
 spec:
   tls:
   - hosts:
