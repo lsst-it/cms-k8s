@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 set -xuo pipefail
 
-INFLUXDB_NAMESPACE='it-influxdb'
 INFLUXDB_USER='telegraf'
-GRAFANA_NAMESPACE='it-grafana'
+NAMESPACE='it-monitoring'
 DATABASE='telegraf'
 
 INFLUXDB_HOST="$(kubectl -n ${NAMESPACE} get ingress influxdb -ojson | jq -r '.spec.tls[0].hosts[0]')"

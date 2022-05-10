@@ -4,7 +4,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: grafana
-  namespace: it-grafana
+  namespace: it-monitoring
   labels:
     helm.sh/chart: grafana-5.6.12
     app.kubernetes.io/name: grafana
@@ -37,7 +37,7 @@ data:
       isDefault: true
       name: IT InfluxDB
       type: influxdb
-      url: http://influxdb.it-influxdb:8086
+      url: http://influxdb.it-monitoring:8086
       user: ${INFLUXDB_USERNAME}
       password: ${INFLUXDB_PASSWORD}
     - access: proxy
@@ -45,41 +45,17 @@ data:
       isDefault: false
       name: IT InfluxDB internal
       type: influxdb
-      url: http://influxdb.it-influxdb:8086
+      url: http://influxdb.it-monitoring:8086
       user: ${INFLUXDB_USERNAME}
       password: ${INFLUXDB_PASSWORD}
-    - name: yepun-prometheus
+    - name: pillan-prometheus
       type: prometheus
-      uid: yepun-prometheus
-      url: http://yepun-metrics.cp.lsst.org:9090/
+      uid: pillan-prometheus
+      url: http://pillan-metrics.tu.lsst.org:9090/
       access: proxy
       isDefault: false
       jsonData:
-        timeInterval: 30s   
-    - name: yagan-prometheus
-      type: prometheus
-      uid: yagan-prometheus
-      url: http://yagan-metrics.cp.lsst.org:9090/
-      access: proxy
-      isDefault: false
-      jsonData:
-        timeInterval: 30s      
-    - name: chonchon-prometheus
-      type: prometheus
-      uid: chonchon-prometheus
-      url: http://chonchon-metrics.cp.lsst.org:9090/
-      access: proxy
-      isDefault: false
-      jsonData:
-        timeInterval: 30s    
-    - name: lukay-prometheus
-      type: prometheus
-      uid: lukay-prometheus
-      url: http://lukay-metrics.cp.lsst.org:9090/
-      access: proxy
-      isDefault: false
-      jsonData:
-        timeInterval: 30s    
+        timeInterval: 30s     
   enabled: |
     false
   label: |

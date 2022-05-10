@@ -1,0 +1,149 @@
+---
+# Source: graylog/charts/elasticsearch/templates/master-statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: elasticsearch
+    chart: elasticsearch-1.32.2
+    component: "master"
+    heritage: Helm
+    release: graylog
+  name: graylog-elasticsearch-master
+  namespace: graylog
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: elasticsearch
+      component: master
+      release: graylog
+      role: master
+  serviceName: graylog-elasticsearch-master
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: elasticsearch
+        component: master
+        release: graylog
+        role: master
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: elasticsearch
+                  component: master
+                  release: graylog
+              topologyKey: kubernetes.io/hostname
+            weight: 1
+      containers:
+      - env:
+        - name: NODE_DATA
+          value: "false"
+        - name: DISCOVERY_SERVICE
+          value: graylog-elasticsearch-discovery
+        - name: PROCESSORS
+          valueFrom:
+            resourceFieldRef:
+              divisor: "0"
+              resource: limits.cpu
+        - name: ES_JAVA_OPTS
+          value: '-Djava.net.preferIPv4Stack=true -Xms512m -Xmx512m  '
+        - name: MINIMUM_MASTER_NODES
+          value: "2"
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+        imagePullPolicy: IfNotPresent
+        name: elasticsearch
+        ports:
+        - containerPort: 9300
+          name: transport
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /_cluster/health?local=true
+            port: 9200
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: 25m
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+        - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
+          name: config
+          subPath: elasticsearch.yml
+      dnsPolicy: ClusterFirst
+      initContainers:
+      - command:
+        - sysctl
+        - -w
+        - vm.max_map_count=262144
+        image: busybox:latest
+        imagePullPolicy: Always
+        name: sysctl
+        resources: {}
+        securityContext:
+          privileged: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      - command:
+        - /bin/bash
+        - -c
+        - |
+          set -e; set -x; chown elasticsearch:elasticsearch /usr/share/elasticsearch/data; for datadir in $(find /usr/share/elasticsearch/data -mindepth 1 -maxdepth 1 -not -name ".snapshot"); do
+            chown -R elasticsearch:elasticsearch $datadir;
+          done; chown elasticsearch:elasticsearch /usr/share/elasticsearch/logs; for logfile in $(find /usr/share/elasticsearch/logs -mindepth 1 -maxdepth 1 -not -name ".snapshot"); do
+            chown -R elasticsearch:elasticsearch $logfile;
+          done
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+        imagePullPolicy: IfNotPresent
+        name: chown
+        resources: {}
+        securityContext:
+          runAsUser: 0
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 1000
+      serviceAccount: graylog-elasticsearch-master
+      serviceAccountName: graylog-elasticsearch-master
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: graylog-elasticsearch
+        name: config
+  updateStrategy:
+    type: OnDelete
+  volumeClaimTemplates:
+  - metadata:
+      creationTimestamp: null
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: "10Gi"
+    
