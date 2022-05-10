@@ -12,4 +12,4 @@ GRAFANA_PASSWORD=\'"$(kubectl -n ${NAMESPACE} get secret grafana-credentials -oj
 kubectl exec -it -n $NAMESPACE influxdb-0 -- \
     /usr/bin/influx -username $INFLUXDB_USER -password $INFLUXDB_PASSWORD -execute "CREATE DATABASE ${DATABASE}"
 kubectl exec -it -n ${NAMESPACE} influxdb-0 -- \
-    /usr/bin/influx -host "${INFLUXDB_HOST}" -port 443 -ssl -username "${INFLUXDB_USER}" -password  "${INFLUXDB_PASSWORD}" -execute "USE DATABASE ${DATABASE}; CREATE USER telegraf WITH PASSWORD ${GRAFANA_PASSWORD} WITH ALL PRIVILEGES"
+    /usr/bin/influx -username $INFLUXDB_USER -password $INFLUXDB_PASSWORD -execute  "USE DATABASE ${DATABASE}; CREATE USER telegraf WITH PASSWORD ${GRAFANA_PASSWORD} WITH ALL PRIVILEGES"
