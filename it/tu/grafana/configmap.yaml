@@ -37,7 +37,7 @@ data:
       isDefault: true
       name: IT InfluxDB
       type: influxdb
-      url: http://influxdb.it-influxdb:8086
+      url: http://influxdb.it-monitoring:8086
       user: ${INFLUXDB_USERNAME}
       password: ${INFLUXDB_PASSWORD}
     - access: proxy
@@ -45,7 +45,7 @@ data:
       isDefault: false
       name: IT InfluxDB internal
       type: influxdb
-      url: http://influxdb.it-influxdb:8086
+      url: http://influxdb.it-monitoring:8086
       user: ${INFLUXDB_USERNAME}
       password: ${INFLUXDB_PASSWORD}
     - name: pillan-prometheus
