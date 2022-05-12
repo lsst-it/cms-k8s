@@ -21,18 +21,25 @@ fi
 ssh $SSH_USER@$SERVER "/usr/bin/kubectl wait --for=condition=ready pod -n it-grafana ${POD} > /dev/null 2>&1"
 
 for folder in "${Folders[@]}"; do
-  /usr/bin/curl -s -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/folders -d "{\"id\":\"$counter\",\"title\":\"$folder\"}" > /dev/null 2>&1
+  /usr/bin/curl -s -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/folders -d "{\"id\":\"$counter\",\"title\":\"$folder\"}" > /dev/null 2>&1
   read -r NAME NUMBER < <(/usr/bin/curl -s -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X GET https://${URL}/api/folders | jq -r '.[] | "\(.title) \(.id)"' | grep $folder)
   echo $NUMBER > ID/$NAME
   counter=$((counter+1))
 done
+
 declare CLUSTERS_ID="$(cat ID/clusters)"
 declare SERVICES_ID="$(cat ID/services)"
 declare SERVERS_ID="$(cat ID/servers)"
 declare K8S_MON_ID="$(cat ID/Kubernetes-Monitoring)"
 
+#Generic
+cd generic
+for filename in *.json; do
+    /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+done
+
 #Clusters
-cd clusters
+cd ../../clusters
 if [ ! -d "list" ] 
 then
     mkdir list
@@ -44,7 +51,7 @@ done
 
 cd ../list
 for filename in *.json; do
-    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+    /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
 
 #Services
@@ -60,7 +67,7 @@ done
 
 cd ../list
 for filename in *.json; do
-    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+    /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
 
 #Kubernetes Monitoring
@@ -76,7 +83,7 @@ done
 
 cd ../list
 for filename in *.json; do
-    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+    /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done
 
 #Servers
@@ -89,4 +96,4 @@ fi
 
 sed "s/\"folderId\": 3/\"folderId\": $SERVERS_ID/g" default/server_template.json > list/server_dashboard.json
 
-/usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
+/usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
