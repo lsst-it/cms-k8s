@@ -1,0 +1,12 @@
+---
+# Source: fluent-bit/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: it-fluentbit-fluent-bit
+  labels:
+    helm.sh/chart: fluent-bit-0.20.1
+    app.kubernetes.io/name: fluent-bit
+    app.kubernetes.io/instance: it-fluentbit
+    app.kubernetes.io/version: "1.9.3"
+    app.kubernetes.io/managed-by: Helm
