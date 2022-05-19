@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -eox
+set -ex
+
 NAMESPACE='it-fluentbit'
 kubectl create ns $NAMESPACE
 kubectl apply -n $NAMESPACE -f svc-account.yaml

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eox
+set -ex
 
 NAMESPACE='it-fluentbit'
 
