@@ -35,6 +35,15 @@ cd it/ls/graylog-stack
 ./deploy.sh
 ```
 
+Fluent-bit Deployment
+------------------------
+
+To deploy fluent-bit, move into the folder and run the deploy.sh script:
+
+```bash
+cd it/cp/fluent-bit
+./deploy.sh
+```
 Charts Deployment
 -----------------
 
