@@ -1,7 +1,7 @@
-Grafana + InfluxDB + Graylog over Kubernetes
+Centralized Monitoring System over Kubernetes
 ==================================
 
-Depending on the site to be deployed, it will install either it-grafana.ls.lsst.org or it-grafana.cp.lsst.org
+Depending on the site to be deployed, it will install graylog, grafana, influxdb, telegraf, kube-prometheus and/or fluent-bit
 
 Grafana+InfluxDB Deployment
 ---------------------------
