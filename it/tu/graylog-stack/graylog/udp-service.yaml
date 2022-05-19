@@ -29,7 +29,11 @@ spec:
   - name: firewall
     port: 7514
     protocol: UDP
-    targetPort: 7514  
+    targetPort: 7514
+  - name: kubernetes
+    port: 12201
+    protocol: UDP
+    targetPort: 12201
   selector:
     app.kubernetes.io/name: graylog
     app.kubernetes.io/instance: "graylog"

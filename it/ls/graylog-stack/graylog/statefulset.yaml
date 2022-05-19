@@ -87,6 +87,9 @@ spec:
         - containerPort: 7514
           name: pdu
           protocol: UDP
+        - containerPort: 12201
+          name: kubernetes
+          protocol: UDP
         readinessProbe:
           failureThreshold: 3
           httpGet:
