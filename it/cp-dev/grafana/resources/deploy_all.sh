@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -xuo pipefail
 
-SERVER='yepun01.cp.lsst.org'
+SERVER='orion01.cp.lsst.org'
 ROOT_PATH=$(pwd)
 URL="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafana -ojson | jq -r '.spec.tls[0].hosts[0]'')"
 USER="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"
@@ -32,46 +32,8 @@ declare SERVICES_ID="$(cat ID/services)"
 declare SERVERS_ID="$(cat ID/servers)"
 declare K8S_MON_ID="$(cat ID/Kubernetes-Monitoring)"
 
-#Generic
-cd generic
-for filename in *.json; do
-    /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-done
-
-#Clusters
-cd ../../clusters
-if [ ! -d "list" ] 
-then
-    mkdir list
-fi
-cd default
-for filename in *.json; do
-    sed "s/\"folderId\": 4/\"folderId\": $CLUSTERS_ID/g" $filename > ../list/$filename
-done
-
-cd ../list
-for filename in *.json; do
-    /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-done
-
-#Services
-cd ../../services
-if [ ! -d "list" ] 
-then
-    mkdir list
-fi
-cd default
-for filename in *.json; do
-    sed "s/\"folderId\": 5/\"folderId\": $SERVICES_ID/g" $filename > ../list/$filename
-done
-
-cd ../list
-for filename in *.json; do
-    /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
-done
-
 #Kubernetes Monitoring
-cd ../../Kubernetes-Monitoring
+cd Kubernetes-Monitoring
 if [ ! -d "list" ] 
 then
     mkdir list
