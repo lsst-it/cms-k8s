@@ -47,39 +47,7 @@ data:
       type: influxdb
       url: http://influxdb.it-influxdb:8086
       user: ${INFLUXDB_USERNAME}
-      password: ${INFLUXDB_PASSWORD}
-    - name: yepun-prometheus
-      type: prometheus
-      uid: yepun-prometheus
-      url: http://yepun-metrics.cp.lsst.org:9090/
-      access: proxy
-      isDefault: false
-      jsonData:
-        timeInterval: 30s   
-    - name: yagan-prometheus
-      type: prometheus
-      uid: yagan-prometheus
-      url: http://yagan-metrics.cp.lsst.org:9090/
-      access: proxy
-      isDefault: false
-      jsonData:
-        timeInterval: 30s      
-    - name: chonchon-prometheus
-      type: prometheus
-      uid: chonchon-prometheus
-      url: http://chonchon-metrics.cp.lsst.org:9090/
-      access: proxy
-      isDefault: false
-      jsonData:
-        timeInterval: 30s    
-    - name: lukay-prometheus
-      type: prometheus
-      uid: lukay-prometheus
-      url: http://lukay-metrics.cp.lsst.org:9090/
-      access: proxy
-      isDefault: false
-      jsonData:
-        timeInterval: 30s    
+      password: ${INFLUXDB_PASSWORD}  
   enabled: |
     false
   label: |

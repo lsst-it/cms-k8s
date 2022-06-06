@@ -7,7 +7,7 @@ URL="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafa
 USER="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"
 PASSWORD="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-password"]' | base64 --decode)"
 POD="$(ssh hreinking_b@$SERVER '/usr/bin/kubectl get -n it-grafana pods -o json ' | jq -r '.items[].metadata.name')"
-Folders=(clusters servers services Kubernetes-Monitoring)
+Folders=(servers Kubernetes-Monitoring)
 SSH_USER="hreinking_b"
 counter=$RANDOM
 NUMBER='0'
@@ -27,8 +27,6 @@ for folder in "${Folders[@]}"; do
   counter=$((counter+1))
 done
 
-declare CLUSTERS_ID="$(cat ID/clusters)"
-declare SERVICES_ID="$(cat ID/services)"
 declare SERVERS_ID="$(cat ID/servers)"
 declare K8S_MON_ID="$(cat ID/Kubernetes-Monitoring)"
 
