@@ -1,0 +1,24 @@
+---
+# Source: graylog/templates/headless-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: graylog
+  labels:
+    helm.sh/chart: graylog-2.1.3
+    app.kubernetes.io/name: graylog
+    app.kubernetes.io/instance: "graylog"
+    app.kubernetes.io/managed-by: "Helm"
+    app.kubernetes.io/version: "4.2.7"
+  annotations:
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+spec:
+  ports:
+    - name: graylog
+      port: 9000
+  type: ClusterIP
+  clusterIP: None
+  publishNotReadyAddresses: true
+  selector:
+    app.kubernetes.io/name: graylog
+    app.kubernetes.io/instance: "graylog"
