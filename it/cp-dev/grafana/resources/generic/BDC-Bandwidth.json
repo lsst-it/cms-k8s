@@ -1,0 +1,4404 @@
+{
+  "dashboard":
+  {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": null,
+    "links": [],
+    "panels": [
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 17,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "id": 4,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "Eth1/1 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/1"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/33 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/33"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/41 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/41"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/49 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/1 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/1"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/33 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/33"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/41 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "G",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/41"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/49 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "H",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/53 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "I",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/53"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/53 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "J",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.1"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/53"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "BDC Core Router 1 - Traffic",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "MBs",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 17,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "id": 8,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "Eth1/2 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.2"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/2"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/33 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(\"ifHighSpeed\") FROM \"snmp\" WHERE (\"agent_host\" = '10.48.1.2' AND \"ifName\" = 'Ethernet1/33') AND $timeFilter GROUP BY time($__interval) fill(none)",
+            "rawQuery": false,
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.2"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/33"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/49 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.2"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/2 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.2"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/2"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/33 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(\"ifHighSpeed\") FROM \"snmp\" WHERE (\"agent_host\" = '10.48.1.2' AND \"ifName\" = 'Ethernet1/33') AND $timeFilter GROUP BY time($__interval) fill(none)",
+            "rawQuery": false,
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.2"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/33"
+              }
+            ]
+          },
+          {
+            "alias": "Eth1/49 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.2"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "BDC Core Router 2 - Traffic",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "GBs",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 13,
+          "w": 12,
+          "x": 0,
+          "y": 17
+        },
+        "hiddenSeries": false,
+        "id": 10,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "Vlan300",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan300"
+              }
+            ]
+          },
+          {
+            "alias": "Vlan301",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan301"
+              }
+            ]
+          },
+          {
+            "alias": "Vlan330",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan330"
+              }
+            ]
+          },
+          {
+            "alias": "Vlan340",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "G",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan340"
+              }
+            ]
+          },
+          {
+            "alias": "Vlan350",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "I",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan350"
+              }
+            ]
+          },
+          {
+            "alias": "Vlan360",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "K",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan360"
+              }
+            ]
+          },
+          {
+            "alias": "Vlan370",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "M",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan370"
+              }
+            ]
+          },
+          {
+            "alias": "Loopback0",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "O",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "loopback0"
+              }
+            ]
+          },
+          {
+            "alias": "Loopback2",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "Q",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "loopback2"
+              }
+            ]
+          },
+          {
+            "alias": "Trunk to LHN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "S",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "Trunk to DTN01",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "U",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/50"
+              }
+            ]
+          },
+          {
+            "alias": "10.48.0.19/31",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "10.48.0.14/31",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/52"
+              }
+            ]
+          },
+          {
+            "alias": "10.48.0.22/31",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/53"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Border Router 1",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "MBs",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 13,
+          "w": 12,
+          "x": 12,
+          "y": 17
+        },
+        "hiddenSeries": false,
+        "id": 11,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "Vlan302",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan302"
+              }
+            ]
+          },
+          {
+            "alias": "Vlan304",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vlan304"
+              }
+            ]
+          },
+          {
+            "alias": "Loopback0",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "loopback0"
+              }
+            ]
+          },
+          {
+            "alias": "Loopback2",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "G",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "loopback2"
+              }
+            ]
+          },
+          {
+            "alias": "Trunk to LHN - Backup Link",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "I",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "10.48.0.21/31",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "K",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "10.48.0.13/31",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/52"
+              }
+            ]
+          },
+          {
+            "alias": "10.48.0.23/31",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/53"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Border Router 2",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "MBs",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "IT InfluxDB",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 14,
+          "w": 24,
+          "x": 0,
+          "y": 30
+        },
+        "hiddenSeries": false,
+        "id": 2,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "VLAN-2100 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2100"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2101 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(\"ifHCInOctets\") / 1000000 FROM \"snmp\" WHERE (\"agent_host\" = '10.49.0.254' AND \"ifName\" = 'VLAN-2101') AND $timeFilter GROUP BY time($__interval) fill(none)",
+            "rawQuery": false,
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2101"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2102 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2102"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2200 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2200"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2300 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2300"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2301 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "G",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2301"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2400 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "H",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2400"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2401 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "I",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2401"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2402 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "J",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2402"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2500 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "K",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2500"
+              }
+            ]
+          },
+          {
+            "alias": "Te1/1/1",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "O",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Lo0"
+              }
+            ]
+          },
+          {
+            "alias": "WLC Port Channel",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "P",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Po11"
+              }
+            ]
+          },
+          {
+            "alias": "Te2/1/2",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "Q",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Te2/1/2"
+              }
+            ]
+          },
+          {
+            "alias": "ACI lf31",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "R",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Te1/0/10"
+              }
+            ]
+          },
+          {
+            "alias": "ACI lf32",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "S",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Te2/0/10"
+              }
+            ]
+          },
+          {
+            "alias": "AURA-BR",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "T",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Te1/0/12"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2100 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "U",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " *-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2100"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2101 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(\"ifHCInOctets\") / 1000000 FROM \"snmp\" WHERE (\"agent_host\" = '10.49.0.254' AND \"ifName\" = 'VLAN-2101') AND $timeFilter GROUP BY time($__interval) fill(none)",
+            "rawQuery": false,
+            "refId": "V",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2101"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2102 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "W",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2102"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2200 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "X",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2200"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2300 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "Y",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2300"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2301 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "Z",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2301"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2400 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "NA",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2400"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2401 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "NA",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2401"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2402 OutBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "NA",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2402"
+              }
+            ]
+          },
+          {
+            "alias": "VLAN-2500 InBound",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "NA",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1/ 1000000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.49.0.254"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Vl2500"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "BDC Distribution Bandwidth",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "MBs",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 26,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "BDC Bandwidth",
+    "uid": "0CqnJ0wGk",
+    "version": 12
+  }
+}
