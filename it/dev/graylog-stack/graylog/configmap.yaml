@@ -162,18 +162,12 @@ data:
     echo "Downloading Graylog Plugins..."
     echo "Downloading https://github.com/KongZ/graylog-plugin-slack-notification/releases/download/v4.1.1/graylog-plugin-slack-notification-4.1.1.jar ..."
     curl -s --location --retry 3 -o ${GRAYLOG_PLUGIN_DIR}/graylog-plugin-slack-notification-4.1.1.jar "https://github.com/KongZ/graylog-plugin-slack-notification/releases/download/v4.1.1/graylog-plugin-slack-notification-4.1.1.jar"
-    echo "Downloading https://github.com/KongZ/graylog-plugin-function-check-diff/releases/download/v1.0.1/graylog-plugin-function-check-diff-1.0.1.jar ..."
-    curl -s --location --retry 3 -o ${GRAYLOG_PLUGIN_DIR}/graylog-plugin-function-check-diff-1.0.1.jar "https://github.com/KongZ/graylog-plugin-function-check-diff/releases/download/v1.0.1/graylog-plugin-function-check-diff-1.0.1.jar"
-    echo "Downloading https://github.com/KongZ/graylog-plugin-google-cloud-pubsub/releases/download/v1.0.4/graylog-plugin-google-cloud-pubsub-1.0.4.jar ..."
-    curl -s --location --retry 3 -o ${GRAYLOG_PLUGIN_DIR}/graylog-plugin-google-cloud-pubsub-1.0.4.jar "https://github.com/KongZ/graylog-plugin-google-cloud-pubsub/releases/download/v1.0.4/graylog-plugin-google-cloud-pubsub-1.0.4.jar"
-    echo "Downloading https://github.com/Graylog2/graylog-plugin-auth-sso/releases/download/3.3.0/graylog-plugin-auth-sso-3.3.0.jar ..."
-    curl -s --location --retry 3 -o ${GRAYLOG_PLUGIN_DIR}/graylog-plugin-auth-sso-3.3.0.jar "https://github.com/Graylog2/graylog-plugin-auth-sso/releases/download/3.3.0/graylog-plugin-auth-sso-3.3.0.jar"
-    echo "Downloading Maxmind GeoLite2 ..."
-    curl -s --location --retry 3 -o /tmp/GeoLite2-City.tar.gz ""
-    curlreturn=$?
-    if [[ $curlreturn -eq 0 ]]; then
-      mkdir -p ${GRAYLOG_HOME}/geoip && cd ${GRAYLOG_HOME}/geoip && tar xvzf /tmp/GeoLite2-City.tar.gz --wildcards "*.mmdb" --strip-components=1 -C ${GRAYLOG_HOME}/geoip && chown -R graylog:graylog ${GRAYLOG_HOME}/geoip
-    fi
+    # echo "Downloading Maxmind GeoLite2 ..."
+    # curl -s --location --retry 3 -o /tmp/GeoLite2-City.tar.gz ""
+    # curlreturn=$?
+    # if [[ $curlreturn -eq 0 ]]; then
+    #   mkdir -p ${GRAYLOG_HOME}/geoip && cd ${GRAYLOG_HOME}/geoip && tar xvzf /tmp/GeoLite2-City.tar.gz --wildcards "*.mmdb" --strip-components=1 -C ${GRAYLOG_HOME}/geoip && chown -R graylog:graylog ${GRAYLOG_HOME}/geoip
+    # fi
     # Start Graylog
     echo "Starting graylog"
     # Original docker-entrypoint.sh in Graylog Docker will error while executing since you can't chown readonly files in `config`
