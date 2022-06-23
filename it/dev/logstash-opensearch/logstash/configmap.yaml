@@ -39,7 +39,7 @@ data:
     }
     output {
         opensearch {
-            hosts     => [":9200"]
+            hosts     => ["opensearch-cluster-master:9200"]
             index     => "logstash-logs-%{+YYYY.MM.dd}"
         }
     }
