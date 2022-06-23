@@ -4,6 +4,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: "logstash-logstash-headless"
+  namespace: opensearch
   labels:
     app: "logstash-logstash"
     chart: "logstash"

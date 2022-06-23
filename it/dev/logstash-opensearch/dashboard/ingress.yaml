@@ -4,6 +4,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: opensearch-dashboard-opensearch-dashboards
+  namespace: opensearch
   labels:
     helm.sh/chart: opensearch-dashboards-2.1.0
     app.kubernetes.io/name: opensearch-dashboards

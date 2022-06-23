@@ -4,6 +4,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: logstash-logstash
+  namespace: opensearch
   labels:
     app: "logstash-logstash"
     chart: "logstash"

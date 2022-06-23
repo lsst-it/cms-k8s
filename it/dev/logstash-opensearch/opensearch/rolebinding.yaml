@@ -10,6 +10,7 @@ metadata:
     app.kubernetes.io/version: "2.0.1"
     app.kubernetes.io/managed-by: Helm
   name: opensearch-dashboard-opensearch-dashboards-dashboards-rolebinding
+  namespace: opensearch
 roleRef:
   kind: Role
   name: opensearch-dashboard-opensearch-dashboards-dashboards

@@ -4,6 +4,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: opensearch-cluster-master-config
+  namespace: opensearch
   labels:
     helm.sh/chart: opensearch-2.1.0
     app.kubernetes.io/name: opensearch

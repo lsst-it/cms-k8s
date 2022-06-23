@@ -4,6 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: opensearch-dashboard-opensearch-dashboards
+  namespace: opensearch
   labels:
     helm.sh/chart: opensearch-dashboards-2.1.0
     app.kubernetes.io/name: opensearch-dashboards

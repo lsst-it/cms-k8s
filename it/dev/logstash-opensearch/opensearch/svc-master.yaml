@@ -4,6 +4,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: opensearch-cluster-master
+  namespace: opensearch
   labels:
     helm.sh/chart: opensearch-2.1.0
     app.kubernetes.io/name: opensearch

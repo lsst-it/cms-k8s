@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 kubectl create ns opensearch
-kubectl apply -n opensearch -f opensearch/pdb.yaml
 kubectl apply -n opensearch -f opensearch/secret.yaml
 kubectl apply -n opensearch -f opensearch/configmap.yaml
 kubectl apply -n opensearch -f opensearch/svc-master.yaml

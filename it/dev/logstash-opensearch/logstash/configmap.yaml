@@ -4,6 +4,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: logstash-logstash-pipeline
+  namespace: opensearch
   labels:
     app: "logstash-logstash"
     chart: "logstash"
