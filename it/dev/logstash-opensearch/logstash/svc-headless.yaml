@@ -1,0 +1,18 @@
+---
+# Source: logstash/templates/service-headless.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: "logstash-logstash-headless"
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+spec:
+  clusterIP: None
+  selector:
+    app: "logstash-logstash"
+  ports:
+    - name: http
+      port: 9600

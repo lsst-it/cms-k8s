@@ -1,0 +1,27 @@
+---
+# Source: opensearch/templates/service.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: opensearch-cluster-master
+  labels:
+    helm.sh/chart: opensearch-2.1.0
+    app.kubernetes.io/name: opensearch
+    app.kubernetes.io/instance: opensearch
+    app.kubernetes.io/version: "2.0.1"
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: opensearch-cluster-master
+  annotations:
+    {}
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: opensearch
+    app.kubernetes.io/instance: opensearch
+  ports:
+  - name: http
+    protocol: TCP
+    port: 9200
+  - name: transport
+    protocol: TCP
+    port: 9300

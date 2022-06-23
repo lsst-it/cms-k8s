@@ -1,0 +1,45 @@
+---
+# Source: logstash/templates/service.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: "logstash-logstash"
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+  annotations:
+    {}
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 139.229.134.153
+  selector:
+    app: "logstash-logstash"
+    chart: "logstash"
+    release: "logstash"
+  ports:
+    - name: beats
+      port: 5044
+      protocol: TCP
+      targetPort: 5044
+    - name: servers
+      port: 5514
+      protocol: UDP
+      targetPort: 5514
+    - name: network
+      port: 6514
+      protocol: UDP
+      targetPort: 6514
+    - name: firewall
+      port: 7514
+      protocol: UDP
+      targetPort: 7514
+    - name: kubernetes
+      port: 12201
+      protocol: UDP
+      targetPort: 12201
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080

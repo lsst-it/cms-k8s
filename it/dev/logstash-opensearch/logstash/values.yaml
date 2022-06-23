@@ -1,0 +1,275 @@
+---
+replicas: 3
+
+logstashConfig: {}
+#  logstash.yml: |
+#    key:
+#      nestedkey: value
+#  log4j2.properties: |
+#    key = value
+
+# Allows you to add any pipeline files in /usr/share/logstash/pipeline/
+### ***warn*** there is a hardcoded logstash.conf in the image, override it first
+logstashPipeline: 
+ logstash.conf: |
+    input {
+      syslog {
+        port => 5514
+        codec => cef
+        syslog_field => "servers"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 6514
+        codec => cef
+        syslog_field => "network"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 7514
+        codec => cef
+        syslog_field => "firewall"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 12201
+        codec => cef
+        syslog_field => "kubernetes"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+    }
+    output {
+        opensearch {
+            hosts     => [":9200"]
+            index     => "logstash-logs-%{+YYYY.MM.dd}"
+        }
+    }
+
+# Allows you to add any pattern files in your custom pattern dir
+logstashPatternDir: "/usr/share/logstash/patterns/"
+logstashPattern: {}
+#    pattern.conf: |
+#      DPKG_VERSION [-+~<>\.0-9a-zA-Z]+
+
+extraEnvs: []
+#  - name: MY_ENVIRONMENT_VAR
+#    value: the_value_goes_here
+
+# Allows you to load environment variables from kubernetes secret or config map
+envFrom: []
+# - secretRef:
+#     name: env-secret
+# - configMapRef:
+#     name: config-map
+
+# Add sensitive data to k8s secrets
+secrets: []
+#  - name: "env"
+#    value:
+#      ELASTICSEARCH_PASSWORD: "LS1CRUdJTiBgUFJJVkFURSB"
+#      api_key: ui2CsdUadTiBasRJRkl9tvNnw
+#  - name: "tls"
+#    value:
+#      ca.crt: |
+#        LS0tLS1CRUdJT0K
+#        LS0tLS1CRUdJT0K
+#        LS0tLS1CRUdJT0K
+#        LS0tLS1CRUdJT0K
+#      cert.crt: "LS0tLS1CRUdJTiBlRJRklDQVRFLS0tLS0K"
+#      cert.key.filepath: "secrets.crt" # The path to file should be relative to the `values.yaml` file.
+
+image: "docker.elastic.co/logstash/logstash"
+imageTag: "8.1.0"
+imagePullPolicy: "IfNotPresent"
+imagePullSecrets: []
+
+logstashJavaOpts: "-Xmx1g -Xms1g"
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "1536Mi"
+  limits:
+    cpu: "1000m"
+    memory: "1536Mi"
+
+volumeClaimTemplate:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: 80Gi
+
+rbac:
+  create: false
+  serviceAccountAnnotations: {}
+  serviceAccountName: ""
+  annotations:
+    {}
+    #annotation1: "value1"
+    #annotation2: "value2"
+    #annotation3: "value3"
+
+persistence:
+  enabled: false
+  annotations: {}
+
+extraVolumes:
+  []
+  # - name: extras
+  #   emptyDir: {}
+
+extraVolumeMounts:
+  []
+  # - name: extras
+  #   mountPath: /usr/share/extras
+  #   readOnly: true
+
+extraContainers:
+  []
+  # - name: do-something
+  #   image: busybox
+  #   command: ['do', 'something']
+
+extraInitContainers:
+  []
+  # - name: do-something
+  #   image: busybox
+  #   command: ['do', 'something']
+
+# This is the PriorityClass settings as defined in
+# https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass
+priorityClassName: ""
+
+# By default this will make sure two pods don't end up on the same node
+# Changing this to a region would allow you to spread pods across regions
+antiAffinityTopologyKey: "kubernetes.io/hostname"
+
+# Hard means that by default pods will only be scheduled if there are enough nodes for them
+# and that they will never end up on the same node. Setting this to soft will do this "best effort"
+antiAffinity: "hard"
+
+# This is the node affinity settings as defined in
+# https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity
+nodeAffinity: {}
+
+# This is inter-pod affinity settings as defined in
+# https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity
+podAffinity: {}
+
+# The default is to deploy all pods serially. By setting this to parallel all pods are started at
+# the same time when bootstrapping the cluster
+podManagementPolicy: "Parallel"
+
+httpPort: 9600
+
+# Custom ports to add to logstash
+extraPorts:
+  []
+  # - name: beats
+  #   containerPort: 5001
+
+updateStrategy: RollingUpdate
+
+# This is the max unavailable setting for the pod disruption budget
+# The default value of 1 will make sure that kubernetes won't allow more than 1
+# of your pods to be unavailable during maintenance
+maxUnavailable: 1
+
+podSecurityContext:
+  fsGroup: 1000
+  runAsUser: 1000
+
+securityContext:
+  capabilities:
+    drop:
+      - ALL
+  # readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+# How long to wait for logstash to stop gracefully
+terminationGracePeriod: 120
+
+# Probes
+# Default probes are using `httpGet` which requires that `http.host: 0.0.0.0` is part of
+# `logstash.yml`. If needed probes can be disabled or overridden using the following syntaxes:
+#
+# disable livenessProbe
+# livenessProbe: null
+#
+# replace httpGet default readinessProbe by some exec probe
+# readinessProbe:
+#   httpGet: null
+#   exec:
+#     command:
+#       - curl
+#      - localhost:9600
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 300
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 3
+  successThreshold: 1
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 60
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 3
+  successThreshold: 3
+
+service:
+  annotations: {}
+  type: LoadBalancer
+  loadBalancerIP: "139.229.134.153"
+  ports:
+    - name: beats
+      port: 5044
+      protocol: TCP
+      targetPort: 5044
+    - name: servers
+      port: 5514
+      protocol: UDP
+      targetPort: 5514
+    - name: network
+      port: 6514
+      protocol: UDP
+      targetPort: 6514
+    - name: firewall
+      port: 7514
+      protocol: UDP
+      targetPort: 7514
+    - name: kubernetes
+      port: 12201
+      protocol: UDP
+      targetPort: 12201
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+  pathtype: ImplementationSpecific
+  hosts:
+    - host: collector.dev.lsst.local
+      paths:
+        - path: /beats
+          servicePort: 5044
+        - path: /http
+          servicePort: 8080
+  tls:
+   - secretName: collector-tls
+     hosts:
+       - collector.dev.lsst.local

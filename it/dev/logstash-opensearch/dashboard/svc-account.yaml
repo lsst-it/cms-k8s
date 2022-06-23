@@ -1,0 +1,12 @@
+---
+# Source: opensearch-dashboards/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: opensearch-dashboard-opensearch-dashboards-dashboards
+  labels:
+    helm.sh/chart: opensearch-dashboards-2.1.0
+    app.kubernetes.io/name: opensearch-dashboards
+    app.kubernetes.io/instance: opensearch-dashboard
+    app.kubernetes.io/version: "2.0.1"
+    app.kubernetes.io/managed-by: Helm

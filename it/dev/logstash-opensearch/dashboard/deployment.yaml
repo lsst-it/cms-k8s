@@ -1,0 +1,58 @@
+---
+# Source: opensearch-dashboards/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opensearch-dashboard-opensearch-dashboards
+  labels:
+    helm.sh/chart: opensearch-dashboards-2.1.0
+    app.kubernetes.io/name: opensearch-dashboards
+    app.kubernetes.io/instance: opensearch-dashboard
+    app.kubernetes.io/version: "2.0.1"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: opensearch-dashboards
+      release: "opensearch-dashboard"
+  template:
+    metadata:
+      labels:
+        app: opensearch-dashboards
+        release: "opensearch-dashboard"
+      annotations:
+    spec:
+      securityContext:
+        {}
+      serviceAccountName: opensearch-dashboard-opensearch-dashboards-dashboards
+      volumes:
+      containers:
+      - name: dashboards
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+          runAsNonRoot: true
+          runAsUser: 1000
+        image: "opensearchproject/opensearch-dashboards:2.0.1"
+        imagePullPolicy: "IfNotPresent"
+        env:
+        - name: OPENSEARCH_HOSTS
+          value: "https://opensearch-cluster-master:9200"
+        - name: SERVER_HOST
+          value: "0.0.0.0"
+        ports:
+        - containerPort: 5601
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 512M
+          requests:
+            cpu: 100m
+            memory: 512M
+        volumeMounts:

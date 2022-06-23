@@ -1,0 +1,45 @@
+---
+# Source: logstash/templates/configmap-pipeline.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-logstash-pipeline
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+data:
+  logstash.conf: |
+    input {
+      syslog {
+        port => 5514
+        codec => cef
+        syslog_field => "servers"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 6514
+        codec => cef
+        syslog_field => "network"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 7514
+        codec => cef
+        syslog_field => "firewall"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 12201
+        codec => cef
+        syslog_field => "kubernetes"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+    }
+    output {
+        opensearch {
+            hosts     => [":9200"]
+            index     => "logstash-logs-%{+YYYY.MM.dd}"
+        }
+    }
