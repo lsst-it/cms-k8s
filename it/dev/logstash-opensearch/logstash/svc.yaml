@@ -19,10 +19,6 @@ spec:
     chart: "logstash"
     release: "logstash"
   ports:
-    - name: beats
-      port: 5044
-      protocol: TCP
-      targetPort: 5044
     - name: servers
       port: 5514
       protocol: UDP
@@ -39,7 +35,3 @@ spec:
       port: 12201
       protocol: UDP
       targetPort: 12201
-    - name: http
-      port: 8080
-      protocol: TCP
-      targetPort: 8080
