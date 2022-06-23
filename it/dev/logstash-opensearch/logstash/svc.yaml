@@ -13,7 +13,7 @@ metadata:
     {}
 spec:
   type: LoadBalancer
-  loadBalancerIP: 139.229.134.153
+  loadBalancerIP: ""
   selector:
     app: "logstash-logstash"
     chart: "logstash"
