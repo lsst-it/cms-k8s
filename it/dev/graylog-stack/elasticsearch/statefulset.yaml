@@ -28,7 +28,7 @@ spec:
       - ReadWriteOnce
       resources:
         requests:
-          storage: 8Gi
+          storage: 100Gi
   template:
     metadata:
       name: "elasticsearch-master"
@@ -149,8 +149,6 @@ spec:
           containerPort: 9300
         resources:
           limits:
-            cpu: 1000m
-            memory: 512M
           requests:
             cpu: 100m
             memory: 512M

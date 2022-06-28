@@ -1,6 +1,7 @@
 ldap.toml
 values.yaml
 secret.yaml
+template.yaml
 ID
 list
 .DS_Store
