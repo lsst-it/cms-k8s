@@ -166,7 +166,7 @@ spec:
           - name: network.host
             value: "0.0.0.0"
           - name: ES_JAVA_OPTS
-            value: "-Xmx128m -Xms128m"
+            value: "-Xmx4g -Xms4g"
           - name: node.data
             value: "true"
           - name: node.ingest
