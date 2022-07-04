@@ -63,7 +63,7 @@ spec:
             - /entrypoint.sh
           env:
             - name: GRAYLOG_SERVER_JAVA_OPTS
-              value: "-Dlog4j2.formatMsgNoLookups=true -Djdk.tls.acknowledgeCloseNotify=true -XX:+UnlockExperimentalVMOptions -XX:NewRatio=1 -XX:MaxMetaspaceSize=256m -server -XX:+ResizeTLAB -XX:-OmitStackTraceInFastThrow -XX:+UnlockExperimentalVMOptions"
+              value: "-Dlog4j2.formatMsgNoLookups=true -Djdk.tls.acknowledgeCloseNotify=true -XX:+UnlockExperimentalVMOptions -XX:NewRatio=1 -XX:MaxMetaspaceSize=256m -server -XX:+ResizeTLAB -XX:-OmitStackTraceInFastThrow -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
             - name: GRAYLOG_PASSWORD_SECRET
               valueFrom:
                 secretKeyRef:
