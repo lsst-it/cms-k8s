@@ -425,7 +425,7 @@
                   },
                   {
                     "params": [
-                      " / 100000"
+                      " / 10"
                     ],
                     "type": "math"
                   }
@@ -464,7 +464,7 @@
               "measurement": "net",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"bytes_sent\")  *-1/ 100000 FROM \"net\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($__interval), \"host\" fill(none)",
+              "query": "SELECT mean(\"bytes_sent\")  *-1/ 10 FROM \"net\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($__interval), \"host\" fill(none)",
               "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
@@ -482,7 +482,7 @@
                   },
                   {
                     "params": [
-                      " *-1/ 100000"
+                      " *-1/ 10"
                     ],
                     "type": "math"
                   }
