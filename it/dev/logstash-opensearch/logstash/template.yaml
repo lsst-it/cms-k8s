@@ -1,0 +1,258 @@
+---
+# Source: logstash/templates/poddisruptionbudget.yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: "logstash-logstash-pdb"
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: "logstash-logstash"
+---
+# Source: logstash/templates/configmap-pipeline.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-logstash-pipeline
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+data:
+  logstash.conf: |
+    input {
+      syslog {
+        port => 5514
+        codec => cef
+        syslog_field => "servers"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 6514
+        codec => cef
+        syslog_field => "network"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 7514
+        codec => cef
+        syslog_field => "firewall"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+      syslog {
+        port => 12201
+        codec => cef
+        syslog_field => "kubernetes"
+        grok_pattern => "<%{POSINT:priority}>%{SYSLOGTIMESTAMP:timestamp} CUSTOM GROK HERE"
+      }
+    }
+    output {
+        opensearch {
+            hosts     => ["opensearch-cluster-master:9200"]
+            index     => "logstash-logs-%{+YYYY.MM.dd}"
+        }
+    }
+---
+# Source: logstash/templates/service-headless.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: "logstash-logstash-headless"
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+spec:
+  clusterIP: None
+  selector:
+    app: "logstash-logstash"
+  ports:
+    - name: http
+      port: 9600
+---
+# Source: logstash/templates/service.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: "logstash-logstash"
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+  annotations:
+    {}
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 139.229.134.153
+  selector:
+    app: "logstash-logstash"
+    chart: "logstash"
+    release: "logstash"
+  ports:
+    - name: beats
+      port: 5044
+      protocol: TCP
+      targetPort: 5044
+    - name: servers
+      port: 5514
+      protocol: UDP
+      targetPort: 5514
+    - name: network
+      port: 6514
+      protocol: UDP
+      targetPort: 6514
+    - name: firewall
+      port: 7514
+      protocol: UDP
+      targetPort: 7514
+    - name: kubernetes
+      port: 12201
+      protocol: UDP
+      targetPort: 12201
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+---
+# Source: logstash/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: logstash-logstash
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+spec:
+  serviceName: logstash-logstash-headless
+  selector:
+    matchLabels:
+      app: "logstash-logstash"
+      release: "logstash"
+  replicas: 3
+  podManagementPolicy: Parallel
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: "logstash-logstash"
+      labels:
+        app: "logstash-logstash"
+        chart: "logstash"
+        heritage: "Helm"
+        release: "logstash"
+      annotations:
+        pipelinechecksum: 73a1ddcb7663b364aa4af239b318bb1b9d5f9b737538810989269765c0bcfef
+    spec:
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - "logstash-logstash"
+            topologyKey: kubernetes.io/hostname
+      terminationGracePeriodSeconds: 120
+      volumes:
+        - name: logstashpipeline
+          configMap:
+            name: logstash-logstash-pipeline
+      containers:
+      - name: "logstash"
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+          runAsNonRoot: true
+          runAsUser: 1000
+        image: "docker.elastic.co/logstash/logstash:8.1.0"
+        imagePullPolicy: "IfNotPresent"
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          successThreshold: 3
+          timeoutSeconds: 5
+        ports:
+        - name: http
+          containerPort: 9600
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1536Mi
+          requests:
+            cpu: 100m
+            memory: 1536Mi
+        env:
+          - name: LS_JAVA_OPTS
+            value: "-Xmx1g -Xms1g"
+        volumeMounts:
+          - name: logstashpipeline
+            mountPath: /usr/share/logstash/pipeline/logstash.conf
+            subPath: logstash.conf
+---
+# Source: logstash/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: logstash-logstash
+  labels:
+    app: "logstash-logstash"
+    chart: "logstash"
+    heritage: "Helm"
+    release: "logstash"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+spec:
+  ingressClassName: "nginx"
+  tls:
+    - hosts:
+      - collector.dev.lsst.local
+      secretName: collector-tls
+  rules:
+  - host: collector.dev.lsst.local
+    http:
+      paths:
+      - path: /beats
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: logstash-logstash
+            port:
+              number: 5044
+      - path: /http
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: logstash-logstash
+            port:
+              number: 8080
