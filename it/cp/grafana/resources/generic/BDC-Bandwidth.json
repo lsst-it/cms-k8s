@@ -706,7 +706,7 @@
         },
         "yaxes": [
           {
-            "format": "MBs",
+            "format": "Gbs",
             "label": null,
             "logBase": 1,
             "max": null,
@@ -1278,7 +1278,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1339,7 +1339,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1400,7 +1400,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1461,7 +1461,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1522,7 +1522,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1583,7 +1583,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1644,7 +1644,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1705,7 +1705,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1766,7 +1766,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1827,7 +1827,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1888,7 +1888,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -1949,7 +1949,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2010,7 +2010,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2071,7 +2071,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2112,7 +2112,7 @@
         },
         "yaxes": [
           {
-            "format": "MBs",
+            "format": "Gbs",
             "label": null,
             "logBase": 1,
             "max": null,
@@ -2221,7 +2221,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2282,7 +2282,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2343,7 +2343,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2404,7 +2404,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2465,7 +2465,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2526,7 +2526,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2587,7 +2587,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2648,7 +2648,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2689,7 +2689,7 @@
         },
         "yaxes": [
           {
-            "format": "MBs",
+            "format": "Gbs",
             "label": null,
             "logBase": 1,
             "max": null,
@@ -2758,7 +2758,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "VLAN-2100 InBound",
+            "alias": "VLAN-21073741824 InBound",
             "groupBy": [
               {
                 "params": [
@@ -2798,7 +2798,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2814,7 +2814,7 @@
                 "condition": "AND",
                 "key": "ifName",
                 "operator": "=",
-                "value": "Vl2100"
+                "value": "Vl21073741824"
               }
             ]
           },
@@ -2838,7 +2838,7 @@
             "measurement": "snmp",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT mean(\"ifHCInOctets\") / 100 FROM \"snmp\" WHERE (\"agent_host\" = '10.49.0.254' AND \"ifName\" = 'VLAN-2101') AND $timeFilter GROUP BY time($__interval) fill(none)",
+            "query": "SELECT mean(\"ifHCInOctets\") / 1073741824 FROM \"snmp\" WHERE (\"agent_host\" = '10.49.0.254' AND \"ifName\" = 'VLAN-2101') AND $timeFilter GROUP BY time($__interval) fill(none)",
             "rawQuery": false,
             "refId": "B",
             "resultFormat": "time_series",
@@ -2862,7 +2862,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2924,7 +2924,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -2986,7 +2986,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3048,7 +3048,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3110,7 +3110,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3172,7 +3172,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3234,7 +3234,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3296,7 +3296,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3358,7 +3358,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3420,7 +3420,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3476,7 +3476,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3532,7 +3532,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3588,7 +3588,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3644,7 +3644,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3700,7 +3700,7 @@
                 },
                 {
                   "params": [
-                    "/ 100"
+                    "/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3721,7 +3721,7 @@
             ]
           },
           {
-            "alias": "VLAN-2100 OutBound",
+            "alias": "VLAN-21073741824 OutBound",
             "groupBy": [
               {
                 "params": [
@@ -3761,7 +3761,7 @@
                 },
                 {
                   "params": [
-                    " *-1/ 100"
+                    " *-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3777,7 +3777,7 @@
                 "condition": "AND",
                 "key": "ifName",
                 "operator": "=",
-                "value": "Vl2100"
+                "value": "Vl21073741824"
               }
             ]
           },
@@ -3801,7 +3801,7 @@
             "measurement": "snmp",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT mean(\"ifHCInOctets\") / 100 FROM \"snmp\" WHERE (\"agent_host\" = '10.49.0.254' AND \"ifName\" = 'VLAN-2101') AND $timeFilter GROUP BY time($__interval) fill(none)",
+            "query": "SELECT mean(\"ifHCInOctets\") / 1073741824 FROM \"snmp\" WHERE (\"agent_host\" = '10.49.0.254' AND \"ifName\" = 'VLAN-2101') AND $timeFilter GROUP BY time($__interval) fill(none)",
             "rawQuery": false,
             "refId": "V",
             "resultFormat": "time_series",
@@ -3825,7 +3825,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3887,7 +3887,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -3949,7 +3949,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -4011,7 +4011,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -4073,7 +4073,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -4135,7 +4135,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -4197,7 +4197,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -4259,7 +4259,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -4321,7 +4321,7 @@
                 },
                 {
                   "params": [
-                    "*-1/ 100"
+                    "*-1/ 1073741824"
                   ],
                   "type": "math"
                 }
@@ -4362,7 +4362,7 @@
         },
         "yaxes": [
           {
-            "format": "MBs",
+            "format": "Gbs",
             "label": null,
             "logBase": 1,
             "max": null,
