@@ -39,7 +39,7 @@ for filename in *.json; do
 done
 
 #Clusters
-cd ../../clusters
+cd ../clusters
 if [ ! -d "list" ] 
 then
     mkdir list
