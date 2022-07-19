@@ -17,8 +17,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 725,
-    "iteration": 1658249461806,
+    "id": null,
     "links": [],
     "panels": [
       {
@@ -1099,8 +1098,7 @@
     "timepicker": {},
     "timezone": "",
     "title": "Metrics Per Host",
-    "uid": "556VtAynk",
-    "version": 5
+    "uid": null
   },
   "folderId": 3,
   "overwrite": false

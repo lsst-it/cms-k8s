@@ -1099,8 +1099,7 @@
     "timepicker": {},
     "timezone": "",
     "title": "Metrics Per Host",
-    "uid": "556VtAynk",
-    "version": 5
+    "uid": null
   },
   "folderId": 3,
   "overwrite": false
