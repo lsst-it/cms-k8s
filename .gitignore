@@ -1,8 +1,5 @@
 it/ldap.toml
 comcam/ldap.toml
-it/*/grafana/resources/ID
-it/*/grafana/resources/clusters/list
-it/*/grafana/resources/services/list
-it/*/grafana/resources/servers/list
-it/*/grafana/resources/Kubernetes-Monitoring/list
+ID
+list
 .DS_Store
