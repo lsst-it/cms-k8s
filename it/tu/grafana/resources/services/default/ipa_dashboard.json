@@ -64,13 +64,17 @@
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
-        "seriesOverrides": [],
+        "seriesOverrides": [
+          {
+            "alias": "system.mean"
+          }
+        ],
         "spaceLength": 10,
         "stack": false,
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yepun01",
+            "alias": "ipa1 TU",
             "groupBy": [
               {
                 "params": [
@@ -108,12 +112,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun01.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun02",
+            "alias": "ipa2 TU",
             "groupBy": [
               {
                 "params": [
@@ -128,6 +132,7 @@
                 "type": "fill"
               }
             ],
+            "hide": false,
             "measurement": "system",
             "orderByTime": "ASC",
             "policy": "default",
@@ -151,55 +156,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun02.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun03",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun03.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun04",
+            "alias": "ipa1 TU",
             "groupBy": [
               {
                 "params": [
@@ -237,12 +199,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun04.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun05",
+            "alias": "ipa2 TU",
             "groupBy": [
               {
                 "params": [
@@ -280,7 +242,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun05.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           }
@@ -379,7 +341,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yepun01",
+            "alias": "ipa1 TU",
             "groupBy": [
               {
                 "params": [
@@ -423,12 +385,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun01.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun02",
+            "alias": "ipa2 TU",
             "groupBy": [
               {
                 "params": [
@@ -472,61 +434,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun02.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun03",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun03.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun04",
+            "alias": "ipa1 TU",
             "groupBy": [
               {
                 "params": [
@@ -570,12 +483,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun04.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun05",
+            "alias": "ipa2 TU",
             "groupBy": [
               {
                 "params": [
@@ -619,7 +532,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun05.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           }
@@ -710,22 +623,13 @@
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "recieved bytes",
-            "color": "#8AB8FF"
-          },
-          {
-            "alias": "sent bytes",
-            "color": "#FFB357"
-          }
-        ],
+        "seriesOverrides": [],
         "spaceLength": 10,
         "stack": false,
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yepun01 recieved bytes",
+            "alias": "ipa1 TU recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -762,12 +666,6 @@
                     "10s"
                   ],
                   "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 10"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -775,67 +673,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun01.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun02 recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 10"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun02.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun03 recieved bytes",
+            "alias": "ipa2 TU recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -872,12 +715,6 @@
                     "10s"
                   ],
                   "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 10"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -885,12 +722,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun03.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun04 recieved bytes",
+            "alias": "ipa1 TU recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -927,12 +764,6 @@
                     "10s"
                   ],
                   "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 10"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -940,12 +771,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun04.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun05 recieved bytes",
+            "alias": "ipa2 TU recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -982,12 +813,6 @@
                     "10s"
                   ],
                   "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 10"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -995,232 +820,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun05.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun01 sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 10"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun01.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun02 sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 10"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun02.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun03 sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 10"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun03.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun04 sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "J",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 10"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun04.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun05 sent bytes",
+            "alias": "ipa1 TU sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1260,7 +865,7 @@
                 },
                 {
                   "params": [
-                    " *-1/ 10"
+                    "*-1"
                   ],
                   "type": "math"
                 }
@@ -1270,7 +875,172 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun05.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
+              }
+            ]
+          },
+          {
+            "alias": "ipa2 TU sent bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_sent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "ipa2.tu.sst.org"
+              }
+            ]
+          },
+          {
+            "alias": "ipa1 TU sent bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "M",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_sent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "ipa1.tu.sst.org"
+              }
+            ]
+          },
+          {
+            "alias": "ipa2 TU sent bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "N",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_sent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "ipa2.tu.sst.org"
               }
             ]
           }
@@ -1358,22 +1128,13 @@
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "read IO",
-            "color": "#1F60C4"
-          },
-          {
-            "alias": "write IO",
-            "color": "#FFB357"
-          }
-        ],
+        "seriesOverrides": [],
         "spaceLength": 10,
         "stack": false,
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yepun01 read IO",
+            "alias": "ipa1 TU read IO",
             "groupBy": [
               {
                 "params": [
@@ -1407,7 +1168,7 @@
                 },
                 {
                   "params": [
-                    "1s"
+                    "10s"
                   ],
                   "type": "derivative"
                 },
@@ -1423,12 +1184,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun01.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun02 read IO",
+            "alias": "ipa2 TU read IO",
             "groupBy": [
               {
                 "params": [
@@ -1462,7 +1223,7 @@
                 },
                 {
                   "params": [
-                    "1s"
+                    "10s"
                   ],
                   "type": "derivative"
                 },
@@ -1478,12 +1239,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun02.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun03 read IO",
+            "alias": "ipa1 TU read IO",
             "groupBy": [
               {
                 "params": [
@@ -1501,7 +1262,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "C",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1517,7 +1278,7 @@
                 },
                 {
                   "params": [
-                    "1s"
+                    "10s"
                   ],
                   "type": "derivative"
                 },
@@ -1533,12 +1294,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun03.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun04 read IO",
+            "alias": "ipa2 TU read IO",
             "groupBy": [
               {
                 "params": [
@@ -1572,7 +1333,7 @@
                 },
                 {
                   "params": [
-                    "1s"
+                    "10s"
                   ],
                   "type": "derivative"
                 },
@@ -1588,232 +1349,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun04.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun05 read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "F",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "1s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun05.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun01 write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "1s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1 / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun01.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun02 write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "1s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1 / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun02.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun03 write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "1s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1 / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun03.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun04 write IO",
+            "alias": "ipa1 TU write IO",
             "groupBy": [
               {
                 "params": [
@@ -1847,13 +1388,13 @@
                 },
                 {
                   "params": [
-                    "1s"
+                    "10s"
                   ],
                   "type": "derivative"
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    " *-1/ 100"
                   ],
                   "type": "math"
                 }
@@ -1863,12 +1404,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun04.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun05 write IO",
+            "alias": "ipa2 TU write IO",
             "groupBy": [
               {
                 "params": [
@@ -1902,13 +1443,13 @@
                 },
                 {
                   "params": [
-                    "1s"
+                    "10s"
                   ],
                   "type": "derivative"
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    " *-1/ 100"
                   ],
                   "type": "math"
                 }
@@ -1918,7 +1459,117 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun05.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
+              }
+            ]
+          },
+          {
+            "alias": "ipa1 TU write IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "M",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "write_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " *-1/ 100"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "ipa1.tu.sst.org"
+              }
+            ]
+          },
+          {
+            "alias": "ipa2 TU write IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "N",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "write_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " *-1/ 100"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "ipa2.tu.sst.org"
               }
             ]
           }
@@ -2017,7 +1668,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yepun01",
+            "alias": "ipa1 TU",
             "groupBy": [
               {
                 "params": [
@@ -2055,12 +1706,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun01.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun02",
+            "alias": "ipa2 TU",
             "groupBy": [
               {
                 "params": [
@@ -2098,55 +1749,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun02.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun03",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun03.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun04",
+            "alias": "ipa1 TU",
             "groupBy": [
               {
                 "params": [
@@ -2184,12 +1792,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun04.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun05",
+            "alias": "ipa2 TU",
             "groupBy": [
               {
                 "params": [
@@ -2227,7 +1835,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun05.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           }
@@ -2236,7 +1844,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "CPU Usage",
+        "title": "TUU Usage",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -2315,18 +1923,13 @@
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "used disk",
-            "color": "#8AB8FF"
-          }
-        ],
+        "seriesOverrides": [],
         "spaceLength": 10,
         "stack": false,
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yepun01 used disk",
+            "alias": "ipa1 TU used disk",
             "groupBy": [
               {
                 "params": [
@@ -2364,12 +1967,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun01.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun02 used disk",
+            "alias": "ipa2 TU used disk",
             "groupBy": [
               {
                 "params": [
@@ -2407,55 +2010,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun02.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun03 used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "yepun03.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "yepun04 used disk",
+            "alias": "ipa1 TU used disk",
             "groupBy": [
               {
                 "params": [
@@ -2493,12 +2053,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun04.cp.lsst.org"
+                "value": "ipa1.tu.sst.org"
               }
             ]
           },
           {
-            "alias": "yepun05 used disk",
+            "alias": "ipa2 TU used disk",
             "groupBy": [
               {
                 "params": [
@@ -2536,7 +2096,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "yepun05.cp.lsst.org"
+                "value": "ipa2.tu.sst.org"
               }
             ]
           }
@@ -2596,9 +2156,9 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "Yepun Cluster",
-    "uid": null
+    "title": "IPA",
+    "uid": null 
   },
-  "folderId": 4,
+  "folderId": 5,
   "overwrite": false
 }

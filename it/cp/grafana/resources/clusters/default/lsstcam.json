@@ -70,7 +70,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "ccs-dc01",
+              "alias": "lsstcam-dc01",
               "groupBy": [
                 {
                   "params": [
@@ -108,12 +108,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02",
+              "alias": "lsstcam-dc02",
               "groupBy": [
                 {
                   "params": [
@@ -151,12 +151,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03",
+              "alias": "lsstcam-dc03",
               "groupBy": [
                 {
                   "params": [
@@ -194,12 +194,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04",
+              "alias": "lsstcam-dc04",
               "groupBy": [
                 {
                   "params": [
@@ -237,12 +237,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05",
+              "alias": "lsstcam-dc05",
               "groupBy": [
                 {
                   "params": [
@@ -280,12 +280,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc06",
+              "alias": "lsstcam-dc06",
               "groupBy": [
                 {
                   "params": [
@@ -323,12 +323,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07",
+              "alias": "lsstcam-dc07",
               "groupBy": [
                 {
                   "params": [
@@ -366,12 +366,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08",
+              "alias": "lsstcam-dc08",
               "groupBy": [
                 {
                   "params": [
@@ -409,12 +409,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09",
+              "alias": "lsstcam-dc09",
               "groupBy": [
                 {
                   "params": [
@@ -452,12 +452,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10",
+              "alias": "lsstcam-dc10",
               "groupBy": [
                 {
                   "params": [
@@ -495,7 +495,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             }
@@ -589,7 +589,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "ccs-dc01",
+              "alias": "lsstcam-dc01",
               "groupBy": [
                 {
                   "params": [
@@ -633,12 +633,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02",
+              "alias": "lsstcam-dc02",
               "groupBy": [
                 {
                   "params": [
@@ -682,12 +682,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03",
+              "alias": "lsstcam-dc03",
               "groupBy": [
                 {
                   "params": [
@@ -731,12 +731,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04",
+              "alias": "lsstcam-dc04",
               "groupBy": [
                 {
                   "params": [
@@ -780,12 +780,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05",
+              "alias": "lsstcam-dc05",
               "groupBy": [
                 {
                   "params": [
@@ -829,12 +829,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc06",
+              "alias": "lsstcam-dc06",
               "groupBy": [
                 {
                   "params": [
@@ -878,12 +878,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07",
+              "alias": "lsstcam-dc07",
               "groupBy": [
                 {
                   "params": [
@@ -927,12 +927,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08",
+              "alias": "lsstcam-dc08",
               "groupBy": [
                 {
                   "params": [
@@ -976,12 +976,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09",
+              "alias": "lsstcam-dc09",
               "groupBy": [
                 {
                   "params": [
@@ -1025,12 +1025,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10",
+              "alias": "lsstcam-dc10",
               "groupBy": [
                 {
                   "params": [
@@ -1074,7 +1074,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             }
@@ -1171,7 +1171,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "ccs-dc01 recieved bytes",
+              "alias": "lsstcam-dc01 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1221,12 +1221,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02 recieved bytes",
+              "alias": "lsstcam-dc02 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1276,12 +1276,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03 recieved bytes",
+              "alias": "lsstcam-dc03 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1331,12 +1331,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04 recieved bytes",
+              "alias": "lsstcam-dc04 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1386,12 +1386,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05 recieved bytes",
+              "alias": "lsstcam-dc05 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1441,12 +1441,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc06 recieved bytes",
+              "alias": "lsstcam-dc06 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1496,12 +1496,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc01 sent bytes",
+              "alias": "lsstcam-dc01 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1551,12 +1551,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02 sent bytes",
+              "alias": "lsstcam-dc02 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1606,12 +1606,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03 sent bytes",
+              "alias": "lsstcam-dc03 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1661,12 +1661,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04 sent bytes",
+              "alias": "lsstcam-dc04 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1716,12 +1716,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05 sent bytes",
+              "alias": "lsstcam-dc05 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1771,12 +1771,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc06 sent bytes",
+              "alias": "lsstcam-dc06 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1826,12 +1826,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07 recieved bytes",
+              "alias": "lsstcam-dc07 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1881,12 +1881,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08 recieved bytes",
+              "alias": "lsstcam-dc08 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1936,12 +1936,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09 recieved bytes",
+              "alias": "lsstcam-dc09 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -1991,12 +1991,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10 recieved bytes",
+              "alias": "lsstcam-dc10 recieved bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2046,12 +2046,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07 sent bytes",
+              "alias": "lsstcam-dc07 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2101,12 +2101,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08 sent bytes",
+              "alias": "lsstcam-dc08 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2156,12 +2156,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09 sent bytes",
+              "alias": "lsstcam-dc09 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2211,12 +2211,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10 sent bytes",
+              "alias": "lsstcam-dc10 sent bytes",
               "groupBy": [
                 {
                   "params": [
@@ -2266,7 +2266,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             }
@@ -2369,7 +2369,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "ccs-dc01 read IO",
+              "alias": "lsstcam-dc01 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2419,12 +2419,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02 read IO",
+              "alias": "lsstcam-dc02 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2474,12 +2474,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03 read IO",
+              "alias": "lsstcam-dc03 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2529,12 +2529,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04 read IO",
+              "alias": "lsstcam-dc04 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2584,12 +2584,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05 read IO",
+              "alias": "lsstcam-dc05 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2639,12 +2639,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc06 read IO",
+              "alias": "lsstcam-dc06 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -2694,12 +2694,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc01 write IO",
+              "alias": "lsstcam-dc01 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2749,12 +2749,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02 write IO",
+              "alias": "lsstcam-dc02 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2804,12 +2804,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03 write IO",
+              "alias": "lsstcam-dc03 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2859,12 +2859,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04 write IO",
+              "alias": "lsstcam-dc04 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2914,12 +2914,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05 write IO",
+              "alias": "lsstcam-dc05 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -2969,12 +2969,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc06 write IO",
+              "alias": "lsstcam-dc06 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3024,12 +3024,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07 read IO",
+              "alias": "lsstcam-dc07 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -3079,12 +3079,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08 read IO",
+              "alias": "lsstcam-dc08 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -3134,12 +3134,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09 read IO",
+              "alias": "lsstcam-dc09 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -3189,12 +3189,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10 read IO",
+              "alias": "lsstcam-dc10 read IO",
               "groupBy": [
                 {
                   "params": [
@@ -3244,12 +3244,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07 write IO",
+              "alias": "lsstcam-dc07 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3299,12 +3299,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08 write IO",
+              "alias": "lsstcam-dc08 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3354,12 +3354,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09 write IO",
+              "alias": "lsstcam-dc09 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3409,12 +3409,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10 write IO",
+              "alias": "lsstcam-dc10 write IO",
               "groupBy": [
                 {
                   "params": [
@@ -3464,7 +3464,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             }
@@ -3563,7 +3563,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "ccs-dc01",
+              "alias": "lsstcam-dc01",
               "groupBy": [
                 {
                   "params": [
@@ -3601,12 +3601,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02",
+              "alias": "lsstcam-dc02",
               "groupBy": [
                 {
                   "params": [
@@ -3644,12 +3644,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03",
+              "alias": "lsstcam-dc03",
               "groupBy": [
                 {
                   "params": [
@@ -3687,12 +3687,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04",
+              "alias": "lsstcam-dc04",
               "groupBy": [
                 {
                   "params": [
@@ -3730,12 +3730,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05",
+              "alias": "lsstcam-dc05",
               "groupBy": [
                 {
                   "params": [
@@ -3773,12 +3773,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc06",
+              "alias": "lsstcam-dc06",
               "groupBy": [
                 {
                   "params": [
@@ -3816,12 +3816,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07",
+              "alias": "lsstcam-dc07",
               "groupBy": [
                 {
                   "params": [
@@ -3859,12 +3859,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08",
+              "alias": "lsstcam-dc08",
               "groupBy": [
                 {
                   "params": [
@@ -3902,12 +3902,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09",
+              "alias": "lsstcam-dc09",
               "groupBy": [
                 {
                   "params": [
@@ -3945,12 +3945,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10",
+              "alias": "lsstcam-dc10",
               "groupBy": [
                 {
                   "params": [
@@ -3988,7 +3988,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             }
@@ -4087,7 +4087,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "ccs-dc01 used disk",
+              "alias": "lsstcam-dc01 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4118,12 +4118,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4131,12 +4125,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc01.cp.lsst.org"
+                  "value": "lsstcam-dc01.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc02 used disk",
+              "alias": "lsstcam-dc02 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4167,12 +4161,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4180,12 +4168,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc02.cp.lsst.org"
+                  "value": "lsstcam-dc02.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc03 used disk",
+              "alias": "lsstcam-dc03 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4216,12 +4204,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4229,12 +4211,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc03.cp.lsst.org"
+                  "value": "lsstcam-dc03.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc04 used disk",
+              "alias": "lsstcam-dc04 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4265,12 +4247,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4278,12 +4254,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc04.cp.lsst.org"
+                  "value": "lsstcam-dc04.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc05 used disk",
+              "alias": "lsstcam-dc05 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4314,12 +4290,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4327,7 +4297,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc05.cp.lsst.org"
+                  "value": "lsstcam-dc05.cp.lsst.org"
                 }
               ]
             },
@@ -4363,12 +4333,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4376,12 +4340,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc06.cp.lsst.org"
+                  "value": "lsstcam-dc06.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc07 used disk",
+              "alias": "lsstcam-dc07 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4412,12 +4376,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4425,12 +4383,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc07.cp.lsst.org"
+                  "value": "lsstcam-dc07.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc08 used disk",
+              "alias": "lsstcam-dc08 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4461,12 +4419,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4474,12 +4426,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc08.cp.lsst.org"
+                  "value": "lsstcam-dc08.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc09 used disk",
+              "alias": "lsstcam-dc09 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4510,12 +4462,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4523,12 +4469,12 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc09.cp.lsst.org"
+                  "value": "lsstcam-dc09.cp.lsst.org"
                 }
               ]
             },
             {
-              "alias": "ccs-dc10 used disk",
+              "alias": "lsstcam-dc10 used disk",
               "groupBy": [
                 {
                   "params": [
@@ -4559,12 +4505,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4572,7 +4512,7 @@
                 {
                   "key": "host",
                   "operator": "=",
-                  "value": "ccs-dc10.cp.lsst.org"
+                  "value": "lsstcam-dc10.cp.lsst.org"
                 }
               ]
             }

@@ -74,7 +74,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS",
+            "alias": "ipa1 CP",
             "groupBy": [
               {
                 "params": [
@@ -112,12 +112,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS",
+            "alias": "ipa2 CP",
             "groupBy": [
               {
                 "params": [
@@ -156,7 +156,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -243,135 +243,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "ipa2.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 DEV",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
               }
             ]
           }
@@ -470,7 +341,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS",
+            "alias": "ipa1 CP",
             "groupBy": [
               {
                 "params": [
@@ -514,12 +385,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS",
+            "alias": "ipa2 CP",
             "groupBy": [
               {
                 "params": [
@@ -563,7 +434,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -664,153 +535,6 @@
                 "value": "ipa2.cp.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "ipa1 DEV",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -905,7 +629,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS recieved bytes",
+            "alias": "ipa1 CP recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -949,12 +673,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS recieved bytes",
+            "alias": "ipa2 CP recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -998,7 +722,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -1101,154 +825,7 @@
             ]
           },
           {
-            "alias": "ipa1 DEV recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC received bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "J",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 LS sent bytes",
+            "alias": "ipa1 CP sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1298,12 +875,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS sent bytes",
+            "alias": "ipa2 CP sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1353,7 +930,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -1466,174 +1043,6 @@
                 "value": "ipa2.cp.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "ipa1 DEV sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "O",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "P",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "Q",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -1725,7 +1134,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS read IO",
+            "alias": "ipa1 CP read IO",
             "groupBy": [
               {
                 "params": [
@@ -1775,12 +1184,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS read IO",
+            "alias": "ipa2 CP read IO",
             "groupBy": [
               {
                 "params": [
@@ -1830,7 +1239,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -1945,172 +1354,7 @@
             ]
           },
           {
-            "alias": "ipa1 DEV read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "F",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 LS write IO",
+            "alias": "ipa1 CP write IO",
             "groupBy": [
               {
                 "params": [
@@ -2160,12 +1404,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS write IO",
+            "alias": "ipa2 CP write IO",
             "groupBy": [
               {
                 "params": [
@@ -2215,7 +1459,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -2328,171 +1572,6 @@
                 "value": "ipa2.cp.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "ipa1 DEV write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "P",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "Q",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "R",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -2589,7 +1668,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS",
+            "alias": "ipa1 CP",
             "groupBy": [
               {
                 "params": [
@@ -2627,12 +1706,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS",
+            "alias": "ipa2 CP",
             "groupBy": [
               {
                 "params": [
@@ -2670,7 +1749,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -2757,135 +1836,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "ipa2.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 DEV",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
               }
             ]
           }
@@ -2979,7 +1929,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS used disk",
+            "alias": "ipa1 CP used disk",
             "groupBy": [
               {
                 "params": [
@@ -3010,12 +1960,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3023,12 +1967,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa1.ls.lsst.org"
+                "value": "ipa1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa2 LS used disk",
+            "alias": "ipa2 CP used disk",
             "groupBy": [
               {
                 "params": [
@@ -3059,12 +2003,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3072,7 +2010,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "ipa2.cp.lsst.org"
               }
             ]
           },
@@ -3108,12 +2046,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3157,12 +2089,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3171,153 +2097,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "ipa2.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 DEV used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa1 TUC used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 TUC used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa2.tuc.lsst.cloud"
               }
             ]
           }

@@ -205,7 +205,7 @@
             ]
           },
           {
-            "alias": "dns1 LS",
+            "alias": "dns1 CP",
             "groupBy": [
               {
                 "params": [
@@ -243,12 +243,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS",
+            "alias": "dns2 CP",
             "groupBy": [
               {
                 "params": [
@@ -286,12 +286,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS",
+            "alias": "dns3 CP",
             "groupBy": [
               {
                 "params": [
@@ -329,7 +329,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -557,7 +557,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "dns1 LS",
+            "alias": "dns1 CP",
             "groupBy": [
               {
                 "params": [
@@ -601,12 +601,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS",
+            "alias": "dns2 CP",
             "groupBy": [
               {
                 "params": [
@@ -650,12 +650,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS",
+            "alias": "dns3 CP",
             "groupBy": [
               {
                 "params": [
@@ -699,7 +699,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -849,153 +849,6 @@
                 "value": "dns3.cp.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "dns1 DEV",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns2 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns2.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -1090,7 +943,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "dns1 LS recieved bytes",
+            "alias": "dns1 CP recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -1134,12 +987,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS recieved bytes",
+            "alias": "dns2 CP recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -1183,12 +1036,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS recieved bytes",
+            "alias": "dns3 CP recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -1232,7 +1085,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -1384,154 +1237,7 @@
             ]
           },
           {
-            "alias": "dns1 DEV recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 TUC recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns2 TUC recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns2.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 LS sent bytes",
+            "alias": "dns1 CP sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1581,12 +1287,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS sent bytes",
+            "alias": "dns2 CP sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1636,12 +1342,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS sent bytes",
+            "alias": "dns3 CP sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -1691,7 +1397,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -1860,174 +1566,6 @@
                 "value": "dns3.cp.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "dns1 DEV sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "P",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 TUC sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "Q",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns2 TUC sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "R",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns2.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -2119,7 +1657,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "dns1 LS read IO",
+            "alias": "dns1 CP read IO",
             "groupBy": [
               {
                 "params": [
@@ -2169,12 +1707,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS read IO",
+            "alias": "dns2 CP read IO",
             "groupBy": [
               {
                 "params": [
@@ -2224,12 +1762,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS read IO",
+            "alias": "dns3 CP read IO",
             "groupBy": [
               {
                 "params": [
@@ -2279,7 +1817,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -2449,172 +1987,7 @@
             ]
           },
           {
-            "alias": "dns1 DEV read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 TUC read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns2 TUC read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns2.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 LS write IO",
+            "alias": "dns1 CP write IO",
             "groupBy": [
               {
                 "params": [
@@ -2664,12 +2037,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS write IO",
+            "alias": "dns2 CP write IO",
             "groupBy": [
               {
                 "params": [
@@ -2719,12 +2092,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS write IO",
+            "alias": "dns3 CP write IO",
             "groupBy": [
               {
                 "params": [
@@ -2774,7 +2147,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -2942,171 +2315,6 @@
                 "value": "dns3.cp.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "dns1 DEV write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "P",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 TUC write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "Q",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns2 TUC write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "R",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns2.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -3203,7 +2411,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "dns1 LS",
+            "alias": "dns1 CP",
             "groupBy": [
               {
                 "params": [
@@ -3241,12 +2449,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS",
+            "alias": "dns2 CP",
             "groupBy": [
               {
                 "params": [
@@ -3284,12 +2492,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS",
+            "alias": "dns3 CP",
             "groupBy": [
               {
                 "params": [
@@ -3327,7 +2535,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -3459,135 +2667,6 @@
                 "value": "dns3.cp.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "dns1 DEV",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns2 TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns2.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -3679,7 +2758,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "dns1 LS used disk",
+            "alias": "dns1 CP used disk",
             "groupBy": [
               {
                 "params": [
@@ -3710,12 +2789,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3723,12 +2796,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns1.ls.lsst.org"
+                "value": "dns1.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns2 LS used disk",
+            "alias": "dns2 CP used disk",
             "groupBy": [
               {
                 "params": [
@@ -3759,12 +2832,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3772,12 +2839,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns2.ls.lsst.org"
+                "value": "dns2.cp.lsst.org"
               }
             ]
           },
           {
-            "alias": "dns3 LS used disk",
+            "alias": "dns3 CP used disk",
             "groupBy": [
               {
                 "params": [
@@ -3808,12 +2875,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3821,7 +2882,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "dns3.ls.lsst.org"
+                "value": "dns3.cp.lsst.org"
               }
             ]
           },
@@ -3857,12 +2918,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3906,12 +2961,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3969,153 +3018,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "dns3.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 DEV used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "G",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "dns1 TUC used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "H",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns1.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "dns2 TUC used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "I",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "dns2.tuc.lsst.cloud"
               }
             ]
           }

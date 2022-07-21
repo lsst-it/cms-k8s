@@ -74,50 +74,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS",
+            "alias": "foreman TU",
             "groupBy": [
               {
                 "params": [
@@ -156,12 +113,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS",
+            "alias": "foreman DEV",
             "groupBy": [
               {
                 "params": [
@@ -176,11 +133,10 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "system",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
@@ -200,7 +156,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           }
@@ -299,56 +255,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS",
+            "alias": "foreman TU",
             "groupBy": [
               {
                 "params": [
@@ -392,12 +299,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS",
+            "alias": "foreman DEV",
             "groupBy": [
               {
                 "params": [
@@ -415,7 +322,7 @@
             "measurement": "mem",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
@@ -441,7 +348,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           }
@@ -538,56 +445,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS recieved bytes",
+            "alias": "foreman TU recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -631,12 +489,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS recieved bytes",
+            "alias": "foreman DEV recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -654,7 +512,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "C",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
@@ -680,67 +538,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa1 LS sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "K",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS sent bytes",
+            "alias": "foreman TU sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -790,12 +593,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS sent bytes",
+            "alias": "foreman DEV sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -813,7 +616,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "L",
+            "refId": "M",
             "resultFormat": "time_series",
             "select": [
               [
@@ -845,7 +648,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           }
@@ -939,62 +742,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS read IO",
+            "alias": "foreman TU read IO",
             "groupBy": [
               {
                 "params": [
@@ -1044,12 +792,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS read IO",
+            "alias": "foreman DEV read IO",
             "groupBy": [
               {
                 "params": [
@@ -1067,7 +815,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1099,67 +847,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa1 LS write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "J",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS write IO",
+            "alias": "foreman TU write IO",
             "groupBy": [
               {
                 "params": [
@@ -1209,12 +902,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS write IO",
+            "alias": "foreman DEV write IO",
             "groupBy": [
               {
                 "params": [
@@ -1232,7 +925,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "K",
+            "refId": "C",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1264,7 +957,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           }
@@ -1363,50 +1056,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS",
+            "alias": "foreman TU",
             "groupBy": [
               {
                 "params": [
@@ -1444,12 +1094,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS",
+            "alias": "foreman DEV",
             "groupBy": [
               {
                 "params": [
@@ -1467,7 +1117,7 @@
             "measurement": "cpu",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1487,7 +1137,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           }
@@ -1496,7 +1146,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "CPU Usage",
+        "title": "TUU Usage",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -1581,50 +1231,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ipa1 LS used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "ipa1.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "ipa2 LS used disk",
+            "alias": "foreman TU used disk",
             "groupBy": [
               {
                 "params": [
@@ -1662,12 +1269,12 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa2.ls.lsst.org"
+                "value": "foreman.tu.lsst.org"
               }
             ]
           },
           {
-            "alias": "ipa3 LS used disk",
+            "alias": "foreman DEV used disk",
             "groupBy": [
               {
                 "params": [
@@ -1685,7 +1292,7 @@
             "measurement": "disk",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1705,7 +1312,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "ipa3.ls.lsst.org"
+                "value": "foreman.dev.lsst.org"
               }
             ]
           }
@@ -1765,8 +1372,8 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "IPA",
-    "uid": null 
+    "title": "Foreman",
+    "uid": null
   },
   "folderId": 5,
   "overwrite": false

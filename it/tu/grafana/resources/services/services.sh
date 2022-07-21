@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -xuo pipefail
 
-ID=$(cat ../ID/k8s-yepun)
-SERVER='yepun01.cp.lsst.org'
+SERVER='pillan01.tu.lsst.org'
+ID=$(cat ../ID/services)
 SSH_USER='hreinking_b'
 URL="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-grafana get ingress grafana -ojson | jq -r '.spec.tls[0].hosts[0]'')"
 USER="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-grafana get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"
@@ -15,7 +15,7 @@ then
 fi
 cd default
 for filename in *.json; do
-    sed "s/\"folderId\": 6/\"folderId\": $ID/g" $filename > ../list/$filename
+    sed "s/\"folderId\": 5/\"folderId\": $ID/g" $filename > ../list/$filename
 done
 
 ssh $SSH_USER@$SERVER "/usr/bin/kubectl wait --for=condition=ready pod -n it-grafana ${POD} > /dev/null 2>&1"

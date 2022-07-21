@@ -3763,12 +3763,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -3812,12 +3806,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -3861,12 +3849,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -3910,12 +3892,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -3959,12 +3935,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4008,12 +3978,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4057,12 +4021,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4106,12 +4064,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
@@ -4155,12 +4107,6 @@
                   {
                     "params": [],
                     "type": "mean"
-                  },
-                  {
-                    "params": [
-                      "*2"
-                    ],
-                    "type": "math"
                   }
                 ]
               ],
