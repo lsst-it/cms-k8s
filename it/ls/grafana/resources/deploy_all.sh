@@ -95,8 +95,14 @@ sed "s/\"folderId\": 3/\"folderId\": $SERVERS_ID/g" default/server_template.json
 #Network
 cd ../../network
 
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
+
 sed "s/\"folderId\": 3/\"folderId\": $NETWORK_ID/g" default/CR-BR-DS-Bandwidth.json > list/CR-BR-DS-Bandwidth.json
 
+cd list
 for filename in *.json; do
     /usr/bin/curl -k -u $USER:$PASSWORD -H "Content-Type: application/json" -X POST https://$URL/api/dashboards/db -d @"$filename" > /dev/null 2>&1
 done

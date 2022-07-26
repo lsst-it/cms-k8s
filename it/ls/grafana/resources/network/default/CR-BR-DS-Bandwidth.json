@@ -4398,7 +4398,8 @@
     "timepicker": {},
     "timezone": "",
     "title": "Core, Border and Distribution Bandwidths",
-    "uid": "0CqnJ0wGk",
-    "version": 12
-  }
+    "uid": null
+  },
+  "folderId": 3,
+  "overwrite": false
 }
