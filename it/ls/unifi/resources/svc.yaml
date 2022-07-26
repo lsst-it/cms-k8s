@@ -1,0 +1,45 @@
+---
+# Source: unifi/templates/common.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi
+  namespace: it-unifi
+  labels:
+    app.kubernetes.io/instance: unifi
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: unifi
+    app.kubernetes.io/version: v7.1.66
+    helm.sh/chart: unifi-5.0.0
+  annotations:
+    traefik.ingress.kubernetes.io/service.serversscheme: https
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: controller
+    protocol: TCP
+    name: controller
+  - port: 10001
+    targetPort: discovery
+    protocol: UDP
+    name: discovery
+  - port: 8443
+    targetPort: http
+    protocol: TCP
+    name: http
+  - port: 6789
+    targetPort: speedtest
+    protocol: TCP
+    name: speedtest
+  - port: 3478
+    targetPort: stun
+    protocol: UDP
+    name: stun
+  - port: 5514
+    targetPort: syslog
+    protocol: UDP
+    name: syslog
+  selector:
+    app.kubernetes.io/name: unifi
+    app.kubernetes.io/instance: unifi
