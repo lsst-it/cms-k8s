@@ -636,13 +636,7 @@
                 },
                 {
                   "params": [
-                    "1s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -653,6 +647,12 @@
                 "key": "host",
                 "operator": "=~",
                 "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "name",
+                "operator": "=~",
+                "value": "/^$disk$/"
               }
             ]
           },
@@ -697,13 +697,7 @@
                 },
                 {
                   "params": [
-                    "1s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1 / 100"
+                    "*-1/32150000"
                   ],
                   "type": "math"
                 }
@@ -714,6 +708,12 @@
                 "key": "host",
                 "operator": "=~",
                 "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "name",
+                "operator": "=~",
+                "value": "/^$disk$/"
               }
             ]
           }
@@ -738,7 +738,7 @@
         },
         "yaxes": [
           {
-            "format": "KBs",
+            "format": "decBps",
             "label": null,
             "logBase": 1,
             "max": null,
@@ -1061,8 +1061,8 @@
           "allValue": null,
           "current": {
             "selected": true,
-            "text": "pillan01.tu.lsst.org",
-            "value": "pillan01.tu.lsst.org"
+            "text": "core1.tu.lsst.org",
+            "value": "core1.tu.lsst.org"
           },
           "datasource": "IT InfluxDB",
           "definition": "",
@@ -1073,6 +1073,31 @@
           "name": "host",
           "options": [],
           "query": "SHOW TAG VALUES WITH KEY = \"host\" ",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "allValue": null,
+          "current": {
+            "selected": true,
+            "text": "sda2",
+            "value": "sda2"
+          },
+          "datasource": "IT InfluxDB",
+          "hide": 0,
+          "includeAll": false,
+          "label": null,
+          "multi": false,
+          "name": "disk",
+          "options": [],
+          "query": "SHOW TAG VALUES WITH KEY = \"name\" WHERE \"host\" =~ /^$host$/ ",
           "refresh": 1,
           "regex": "",
           "skipUrlSync": false,
