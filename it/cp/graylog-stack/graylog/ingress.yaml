@@ -25,7 +25,10 @@ spec:
   - host: it-graylog.cp.lsst.org
     http:
       paths:
-      - backend:
-          serviceName: graylog-web
-          servicePort: graylog
-  
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: graylog-web
+              port: 
+                name: graylog
