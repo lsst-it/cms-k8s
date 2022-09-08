@@ -89,11 +89,10 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "system",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -273,7 +272,7 @@
             "measurement": "mem",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -463,7 +462,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "C",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -561,7 +560,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "L",
+            "refId": "K",
             "resultFormat": "time_series",
             "select": [
               [
@@ -760,7 +759,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -870,7 +869,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "K",
+            "refId": "J",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1074,7 +1073,7 @@
             "measurement": "cpu",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1146,7 +1145,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "TUU Usage",
+        "title": "CPU Usage",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -1249,7 +1248,7 @@
             "measurement": "disk",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
