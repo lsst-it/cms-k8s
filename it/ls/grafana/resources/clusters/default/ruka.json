@@ -2681,13 +2681,31 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ruka01 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2724,13 +2742,31 @@
             ]
           },
           {
-            "alias": "ruka02 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2767,13 +2803,31 @@
             ]
           },
           {
-            "alias": "ruka03 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2810,13 +2864,31 @@
             ]
           },
           {
-            "alias": "ruka04 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2853,13 +2925,31 @@
             ]
           },
           {
-            "alias": "ruka05 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2896,13 +2986,31 @@
             ]
           },
           {
-            "alias": "ruka06 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [

@@ -964,7 +964,7 @@
               },
               {
                 "params": [
-                  "host"
+                  "path"
                 ],
                 "type": "tag"
               },
@@ -1061,8 +1061,8 @@
           "allValue": null,
           "current": {
             "selected": true,
-            "text": "core1.ls.lsst.org",
-            "value": "core1.ls.lsst.org"
+            "text": "luan01.ls.lsst.org",
+            "value": "luan01.ls.lsst.org"
           },
           "datasource": "IT InfluxDB",
           "definition": "",
@@ -1086,11 +1086,12 @@
         {
           "allValue": null,
           "current": {
-            "selected": true,
-            "text": "sda2",
-            "value": "sda2"
+            "selected": false,
+            "text": "dm-0",
+            "value": "dm-0"
           },
           "datasource": "IT InfluxDB",
+          "definition": "",
           "hide": 0,
           "includeAll": false,
           "label": null,

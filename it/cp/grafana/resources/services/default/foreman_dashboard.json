@@ -74,7 +74,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman CP",
+            "alias": "foreman LS",
             "groupBy": [
               {
                 "params": [
@@ -89,11 +89,10 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "system",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -113,7 +112,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -255,7 +254,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman CP",
+            "alias": "foreman LS",
             "groupBy": [
               {
                 "params": [
@@ -273,7 +272,7 @@
             "measurement": "mem",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -299,7 +298,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -445,7 +444,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman CP recieved bytes",
+            "alias": "foreman LS recieved bytes",
             "groupBy": [
               {
                 "params": [
@@ -463,7 +462,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "C",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -489,7 +488,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -543,7 +542,7 @@
             ]
           },
           {
-            "alias": "foreman CP sent bytes",
+            "alias": "foreman LS sent bytes",
             "groupBy": [
               {
                 "params": [
@@ -561,7 +560,7 @@
             "measurement": "net",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "L",
+            "refId": "K",
             "resultFormat": "time_series",
             "select": [
               [
@@ -593,7 +592,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -742,7 +741,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman CP read IO",
+            "alias": "foreman LS read IO",
             "groupBy": [
               {
                 "params": [
@@ -760,7 +759,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -792,7 +791,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -852,7 +851,7 @@
             ]
           },
           {
-            "alias": "foreman CP write IO",
+            "alias": "foreman LS write IO",
             "groupBy": [
               {
                 "params": [
@@ -870,7 +869,7 @@
             "measurement": "diskio",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "K",
+            "refId": "J",
             "resultFormat": "time_series",
             "select": [
               [
@@ -902,7 +901,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -1056,7 +1055,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman CP",
+            "alias": "foreman LS",
             "groupBy": [
               {
                 "params": [
@@ -1074,7 +1073,7 @@
             "measurement": "cpu",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1094,7 +1093,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -1231,13 +1230,31 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman CP used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -1249,7 +1266,7 @@
             "measurement": "disk",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
@@ -1269,18 +1286,36 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "foreman.cp.lsst.org"
+                "value": "foreman.ls.lsst.org"
               }
             ]
           },
           {
-            "alias": "foreman DEV used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
