@@ -93,7 +93,7 @@ sed "s/\"folderId\": 3/\"folderId\": $SERVERS_ID/g" default/server_template.json
 /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
 
 #Network
-cd ../../network
+cd ../network
 
 if [ ! -d "list" ] 
 then
