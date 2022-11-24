@@ -12,6 +12,7 @@ metadata:
     app.kubernetes.io/version: "7.2.0"
     app.kubernetes.io/managed-by: Helm
 data:
+  plugins: snuids-trafficlights-panel
   grafana.ini: |
     [analytics]
     check_for_updates = true
