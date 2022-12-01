@@ -4,4 +4,4 @@ set -xe
 kubectl create ns ruka-prom
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
-helm install ruka-prom -n ruka-prom prometheus-community/kube-prometheus-stack -f values.yaml
+helm upgrade --install ruka-prom -n ruka-prom prometheus-community/kube-prometheus-stack -f values.yaml
