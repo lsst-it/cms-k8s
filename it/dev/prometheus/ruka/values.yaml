@@ -381,9 +381,9 @@ kubeEtcd:
     scheme: https
     insecureSkipVerify: false
     serverName: localhost
-    caFile: /etc/etcd-client/ca.crt
-    certFile: /etc/etcd-client/etcd-client.crt
-    keyFile: /etc/etcd-client/etcd-client.key
+    caFile: /etc/prometheus/secrets/etcd-client/ca.crt
+    certFile: /etc/prometheus/secrets/etcd-client/etcd-client.crt
+    keyFile: /etc/prometheus/secrets/etcd-client/etcd-client.key
     metricRelabelings: []
     relabelings: []
     additionalLabels: {}
@@ -560,7 +560,7 @@ prometheusOperator:
       updateMode: Auto
   image:
     registry: quay.io
-    repository: prometheus-operator/prometheus-opeqrator
+    repository: prometheus-operator/prometheus-operator
     tag: v0.61.1
     sha: ""
     pullPolicy: IfNotPresent
@@ -570,13 +570,7 @@ prometheusOperator:
       repository: prometheus-operator/prometheus-config-reloader
       tag: v0.61.1
       sha: ""
-    resources:
-      requests:
-        cpu: 200m
-        memory: 50Mi
-      limits:
-        cpu: 200m
-        memory: 50Mi
+    resources: {}
   thanosImage:
     registry: quay.io
     repository: thanos/thanos
@@ -640,7 +634,7 @@ prometheus:
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
     externalTrafficPolicy: Cluster
-    type: ClusterIP
+    type: LoadBalancer
     additionalPorts: []
     publishNotReadyAddresses: false
     sessionAffinity: ""
@@ -768,7 +762,7 @@ prometheus:
       secret:
         secretName: etcd-client
     volumeMounts:
-    - mountPath: /etc/etcd-client/
+    - mountPath: /etc/prometheus/secrets/etcd-client
       name: etcd-client
     additionalScrapeConfigs: []
     additionalScrapeConfigsSecret: {}
