@@ -381,9 +381,9 @@ kubeEtcd:
     scheme: https
     insecureSkipVerify: false
     serverName: localhost
-    caFile: /etc/prometheus/configmaps/etcd-client-cert/ca.crt
-    certFile: /etc/prometheus/configmaps/etcd-client-cert/etcd-client.crt
-    keyFile: /etc/prometheus/configmaps/etcd-client-cert/etcd-client.key
+    caFile: /etc/etcd-client/ca.crt
+    certFile: /etc/etcd-client/etcd-client.crt
+    keyFile: /etc/etcd-client/etcd-client.key
     metricRelabelings: []
     relabelings: []
     additionalLabels: {}
@@ -560,7 +560,7 @@ prometheusOperator:
       updateMode: Auto
   image:
     registry: quay.io
-    repository: prometheus-operator/prometheus-operator
+    repository: prometheus-operator/prometheus-opeqrator
     tag: v0.61.1
     sha: ""
     pullPolicy: IfNotPresent
@@ -763,8 +763,13 @@ prometheus:
     remoteWriteDashboards: false
     resources: {}
     storageSpec: {}
-    volumes: []
-    volumeMounts: []
+    volumes:
+    - name: etcd-client
+      secret:
+        secretName: etcd-client
+    volumeMounts:
+    - mountPath: /etc/etcd-client/
+      name: etcd-client
     additionalScrapeConfigs: []
     additionalScrapeConfigsSecret: {}
     additionalPrometheusSecretsAnnotations: {}
