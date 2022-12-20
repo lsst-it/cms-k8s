@@ -1225,7 +1225,7 @@ coreDns:
 ## Component scraping kubeDns. Use either this or coreDns
 ##
 kubeDns:
-  enabled: false
+  enabled: true
   service:
     dnsmasq:
       port: 10054
@@ -1291,16 +1291,7 @@ kubeDns:
 ##
 kubeEtcd:
   enabled: true
-
-  ## If your etcd is not deployed as a pod, specify IPs it can be found on
-  ##
   endpoints: []
-  # - 10.141.4.22
-  # - 10.141.4.23
-  # - 10.141.4.24
-
-  ## Etcd service. If using kubeEtcd.endpoints only the port and targetPort are used
-  ##
   service:
     enabled: true
     port: 2381
@@ -1308,31 +1299,13 @@ kubeEtcd:
     # selector:
     #   component: etcd
 
-  ## Configure secure access to the etcd cluster by loading a secret into prometheus and
-  ## specifying security configuration below. For example, with a secret named etcd-client-cert
-  ##
-  ## serviceMonitor:
-  ##   scheme: https
-  ##   insecureSkipVerify: false
-  ##   serverName: localhost
-  ##   caFile: /etc/prometheus/secrets/etcd-client-cert/etcd-ca
-  ##   certFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client
-  ##   keyFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client-key
-  ##
   serviceMonitor:
-    enabled: true
-    ## Scrape interval. If not set, the Prometheus default scrape interval is used.
-    ##
-    interval: ""
-    ## proxyUrl: URL of a proxy that should be used for scraping.
-    ##
-    proxyUrl: ""
-    scheme: http
+    scheme: https
     insecureSkipVerify: false
     serverName: localhost
-    caFile: /etc/prometheus/secrets/etcd-client-cert/etcd-ca
-    certFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client
-    keyFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client-key
+    caFile: /etc/prometheus/configmaps/etcd-client-cert/ca.crt
+    certFile: /etc/prometheus/configmaps/etcd-client-cert/etcd-client.crt
+    keyFile: /etc/prometheus/configmaps/etcd-client-cert/etcd-client.key
 
     ## MetricRelabelConfigs to apply to samples after scraping, but before ingestion.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
@@ -1366,6 +1339,9 @@ kubeScheduler:
   ## If your kube scheduler is not deployed as a pod, specify IPs it can be found on
   ##
   endpoints: []
+  # - 10.141.4.22
+  # - 10.141.4.23
+  # - 10.141.4.24
 
   ## If using kubeScheduler.endpoints only the port and targetPort are used
   ##
@@ -1905,7 +1881,7 @@ prometheusOperator:
   image:
     registry: quay.io
     repository: prometheus-operator/prometheus-operator
-    tag: v0.60.1
+    tag: v0.61.1
     sha: ""
     pullPolicy: IfNotPresent
 
@@ -1931,7 +1907,7 @@ prometheusOperator:
     image:
       registry: quay.io
       repository: prometheus-operator/prometheus-config-reloader
-      tag: v0.60.1
+      tag: v0.61.1
       sha: ""
 
     # resource config for prometheusConfigReloader
@@ -1948,7 +1924,7 @@ prometheusOperator:
   thanosImage:
     registry: quay.io
     repository: thanos/thanos
-    tag: v0.28.1
+    tag: v0.29.0
     sha: ""
 
   ## Set a Field Selector to filter watched secrets
@@ -1958,512 +1934,155 @@ prometheusOperator:
 ## Deploy a Prometheus instance
 ##
 prometheus:
-
   enabled: true
-
-  ## Annotations for Prometheus
-  ##
   annotations: {}
-
-  ## Service account for Prometheuses to use.
-  ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
-  ##
   serviceAccount:
     create: true
     name: ""
     annotations: {}
-
-  # Service for thanos service discovery on sidecar
-  # Enable this can make Thanos Query can use
-  # `--store=dnssrv+_grpc._tcp.${kube-prometheus-stack.fullname}-thanos-discovery.${namespace}.svc.cluster.local` to discovery
-  # Thanos sidecar on prometheus nodes
-  # (Please remember to change ${kube-prometheus-stack.fullname} and ${namespace}. Not just copy and paste!)
   thanosService:
     enabled: false
     annotations: {}
     labels: {}
-
-    ## Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
-    ##
     externalTrafficPolicy: Cluster
-
-    ## Service type
-    ##
     type: ClusterIP
-
-    ## gRPC port config
     portName: grpc
     port: 10901
     targetPort: "grpc"
-
-    ## HTTP port config (for metrics)
     httpPortName: http
     httpPort: 10902
     targetHttpPort: "http"
-
-    ## ClusterIP to assign
-    # Default is to make this a headless service ("None")
     clusterIP: "None"
-
-    ## Port to expose on each node, if service type is NodePort
-    ##
     nodePort: 30901
     httpNodePort: 30902
-
-  # ServiceMonitor to scrape Sidecar metrics
-  # Needs thanosService to be enabled as well
   thanosServiceMonitor:
     enabled: false
     interval: ""
-
-    ## scheme: HTTP scheme to use for scraping. Can be used with `tlsConfig` for example if using istio mTLS.
     scheme: ""
-
-    ## tlsConfig: TLS configuration to use when scraping the endpoint. For example if using istio mTLS.
-    ## Of type: https://github.com/coreos/prometheus-operator/blob/main/Documentation/api.md#tlsconfig
     tlsConfig: {}
-
     bearerTokenFile:
-
-    ## Metric relabel configs to apply to samples before ingestion.
     metricRelabelings: []
-
-    ## relabel configs to apply to samples before ingestion.
     relabelings: []
-
-  # Service for external access to sidecar
-  # Enabling this creates a service to expose thanos-sidecar outside the cluster.
   thanosServiceExternal:
     enabled: false
     annotations: {}
     labels: {}
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
-
-    ## gRPC port config
     portName: grpc
     port: 10901
     targetPort: "grpc"
-
-    ## HTTP port config (for metrics)
     httpPortName: http
     httpPort: 10902
     targetHttpPort: "http"
-
-    ## Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
-    ##
     externalTrafficPolicy: Cluster
-
-    ## Service type
-    ##
     type: LoadBalancer
-
-    ## Port to expose on each node
-    ##
     nodePort: 30901
     httpNodePort: 30902
-
-  ## Configuration for Prometheus service
-  ##
   service:
     annotations: {}
     labels: {}
     clusterIP: ""
-
-    ## Port for Prometheus Service to listen on
-    ##
     port: 9090
-
-    ## To be used with a proxy extraContainer port
     targetPort: 9090
-
-    ## List of IP addresses at which the Prometheus server service is available
-    ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
-    ##
     externalIPs: []
-
-    ## Port to expose on each node
-    ## Only used if service.type is 'NodePort'
-    ##
     nodePort: 30090
-
-    ## Loadbalancer IP
-    ## Only use if service.type is "LoadBalancer"
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
-
-    ## Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
-    ##
     externalTrafficPolicy: Cluster
-
-    ## Service type
-    ##
     type: ClusterIP
-
-    ## Additional port to define in the Service
     additionalPorts: []
-    # additionalPorts:
-    # - name: authenticated
-    #   port: 8081
-    #   targetPort: 8081
-
-    ## Consider that all endpoints are considered "ready" even if the Pods themselves are not
-    ## Ref: https://kubernetes.io/docs/reference/kubernetes-api/service-resources/service-v1/#ServiceSpec
     publishNotReadyAddresses: false
-
     sessionAffinity: ""
-
-  ## Configuration for creating a separate Service for each statefulset Prometheus replica
-  ##
   servicePerReplica:
     enabled: false
     annotations: {}
-
-    ## Port for Prometheus Service per replica to listen on
-    ##
     port: 9090
-
-    ## To be used with a proxy extraContainer port
     targetPort: 9090
-
-    ## Port to expose on each node
-    ## Only used if servicePerReplica.type is 'NodePort'
-    ##
     nodePort: 30091
-
-    ## Loadbalancer source IP ranges
-    ## Only used if servicePerReplica.type is "LoadBalancer"
     loadBalancerSourceRanges: []
-
-    ## Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
-    ##
     externalTrafficPolicy: Cluster
-
-    ## Service type
-    ##
     type: ClusterIP
-
-  ## Configure pod disruption budgets for Prometheus
-  ## ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/#specifying-a-poddisruptionbudget
-  ## This configuration is immutable once created and will require the PDB to be deleted to be changed
-  ## https://github.com/kubernetes/kubernetes/issues/45398
-  ##
   podDisruptionBudget:
     enabled: false
     minAvailable: 1
     maxUnavailable: ""
-
-  # Ingress exposes thanos sidecar outside the cluster
   thanosIngress:
     enabled: false
-
-    # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-    # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-    # ingressClassName: nginx
-
     annotations: {}
     labels: {}
     servicePort: 10901
-
-    ## Port to expose on each node
-    ## Only used if service.type is 'NodePort'
-    ##
     nodePort: 30901
-
-    ## Hosts must be provided if Ingress is enabled.
-    ##
     hosts: []
-      # - thanos-gateway.domain.com
-
-    ## Paths to use for ingress rules
-    ##
     paths: []
-    # - /
-
-    ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-    ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
-    # pathType: ImplementationSpecific
-
-    ## TLS configuration for Thanos Ingress
-    ## Secret must be manually created in the namespace
-    ##
     tls: []
-    # - secretName: thanos-gateway-tls
-    #   hosts:
-    #   - thanos-gateway.domain.com
-    #
-
-  ## ExtraSecret can be used to store various data in an extra secret
-  ## (use it for example to store hashed basic auth credentials)
   extraSecret:
-    ## if not set, name will be auto generated
-    # name: ""
     annotations: {}
     data: {}
-  #   auth: |
-  #     foo:$apr1$OFG3Xybp$ckL0FHDAkoXYIlH9.cysT0
-  #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
-
   ingress:
     enabled: false
-
-    # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-    # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-    # ingressClassName: nginx
-
     annotations: {}
     labels: {}
-
-    ## Redirect ingress to an additional defined port on the service
-    # servicePort: 8081
-
-    ## Hostnames.
-    ## Must be provided if Ingress is enabled.
-    ##
-    # hosts:
-    #   - prometheus.domain.com
     hosts: []
-
-    ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
-    ##
     paths: []
-    # - /
-
-    ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-    ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
-    # pathType: ImplementationSpecific
-
-    ## TLS configuration for Prometheus Ingress
-    ## Secret must be manually created in the namespace
-    ##
     tls: []
-      # - secretName: prometheus-general-tls
-      #   hosts:
-      #     - prometheus.example.com
-
-  ## Configuration for creating an Ingress that will map to each Prometheus replica service
-  ## prometheus.servicePerReplica must be enabled
-  ##
   ingressPerReplica:
     enabled: false
-
-    # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-    # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-    # ingressClassName: nginx
-
     annotations: {}
     labels: {}
-
-    ## Final form of the hostname for each per replica ingress is
-    ## {{ ingressPerReplica.hostPrefix }}-{{ $replicaNumber }}.{{ ingressPerReplica.hostDomain }}
-    ##
-    ## Prefix for the per replica ingress that will have `-$replicaNumber`
-    ## appended to the end
     hostPrefix: ""
-    ## Domain that will be used for the per replica ingress
     hostDomain: ""
-
-    ## Paths to use for ingress rules
-    ##
     paths: []
-    # - /
-
-    ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-    ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
-    # pathType: ImplementationSpecific
-
-    ## Secret name containing the TLS certificate for Prometheus per replica ingress
-    ## Secret must be manually created in the namespace
     tlsSecretName: ""
-
-    ## Separated secret for each per replica Ingress. Can be used together with cert-manager
-    ##
     tlsSecretPerReplica:
       enabled: false
-      ## Final form of the secret for each per replica ingress is
-      ## {{ tlsSecretPerReplica.prefix }}-{{ $replicaNumber }}
-      ##
       prefix: "prometheus"
-
-  ## Configure additional options for default pod security policy for Prometheus
-  ## ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
   podSecurityPolicy:
     allowedCapabilities: []
     allowedHostPaths: []
     volumes: []
-
   serviceMonitor:
-    ## Scrape interval. If not set, the Prometheus default scrape interval is used.
-    ##
     interval: ""
     selfMonitor: true
-
-    ## scheme: HTTP scheme to use for scraping. Can be used with `tlsConfig` for example if using istio mTLS.
     scheme: ""
-
-    ## tlsConfig: TLS configuration to use when scraping the endpoint. For example if using istio mTLS.
-    ## Of type: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#tlsconfig
     tlsConfig: {}
-
     bearerTokenFile:
-
-    ## Metric relabel configs to apply to samples before ingestion.
-    ##
     metricRelabelings: []
-    # - action: keep
-    #   regex: 'kube_(daemonset|deployment|pod|namespace|node|statefulset).+'
-    #   sourceLabels: [__name__]
-
-    #   relabel configs to apply to samples before ingestion.
-    ##
     relabelings: []
-    # - sourceLabels: [__meta_kubernetes_pod_node_name]
-    #   separator: ;
-    #   regex: ^(.*)$
-    #   targetLabel: nodename
-    #   replacement: $1
-    #   action: replace
-
-  ## Settings affecting prometheusSpec
-  ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#prometheusspec
-  ##
   prometheusSpec:
-    ## If true, pass --storage.tsdb.max-block-duration=2h to prometheus. This is already done if using Thanos
-    ##
     disableCompaction: false
-    ## APIServerConfig
-    ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#apiserverconfig
-    ##
     apiserverConfig: {}
-
-    ## Allows setting additional arguments for the Prometheus container
-    ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#monitoring.coreos.com/v1.Prometheus
     additionalArgs: []
-
-    ## Interval between consecutive scrapes.
-    ## Defaults to 30s.
-    ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/release-0.44/pkg/prometheus/promcfg.go#L180-L183
-    ##
     scrapeInterval: ""
-
-    ## Number of seconds to wait for target to respond before erroring
-    ##
     scrapeTimeout: ""
-
-    ## Interval between consecutive evaluations.
-    ##
     evaluationInterval: ""
-
-    ## ListenLocal makes the Prometheus server listen on loopback, so that it does not bind against the Pod IP.
-    ##
     listenLocal: false
-
-    ## EnableAdminAPI enables Prometheus the administrative HTTP API which includes functionality such as deleting time series.
-    ## This is disabled by default.
-    ## ref: https://prometheus.io/docs/prometheus/latest/querying/api/#tsdb-admin-apis
-    ##
     enableAdminAPI: false
-
-    ## WebTLSConfig defines the TLS parameters for HTTPS
-    ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#webtlsconfig
     web: {}
-
-    ## Exemplars related settings that are runtime reloadable.
-    ## It requires to enable the exemplar storage feature to be effective.
     exemplars: ""
-      ## Maximum number of exemplars stored in memory for all series.
-      ## If not set, Prometheus uses its default value.
-      ## A value of zero or less than zero disables the storage.
-      # maxSize: 100000
-
-    # EnableFeatures API enables access to Prometheus disabled features.
-    # ref: https://prometheus.io/docs/prometheus/latest/disabled_features/
     enableFeatures: []
-    # - exemplar-storage
-
-    ## Image of Prometheus.
-    ##
     image:
       registry: quay.io
       repository: prometheus/prometheus
-      tag: v2.39.1
+      tag: v2.40.5
       sha: ""
-
-    ## Tolerations for use with node taints
-    ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
-    ##
     tolerations: []
-    #  - key: "key"
-    #    operator: "Equal"
-    #    value: "value"
-    #    effect: "NoSchedule"
-
-    ## If specified, the pod's topology spread constraints.
-    ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
-    ##
     topologySpreadConstraints: []
-    # - maxSkew: 1
-    #   topologyKey: topology.kubernetes.io/zone
-    #   whenUnsatisfiable: DoNotSchedule
-    #   labelSelector:
-    #     matchLabels:
-    #       app: prometheus
-
-    ## Alertmanagers to which alerts will be sent
-    ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#alertmanagerendpoints
-    ##
-    ## Default configuration will connect to the alertmanager deployed as part of this release
-    ##
     alertingEndpoints: []
-    # - name: ""
-    #   namespace: ""
-    #   port: http
-    #   scheme: http
-    #   pathPrefix: ""
-    #   tlsConfig: {}
-    #   bearerTokenFile: ""
-    #   apiVersion: v2
-
-    ## External labels to add to any time series or alerts when communicating with external systems
-    ##
     externalLabels: {}
-
-    ## enable --web.enable-remote-write-receiver flag on prometheus-server
-    ##
     enableRemoteWriteReceiver: false
-
-    ## Name of the external label used to denote replica name
-    ##
     replicaExternalLabelName: ""
-
-    ## If true, the Operator won't add the external label used to denote replica name
-    ##
     replicaExternalLabelNameClear: false
-
-    ## Name of the external label used to denote Prometheus instance name
-    ##
     prometheusExternalLabelName: ""
-
-    ## If true, the Operator won't add the external label used to denote Prometheus instance name
-    ##
     prometheusExternalLabelNameClear: false
-
-    ## External URL at which Prometheus will be reachable.
-    ##
     externalUrl: ""
-
-    ## Define which Nodes the Pods are scheduled on.
-    ## ref: https://kubernetes.io/docs/user-guide/node-selection/
-    ##
     nodeSelector: {}
-
-    ## Secrets is a list of Secrets in the same namespace as the Prometheus object, which shall be mounted into the Prometheus Pods.
-    ## The Secrets are mounted into /etc/prometheus/secrets/. Secrets changes after initial creation of a Prometheus object are not
-    ## reflected in the running Pods. To change the secrets mounted into the Prometheus Pods, the object must be deleted and recreated
-    ## with the new list of secrets.
-    ##
     secrets:
-      - etcd-client
+    - etcd-client
+
+    ## ConfigMaps is a list of ConfigMaps in the same namespace as the Prometheus object, which shall be mounted into the Prometheus Pods.
+    ## The ConfigMaps are mounted into /etc/prometheus/configmaps/.
+    ##
     configMaps: []
 
     ## QuerySpec defines the query command line flags when starting Prometheus.
@@ -3225,7 +2844,7 @@ thanosRuler:
     image:
       registry: quay.io
       repository: thanos/thanos
-      tag: v0.28.1
+      tag: v0.29.0
       sha: ""
 
     ## Namespaces to be selected for PrometheusRules discovery.
