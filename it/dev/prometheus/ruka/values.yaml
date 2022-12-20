@@ -1329,10 +1329,10 @@ kubeEtcd:
     proxyUrl: ""
     scheme: http
     insecureSkipVerify: false
-    serverName: ""
-    caFile: ""
-    certFile: ""
-    keyFile: ""
+    serverName: localhost
+    caFile: /etc/prometheus/secrets/etcd-client-cert/etcd-ca
+    certFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client
+    keyFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client-key
 
     ## MetricRelabelConfigs to apply to samples after scraping, but before ingestion.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
@@ -1366,9 +1366,6 @@ kubeScheduler:
   ## If your kube scheduler is not deployed as a pod, specify IPs it can be found on
   ##
   endpoints: []
-  # - 10.141.4.22
-  # - 10.141.4.23
-  # - 10.141.4.24
 
   ## If using kubeScheduler.endpoints only the port and targetPort are used
   ##
@@ -2465,11 +2462,8 @@ prometheus:
     ## reflected in the running Pods. To change the secrets mounted into the Prometheus Pods, the object must be deleted and recreated
     ## with the new list of secrets.
     ##
-    secrets: []
-
-    ## ConfigMaps is a list of ConfigMaps in the same namespace as the Prometheus object, which shall be mounted into the Prometheus Pods.
-    ## The ConfigMaps are mounted into /etc/prometheus/configmaps/.
-    ##
+    secrets:
+      - etcd-client
     configMaps: []
 
     ## QuerySpec defines the query command line flags when starting Prometheus.

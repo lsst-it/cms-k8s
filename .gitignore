@@ -4,3 +4,4 @@ ID
 list
 .DS_Store
 template.yaml
+etcd/
