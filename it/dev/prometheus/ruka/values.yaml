@@ -762,7 +762,7 @@ prometheus:
       secret:
         secretName: etcd-client
     volumeMounts:
-    - mountPath: /etc/prometheus/secrets/etcd-client
+    - mountPath: etcd-client
       name: etcd-client
     additionalScrapeConfigs: []
     additionalScrapeConfigsSecret: {}
