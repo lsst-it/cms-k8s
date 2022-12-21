@@ -372,14 +372,19 @@ kubeDns:
     additionalLabels: {}
 kubeEtcd:
   enabled: true
-  endpoints: []
+  endpoints:
+  - 139.229.134.10
+  - 139.229.134.11
+  - 139.229.134.12
+  - 139.229.134.13
+  - 139.229.134.14
   service:
     enabled: true
     port: 2381
     targetPort: 2381
   serviceMonitor:
     scheme: https
-    insecureSkipVerify: false
+    insecureSkipVerify: true
     serverName: localhost
     caFile: /etc/prometheus/secrets/etcd-client/ca.crt
     certFile: /etc/prometheus/secrets/etcd-client/etcd-client.crt
