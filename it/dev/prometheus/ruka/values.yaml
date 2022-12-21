@@ -375,24 +375,11 @@ kubeEtcd:
   endpoints: []
   service:
     enabled: true
-    port: https-etcd
-    targetPort: 2379
+    port: 2381
+    targetPort: 2381
   serviceMonitor:
     port: https-etcd
     path: /metrics
-    relabelings:
-    - action: replace
-      regex: (.+)
-      replacement: $1
-      sourceLabels:
-      - __meta_kubernetes_pod_host_ip
-      targetLabel: host_ip
-    - action: replace
-      regex: (.+)
-      replacement: $1
-      sourceLabels:
-      - __meta_kubernetes_pod_node_name
-      targetLabel: node
     scheme: https
     insecureSkipVerify: true
     serverName: localhost
@@ -737,7 +724,7 @@ prometheus:
     externalUrl: ""
     nodeSelector: {}
     secrets:
-    - etcd-client
+    - etcd-certs
     configMaps: []
     query: {}
     ruleNamespaceSelector: {}

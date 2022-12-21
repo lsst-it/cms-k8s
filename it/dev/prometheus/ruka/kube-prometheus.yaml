@@ -39900,7 +39900,7 @@ metadata:
 spec:
   clusterIP: None
   ports:
-    - name: https-etcd
+    - name: http-metrics
       port: 2381
       protocol: TCP
       targetPort: 2381
@@ -40538,19 +40538,22 @@ spec:
   walCompression: true
   routePrefix: "/"
   secrets:
-    - etcd-certs
+    - etcd-client
   serviceAccountName: ruka-prom-kube-prometheus-prometheus
   serviceMonitorSelector:
     matchLabels:
       release: "ruka-prom"
+
   serviceMonitorNamespaceSelector: {}
   podMonitorSelector:
     matchLabels:
       release: "ruka-prom"
+
   podMonitorNamespaceSelector: {}
   probeSelector:
     matchLabels:
       release: "ruka-prom"
+
   probeNamespaceSelector: {}
   securityContext:
     fsGroup: 2000
@@ -40561,6 +40564,7 @@ spec:
   ruleSelector:
     matchLabels:
       release: "ruka-prom"
+
   portName: http-web
   volumes:
     - name: etcd-certs
@@ -43783,8 +43787,8 @@ metadata:
   name: ruka-prom-kube-prometheus-kube-etcd
   namespace: ruka-prom
   labels:
-    k8s-app: etcd-cluster-monitoring
     app: kube-prometheus-stack-kube-etcd
+    
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: ruka-prom
     app.kubernetes.io/version: "43.0.0"
@@ -43793,33 +43797,18 @@ metadata:
     release: "ruka-prom"
     heritage: "Helm"
 spec:
-  jobLabel: component
+  jobLabel: jobLabel
   selector:
     matchLabels:
       app: kube-prometheus-stack-kube-etcd
       release: "ruka-prom"
-      k8s-app: kube-etcd
   namespaceSelector:
     matchNames:
-      - "ruka-prom"
+      - "kube-system"
   endpoints:
-  - port: https-etcd
+  - port: http-metrics
     bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
     scheme: https
-    path: /metrics
-    relabelings:
-    - action: replace
-      regex: (.+)
-      replacement: $1
-      sourceLabels:
-      - __meta_kubernetes_pod_host_ip
-      targetLabel: host_ip
-    - action: replace
-      regex: (.+)
-      replacement: $1
-      sourceLabels:
-      - __meta_kubernetes_pod_node_name
-      targetLabel: node
     tlsConfig:
       serverName: localhost
       caFile: /etc/prometheus/secrets/etcd-certs/ca.crt
@@ -44023,6 +44012,7 @@ metadata:
   namespace: ruka-prom
   labels:
     app: kube-prometheus-stack-prometheus
+    
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: ruka-prom
     app.kubernetes.io/version: "43.0.0"
