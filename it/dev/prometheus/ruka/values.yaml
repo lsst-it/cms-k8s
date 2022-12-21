@@ -372,16 +372,11 @@ kubeDns:
     additionalLabels: {}
 kubeEtcd:
   enabled: true
-  endpoints:
-  - 139.229.134.10
-  - 139.229.134.11
-  - 139.229.134.12
-  - 139.229.134.13
-  - 139.229.134.14
+  endpoints: []
   service:
     enabled: true
-    port: 2381
-    targetPort: 2381
+    port: https-etcd
+    targetPort: 2379
   serviceMonitor:
     port: https-etcd
     path: /metrics
