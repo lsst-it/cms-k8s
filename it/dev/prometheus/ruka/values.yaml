@@ -383,12 +383,27 @@ kubeEtcd:
     port: 2381
     targetPort: 2381
   serviceMonitor:
+    port: https-etcd
+    path: /metrics
+    relabelings:
+    - action: replace
+      regex: (.+)
+      replacement: $1
+      sourceLabels:
+      - __meta_kubernetes_pod_host_ip
+      targetLabel: host_ip
+    - action: replace
+      regex: (.+)
+      replacement: $1
+      sourceLabels:
+      - __meta_kubernetes_pod_node_name
+      targetLabel: node
     scheme: https
     insecureSkipVerify: true
     serverName: localhost
-    caFile: /etc/prometheus/secrets/etcd-client/ca.crt
-    certFile: /etc/prometheus/secrets/etcd-client/etcd-client.crt
-    keyFile: /etc/prometheus/secrets/etcd-client/etcd-client.key
+    caFile: /etc/prometheus/secrets/etcd-certs/ca.crt
+    certFile: /etc/prometheus/secrets/etcd-certs/client.crt
+    keyFile: /etc/prometheus/secrets/etcd-certs/client.key
     metricRelabelings: []
     relabelings: []
     additionalLabels: {}
@@ -763,12 +778,12 @@ prometheus:
     resources: {}
     storageSpec: {}
     volumes:
-    - name: etcd-client
+    - name: etcd-certs
       secret:
-        secretName: etcd-client
+        secretName: etcd-certs
     volumeMounts:
-    - mountPath: etcd-client
-      name: etcd-client
+    - mountPath: etcd-certs
+      name: etcd-certs
     additionalScrapeConfigs: []
     additionalScrapeConfigsSecret: {}
     additionalPrometheusSecretsAnnotations: {}
