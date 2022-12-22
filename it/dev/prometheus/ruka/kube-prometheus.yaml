@@ -141,6 +141,25 @@ metadata:
 data:
   alertmanager.yaml: "Z2xvYmFsOgogIHJlc29sdmVfdGltZW91dDogNW0KaW5oaWJpdF9ydWxlczoKLSBlcXVhbDoKICAtIG5hbWVzcGFjZQogIC0gYWxlcnRuYW1lCiAgc291cmNlX21hdGNoZXJzOgogIC0gc2V2ZXJpdHkgPSBjcml0aWNhbAogIHRhcmdldF9tYXRjaGVyczoKICAtIHNldmVyaXR5ID1+IHdhcm5pbmd8aW5mbwotIGVxdWFsOgogIC0gbmFtZXNwYWNlCiAgLSBhbGVydG5hbWUKICBzb3VyY2VfbWF0Y2hlcnM6CiAgLSBzZXZlcml0eSA9IHdhcm5pbmcKICB0YXJnZXRfbWF0Y2hlcnM6CiAgLSBzZXZlcml0eSA9IGluZm8KLSBlcXVhbDoKICAtIG5hbWVzcGFjZQogIHNvdXJjZV9tYXRjaGVyczoKICAtIGFsZXJ0bmFtZSA9IEluZm9JbmhpYml0b3IKICB0YXJnZXRfbWF0Y2hlcnM6CiAgLSBzZXZlcml0eSA9IGluZm8KcmVjZWl2ZXJzOgotIG5hbWU6ICJudWxsIgpyb3V0ZToKICBncm91cF9ieToKICAtIG5hbWVzcGFjZQogIGdyb3VwX2ludGVydmFsOiA1bQogIGdyb3VwX3dhaXQ6IDMwcwogIHJlY2VpdmVyOiAibnVsbCIKICByZXBlYXRfaW50ZXJ2YWw6IDEyaAogIHJvdXRlczoKICAtIG1hdGNoZXJzOgogICAgLSBhbGVydG5hbWUgPX4gIkluZm9JbmhpYml0b3J8V2F0Y2hkb2ciCiAgICByZWNlaXZlcjogIm51bGwiCnRlbXBsYXRlczoKLSAvZXRjL2FsZXJ0bWFuYWdlci9jb25maWcvKi50bXBs"
 ---
+# Source: kube-prometheus-stack/templates/prometheus/additionalScrapeConfigs.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ruka-prom-kube-prometheus-prometheus-scrape-confg
+  namespace: ruka-prom
+  labels:
+    app: kube-prometheus-stack-prometheus-scrape-confg
+    
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: ruka-prom
+    app.kubernetes.io/version: "43.0.0"
+    app.kubernetes.io/part-of: kube-prometheus-stack
+    chart: kube-prometheus-stack-43.0.0
+    release: "ruka-prom"
+    heritage: "Helm"
+data:
+  additional-scrape-configs.yaml: "LSBqb2JfbmFtZTogZXRjZC1tZXRyaWNzCiAgc3RhdGljX2NvbmZpZ3M6CiAgLSB0YXJnZXRzOgogICAgLSAxMzkuMjI5LjEzNC4xMDoyMzgxCiAgICAtIDEzOS4yMjkuMTM0LjExOjIzODEKICAgIC0gMTM5LjIyOS4xMzQuMTI6MjM4MQogICAgLSAxMzkuMjI5LjEzNC4xMzoyMzgxCiAgICAtIDEzOS4yMjkuMTM0LjE0OjIzODEKICB0bHNfY29uZmlnOgogICAgY2FfZmlsZTogL2V0Yy9wcm9tZXRoZXVzL3NlY3JldHMvZXRjZC1jZXJ0cy9jYS5jcnQKICAgIGNlcnRfZmlsZTogL2V0Yy9wcm9tZXRoZXVzL3NlY3JldHMvZXRjZC1jZXJ0cy9jbGllbnQuY3J0CiAgICBpbnNlY3VyZV9za2lwX3ZlcmlmeTogdHJ1ZQogICAga2V5X2ZpbGU6IC9ldGMvcHJvbWV0aGV1cy9zZWNyZXRzL2V0Y2QtY2VydHMvY2xpZW50LmtleQ=="
+---
 # Source: kube-prometheus-stack/charts/grafana/templates/configmap-dashboard-provider.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -40538,7 +40557,7 @@ spec:
   walCompression: true
   routePrefix: "/"
   secrets:
-    - etcd-client
+    - etcd-certs
   serviceAccountName: ruka-prom-kube-prometheus-prometheus
   serviceMonitorSelector:
     matchLabels:
@@ -40565,6 +40584,9 @@ spec:
     matchLabels:
       release: "ruka-prom"
 
+  additionalScrapeConfigs:
+    name: ruka-prom-kube-prometheus-prometheus-scrape-confg
+    key: additional-scrape-configs.yaml
   portName: http-web
   volumes:
     - name: etcd-certs
