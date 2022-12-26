@@ -769,7 +769,7 @@ prometheus:
     additionalScrapeConfigs:
       - job_name: etcd-metrics
         static_configs:
-        - targets: ['139.229.160.71:2381','139.229.160.72:2381','139.229.160.73:2381','139.229.160.74:2381',,'139.229.160.75:2381']
+        - targets: ['139.229.160.71:2381','139.229.160.72:2381','139.229.160.73:2381','139.229.160.74:2381','139.229.160.75:2381']
         tls_config:
           ca_file: /etc/prometheus/secrets/etcd-certs/ca.crt
           cert_file: /etc/prometheus/secrets/etcd-certs/client.crt
