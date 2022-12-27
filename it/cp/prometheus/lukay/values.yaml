@@ -519,7 +519,7 @@ prometheusOperator:
     nodePort: 30080
     nodePortTls: 30443
     additionalPorts: []
-    loadBalancerIP: ""
+    loadBalancerIP: "139.229.160.212"
     loadBalancerSourceRanges: []
     externalTrafficPolicy: Cluster
     type: ClusterIP

@@ -131,7 +131,7 @@ alertmanager:
     nodePort: 30903
     additionalPorts: []
     externalIPs: []
-    loadBalancerIP: ""
+    loadBalancerIP: "139.229.160.202"
     loadBalancerSourceRanges: []
     externalTrafficPolicy: Cluster
     type: ClusterIP

@@ -837,7 +837,7 @@ thanosRuler:
     nodePort: 30905
     additionalPorts: []
     externalIPs: []
-    loadBalancerIP: ""
+    loadBalancerIP: "139.229.160.130"
     loadBalancerSourceRanges: []
     externalTrafficPolicy: Cluster
     type: ClusterIP
