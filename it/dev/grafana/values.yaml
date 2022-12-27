@@ -19,6 +19,9 @@ serviceAccount:
 
 replicas: 1
 
+plugins:
+- snuids-trafficlights-panel
+
 deploymentStrategy:
   type: RollingUpdate
 

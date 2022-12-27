@@ -1,0 +1,2136 @@
+{
+  "dashboard":
+  {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": null,
+    "links": [],
+    "panels": [
+      {
+        "alert": {
+          "alertRuleTags": {},
+          "conditions": [
+            {
+              "evaluator": {
+                "params": [],
+                "type": "no_value"
+              },
+              "operator": {
+                "type": "and"
+              },
+              "query": {
+                "params": [
+                  "A",
+                  "5m",
+                  "now"
+                ]
+              },
+              "reducer": {
+                "params": [],
+                "type": "last"
+              },
+              "type": "query"
+            }
+          ],
+          "executionErrorState": "keep_state",
+          "for": "5m",
+          "frequency": "1m",
+          "handler": 1,
+          "message": "Telconor Link Down",
+          "name": "Telconor Link Down",
+          "noDataState": "alerting",
+          "notifications": [
+            {
+              "uid": "Rami4UOVk"
+            }
+          ]
+        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "decbps"
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 17,
+          "w": 17,
+          "x": 0,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "id": 2,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "100G-01-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT derivative(mean(\"ifHCInOctets\"), 10s) FROM \"snmp\" WHERE (\"agent_host\" = '10.48.1.4' AND \"ifName\" = 'Ethernet1/51') AND $timeFilter GROUP BY time($__interval) fill(none)",
+            "rawQuery": false,
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "100G-01-OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "TELCONOR - IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/48"
+              }
+            ]
+          },
+          {
+            "alias": "TELCONOR - OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1 "
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/48"
+              }
+            ]
+          },
+          {
+            "alias": "100G-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "100G-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1 "
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Base to Summit Link",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "decbps",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 26
+                },
+                {
+                  "color": "red",
+                  "value": 28
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 7,
+          "x": 17,
+          "y": 0
+        },
+        "id": 7,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "7.2.0",
+        "targets": [
+          {
+            "alias": "CR_Temperature",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(\"value\") FROM \"measurement\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "temperature"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "-3"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.17.0.254"
+              }
+            ]
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Summit Data Center Temperature",
+        "type": "gauge"
+      },
+      {
+        "alert": {
+          "alertRuleTags": {},
+          "conditions": [
+            {
+              "evaluator": {
+                "params": [
+                  28
+                ],
+                "type": "gt"
+              },
+              "operator": {
+                "type": "and"
+              },
+              "query": {
+                "params": [
+                  "A",
+                  "5m",
+                  "now"
+                ]
+              },
+              "reducer": {
+                "params": [],
+                "type": "last"
+              },
+              "type": "query"
+            }
+          ],
+          "executionErrorState": "alerting",
+          "for": "5m",
+          "frequency": "1m",
+          "handler": 1,
+          "message": "The temperature limit has been reached",
+          "name": "Comp-DS01 Temperature alert",
+          "noDataState": "no_data",
+          "notifications": [
+            {
+              "uid": "24NdSNkVk"
+            },
+            {
+              "uid": "dxPOINzVk"
+            },
+            {
+              "uid": "da_Pm3DVk"
+            },
+            {
+              "uid": "Rami4UOVk"
+            }
+          ]
+        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 9,
+          "w": 7,
+          "x": 17,
+          "y": 8
+        },
+        "hiddenSeries": false,
+        "id": 6,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "CR_Temperature",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(\"value\") FROM \"measurement\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "temperature"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "-3"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.17.0.254"
+              }
+            ]
+          }
+        ],
+        "thresholds": [
+          {
+            "colorMode": "critical",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 28
+          }
+        ],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Summit Data Center Temperature",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "celsius",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "decimals": 2,
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 70
+                },
+                {
+                  "color": "#EF843C",
+                  "value": 80
+                },
+                {
+                  "color": "#E24D42",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "decbps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 14,
+          "x": 0,
+          "y": 17
+        },
+        "id": 3,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "7.2.0",
+        "targets": [
+          {
+            "alias": "100G-01-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "100G-01-OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "100G-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          },
+          {
+            "alias": "100G-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/51"
+              }
+            ]
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "100G Base to Summit",
+        "type": "gauge"
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "align": null,
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 70
+                },
+                {
+                  "color": "#EF843C",
+                  "value": 80
+                },
+                {
+                  "color": "#E24D42",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "decbps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 10,
+          "x": 14,
+          "y": 17
+        },
+        "id": 4,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "7.2.0",
+        "targets": [
+          {
+            "alias": "TELCONOR - IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/48"
+              }
+            ]
+          },
+          {
+            "alias": "TELCONOR - OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/48"
+              }
+            ]
+          },
+          {
+            "alias": "100G-01-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "100G-01-OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "100G-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "100G-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": true,
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Telconor",
+        "type": "gauge"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "decbps"
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 12,
+          "w": 16,
+          "x": 0,
+          "y": 23
+        },
+        "hiddenSeries": false,
+        "id": 8,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.2.0",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "alias": "LHN-01-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "LHN-01-OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "LHN-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "LHN-02-OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "LHN Monitoring",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "decbps",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "decimals": 2,
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 70
+                },
+                {
+                  "color": "#EF843C",
+                  "value": 80
+                },
+                {
+                  "color": "#E24D42",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "decbps"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 8,
+          "x": 16,
+          "y": 23
+        },
+        "id": 9,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "7.2.0",
+        "targets": [
+          {
+            "alias": "LHN-01-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "LHN-01-OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.4"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "LHN-02-IN",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCInOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          },
+          {
+            "alias": "LHN-02-OUT",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "snmp",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "ifHCOutOctets"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "agent_host",
+                "operator": "=",
+                "value": "10.48.1.5"
+              },
+              {
+                "condition": "AND",
+                "key": "ifName",
+                "operator": "=",
+                "value": "Ethernet1/49"
+              }
+            ]
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "LHN Monitoring",
+        "type": "gauge"
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 26,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Base to Summit LInk",
+    "uid": null
+  },
+  "folderId": 3,
+  "overwrite": false
+}

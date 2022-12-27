@@ -1413,7 +1413,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1468,7 +1468,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1523,7 +1523,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1578,7 +1578,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1633,7 +1633,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1688,7 +1688,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1743,7 +1743,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1798,7 +1798,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1853,7 +1853,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1908,7 +1908,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2326,13 +2326,31 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yepun01 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2357,12 +2375,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2375,13 +2387,31 @@
             ]
           },
           {
-            "alias": "yepun02 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2406,12 +2436,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2424,13 +2448,31 @@
             ]
           },
           {
-            "alias": "yepun03 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2455,12 +2497,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2473,13 +2509,31 @@
             ]
           },
           {
-            "alias": "yepun04 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2504,12 +2558,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2522,13 +2570,31 @@
             ]
           },
           {
-            "alias": "yepun05 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2553,12 +2619,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],

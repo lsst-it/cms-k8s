@@ -1615,7 +1615,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1670,7 +1670,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1725,7 +1725,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1780,7 +1780,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1835,7 +1835,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1890,7 +1890,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1945,7 +1945,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2000,7 +2000,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2055,7 +2055,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2110,7 +2110,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2165,7 +2165,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2220,7 +2220,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2681,13 +2681,31 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "ruka01 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2712,12 +2730,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2730,13 +2742,31 @@
             ]
           },
           {
-            "alias": "ruka02 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2761,12 +2791,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2779,13 +2803,31 @@
             ]
           },
           {
-            "alias": "ruka03 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2810,12 +2852,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2828,13 +2864,31 @@
             ]
           },
           {
-            "alias": "ruka04 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2859,12 +2913,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2877,13 +2925,31 @@
             ]
           },
           {
-            "alias": "ruka05 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2908,12 +2974,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2926,13 +2986,31 @@
             ]
           },
           {
-            "alias": "ruka06 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2957,12 +3035,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],

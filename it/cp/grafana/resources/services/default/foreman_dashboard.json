@@ -74,49 +74,6 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman LS",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
-              }
-            ]
-          },
-          {
             "alias": "foreman CP",
             "groupBy": [
               {
@@ -200,49 +157,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "foreman.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "system",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
               }
             ]
           }
@@ -341,55 +255,6 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman LS",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
-              }
-            ]
-          },
-          {
             "alias": "foreman CP",
             "groupBy": [
               {
@@ -486,55 +351,6 @@
                 "value": "foreman.dev.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "foreman TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    " / 1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -628,55 +444,6 @@
         "stack": false,
         "steppedLine": false,
         "targets": [
-          {
-            "alias": "foreman LS recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
-              }
-            ]
-          },
           {
             "alias": "foreman CP recieved bytes",
             "groupBy": [
@@ -772,110 +539,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "foreman.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman TUC recieved bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_recv"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "foreman LS sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "K",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -988,61 +651,6 @@
                 "value": "foreman.dev.lsst.org"
               }
             ]
-          },
-          {
-            "alias": "foreman TUC sent bytes",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "net",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "N",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "bytes_sent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    "*-1"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
-              }
-            ]
           }
         ],
         "thresholds": [],
@@ -1134,61 +742,6 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman LS read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
-              }
-            ]
-          },
-          {
             "alias": "foreman CP read IO",
             "groupBy": [
               {
@@ -1229,7 +782,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1284,7 +837,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1295,116 +848,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "foreman.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman TUC read IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "read_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " / 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
-              }
-            ]
-          },
-          {
-            "alias": "foreman LS write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "J",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
               }
             ]
           },
@@ -1449,7 +892,7 @@
                 },
                 {
                   "params": [
-                    " *-1/ 100"
+                    " *-1/ 32150000"
                   ],
                   "type": "math"
                 }
@@ -1504,7 +947,7 @@
                 },
                 {
                   "params": [
-                    " *-1/ 100"
+                    " *-1/ 32150000"
                   ],
                   "type": "math"
                 }
@@ -1515,61 +958,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "foreman.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman TUC write IO",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "diskio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "F",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "write_bytes"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "10s"
-                  ],
-                  "type": "derivative"
-                },
-                {
-                  "params": [
-                    " *-1/ 100"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
               }
             ]
           }
@@ -1668,49 +1056,6 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman LS",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
-              }
-            ]
-          },
-          {
             "alias": "foreman CP",
             "groupBy": [
               {
@@ -1793,49 +1138,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "foreman.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman TUC",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
               }
             ]
           }
@@ -1929,7 +1231,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "foreman LS used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
@@ -1939,52 +1241,21 @@
               },
               {
                 "params": [
-                  "none"
+                  "host"
                 ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.ls.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman CP used disk",
-            "groupBy": [
+                "type": "tag"
+              },
               {
                 "params": [
-                  "$__interval"
+                  "device"
                 ],
-                "type": "time"
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2009,12 +1280,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2023,104 +1288,6 @@
                 "key": "host",
                 "operator": "=",
                 "value": "foreman.cp.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman DEV used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "D",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.dev.lsst.org"
-              }
-            ]
-          },
-          {
-            "alias": "foreman TUC used disk",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "E",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "foreman.tuc.lsst.cloud"
               }
             ]
           }

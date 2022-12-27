@@ -71,14 +71,14 @@ then
     mkdir list
 fi
 
-sed "s/\"folderId\": 3/\"folderId\": $ID/g" default/server_template.json > list/server_dashboard.json
+sed "s/\"folderId\": 3/\"folderId\": $SERVERS_ID/g" default/server_template.json > list/server_dashboard.json
 
 ssh $SSH_USER@$SERVER "/usr/bin/kubectl wait --for=condition=ready pod -n it-grafana ${POD} > /dev/null 2>&1"
 /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @list/server_dashboard.json > /dev/null 2>&1
 
 
 #Ruka K8s metrics
-cd ../../k8s-ruka
+cd ../k8s-ruka
 if [ ! -d "list" ] 
 then
     mkdir list

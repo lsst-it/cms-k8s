@@ -1615,7 +1615,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1670,7 +1670,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1725,7 +1725,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1780,7 +1780,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1835,7 +1835,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1890,7 +1890,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1945,7 +1945,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2000,7 +2000,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2055,7 +2055,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2110,7 +2110,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2165,7 +2165,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2220,7 +2220,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2681,13 +2681,30 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "pillan01 used disk",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2712,12 +2729,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2730,13 +2741,30 @@
             ]
           },
           {
-            "alias": "pillan02 used disk",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2761,12 +2789,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2779,13 +2801,30 @@
             ]
           },
           {
-            "alias": "pillan03 used disk",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2810,12 +2849,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2828,13 +2861,30 @@
             ]
           },
           {
-            "alias": "pillan04 used disk",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2859,12 +2909,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2877,13 +2921,30 @@
             ]
           },
           {
-            "alias": "pillan05 used disk",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2908,12 +2969,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -2926,13 +2981,30 @@
             ]
           },
           {
-            "alias": "pillan06 used disk",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -2957,12 +3029,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],

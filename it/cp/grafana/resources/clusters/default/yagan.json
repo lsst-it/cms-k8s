@@ -369,6 +369,135 @@
                 "value": "yagan07.cp.lsst.org"
               }
             ]
+          },
+          {
+            "alias": "yagan08",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "system",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "load15"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan09",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "system",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "load15"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan10",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "system",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "load15"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
+              }
+            ]
           }
         ],
         "thresholds": [],
@@ -804,6 +933,153 @@
                 "key": "host",
                 "operator": "=",
                 "value": "yagan07.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan08",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "mem",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    " / 1000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan09",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "mem",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    " / 1000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan10",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "mem",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    " / 1000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
               }
             ]
           }
@@ -1294,6 +1570,171 @@
             ]
           },
           {
+            "alias": "yagan08 recieved bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_recv"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 10"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan09 recieved bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_recv"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 10"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan10 recieved bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_recv"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 10"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
+              }
+            ]
+          },
+          {
             "alias": "yagan01 sent bytes",
             "groupBy": [
               {
@@ -1677,6 +2118,171 @@
                 "value": "yagan07.cp.lsst.org"
               }
             ]
+          },
+          {
+            "alias": "yagan08 sent bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_sent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " *-1/ 10"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan09 sent bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_sent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " *-1/ 10"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan10 sent bytes",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "net",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "bytes_sent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " *-1/ 10"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
+              }
+            ]
           }
         ],
         "thresholds": [],
@@ -1817,7 +2423,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1872,7 +2478,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1927,7 +2533,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -1982,7 +2588,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2037,7 +2643,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2092,7 +2698,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2147,7 +2753,7 @@
                 },
                 {
                   "params": [
-                    " / 100"
+                    " / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2158,6 +2764,171 @@
                 "key": "host",
                 "operator": "=",
                 "value": "yagan07.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan08 read IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "read_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 32150000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan09 read IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "read_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 32150000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan10 read IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "read_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    " / 32150000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
               }
             ]
           },
@@ -2202,7 +2973,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2257,7 +3028,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2312,7 +3083,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2367,7 +3138,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2422,7 +3193,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2477,7 +3248,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2532,7 +3303,7 @@
                 },
                 {
                   "params": [
-                    "*-1 / 100"
+                    "*-1 / 32150000"
                   ],
                   "type": "math"
                 }
@@ -2543,6 +3314,171 @@
                 "key": "host",
                 "operator": "=",
                 "value": "yagan07.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan08 write IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "write_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1 / 32150000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan09 write IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "write_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1 / 32150000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan10 write IO",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "diskio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "L",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "write_bytes"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1s"
+                  ],
+                  "type": "derivative"
+                },
+                {
+                  "params": [
+                    "*-1 / 32150000"
+                  ],
+                  "type": "math"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
               }
             ]
           }
@@ -2940,6 +3876,135 @@
                 "value": "yagan07.cp.lsst.org"
               }
             ]
+          },
+          {
+            "alias": "yagan08",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "cpu",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "usage_user"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan09",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "cpu",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "usage_user"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "yagan10",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "cpu",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "usage_user"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
+              }
+            ]
           }
         ],
         "thresholds": [],
@@ -3036,13 +4101,31 @@
         "steppedLine": false,
         "targets": [
           {
-            "alias": "yagan01 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -3067,12 +4150,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3085,13 +4162,31 @@
             ]
           },
           {
-            "alias": "yagan02 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -3116,12 +4211,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3134,13 +4223,31 @@
             ]
           },
           {
-            "alias": "yagan03 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -3165,12 +4272,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3183,13 +4284,31 @@
             ]
           },
           {
-            "alias": "yagan04 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -3214,12 +4333,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3232,13 +4345,31 @@
             ]
           },
           {
-            "alias": "yagan05 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -3263,12 +4394,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3281,13 +4406,31 @@
             ]
           },
           {
-            "alias": "yagan06 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -3312,12 +4455,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3330,13 +4467,31 @@
             ]
           },
           {
-            "alias": "yagan07 used disk",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
                   "$__interval"
                 ],
                 "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
               },
               {
                 "params": [
@@ -3361,12 +4516,6 @@
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "*2"
-                  ],
-                  "type": "math"
                 }
               ]
             ],
@@ -3375,6 +4524,189 @@
                 "key": "host",
                 "operator": "=",
                 "value": "yagan07.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "disk",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used_percent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan08.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "disk",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used_percent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan09.cp.lsst.org"
+              }
+            ]
+          },
+          {
+            "alias": "",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "host"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "device"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "disk",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used_percent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "yagan10.cp.lsst.org"
               }
             ]
           }

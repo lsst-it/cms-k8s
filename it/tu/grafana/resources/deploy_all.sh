@@ -8,7 +8,7 @@ URL="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-monitoring get ingress graf
 USER="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-monitoring get secret grafana-credentials -ojson ' | jq -r '.data["admin-user"]' | base64 --decode)"
 PASSWORD="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl -n it-monitoring get secret grafana-credentials -ojson ' | jq -r '.data["admin-password"]' | base64 --decode)"
 POD="$(ssh $SSH_USER@$SERVER '/usr/bin/kubectl get -n it-monitoring pods -o json ' | jq -r '.items[].metadata.name')"
-Folders=(clusters servers Kubernetes-Monitoring)
+Folders=(clusters servers services Kubernetes-Monitoring)
 counter=$RANDOM
 NUMBER='0'
 NAME=null
@@ -28,6 +28,7 @@ for folder in "${Folders[@]}"; do
 done
 declare CLUSTERS_ID="$(cat ID/clusters)"
 declare SERVERS_ID="$(cat ID/servers)"
+declare SERVICES_ID="$(cat ID/services)"
 declare K8S_MON_ID="$(cat ID/Kubernetes-Monitoring)"
 
 #Clusters
@@ -55,6 +56,22 @@ fi
 cd default
 for filename in *.json; do
     sed "s/\"folderId\": 6/\"folderId\": $K8S_MON_ID/g" $filename > ../list/$filename
+done
+
+cd ../list
+for filename in *.json; do
+    /usr/bin/curl -k -u ${USER}:${PASSWORD} -H "Content-Type: application/json" -X POST https://${URL}/api/dashboards/db -d @"$filename" > /dev/null 2>&1
+done
+
+#Services
+cd ../../services
+if [ ! -d "list" ] 
+then
+    mkdir list
+fi
+cd default
+for filename in *.json; do
+    sed "s/\"folderId\": 5/\"folderId\": $SERVICES_ID/g" $filename > ../list/$filename
 done
 
 cd ../list

@@ -1,6 +1,6 @@
 {
   "dashboard":
-  {  
+  {
     "annotations": {
       "list": [
         {
@@ -52,10 +52,17 @@
           "for": "5m",
           "frequency": "1m",
           "handler": 1,
-          "message": "The temperature limit has been reached",
+          "message": "The temperature limit (28 degrees) has been reached.",
           "name": "Comp-DS01 Temperature alert",
           "noDataState": "no_data",
-          "notifications": []
+          "notifications": [
+            {
+              "uid": "24NdSNkVk"
+            },
+            {
+              "uid": "dxPOINzVk"
+            }
+          ]
         },
         "aliasColors": {},
         "bars": false,
@@ -243,9 +250,9 @@
         "options": {
           "reduceOptions": {
             "calcs": [
-              "mean"
+              "lastNotNull"
             ],
-            "fields": "",
+            "fields": "/^CR_Temperature$/",
             "values": false
           },
           "showThresholdLabels": false,
@@ -258,7 +265,7 @@
             "groupBy": [
               {
                 "params": [
-                  "$__interval"
+                  "1s"
                 ],
                 "type": "time"
               },
