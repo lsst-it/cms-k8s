@@ -1,3 +1,8 @@
+Deprecation Notice
+==================
+
+This repo is **DEPRECATED** and all configuration should be migrated to [`lsst-it/k8s-cookbook`](https://github.com/lsst-it/k8s-cookbook).
+
 Centralized Monitoring System over Kubernetes
 ==================================
 
